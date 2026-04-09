@@ -1,0 +1,39 @@
+[project]
+name = "may-weather"
+version = "0.1.0"
+description = "Static microsite and forecast pipeline for Haltern am See on 2026-05-01."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "beautifulsoup4>=4.12.3",
+  "httpx>=0.27.2",
+]
+
+[project.scripts]
+weather-fetch = "forecast_pipeline.cli:main_fetch"
+weather-build-history = "forecast_pipeline.cli:main_build_history"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/forecast_pipeline"]
+
+[tool.pytest.ini_options]
+addopts = "-s"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+  "click>=8.3.2",
+  "pyright>=1.1.408",
+  "pysonar>=1.4.0.4676",
+  "pytest>=8.3.5",
+  "pytest-cov>=7.1.0",
+  "pyyaml>=6.0.3",
+  "ruff>=0.15.10",
+  "truststore>=0.10.4",
+  "vulture>=2.16",
+]

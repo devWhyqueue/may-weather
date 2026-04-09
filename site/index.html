@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haltern am See • Wetter für den 01.05.2026</title>
+    <meta
+      name="description"
+      content="Atmosphärische Wetter-Microsite für Haltern am See mit aggregierter Prognose für den 01.05.2026."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <main class="shell">
+      <section class="hero panel animate-rise">
+        <div class="eyebrow">Haltern am See · Freitag, 01.05.2026</div>
+        <div class="hero-grid">
+          <div>
+            <p class="kicker">Lake Forecast Ledger</p>
+            <h1>Der Mai beginnt am See mit einer Prognose, die sich mit jeder Quelle verdichtet.</h1>
+            <p class="lede" id="hero-note">
+              Die Microsite bündelt zehn deutsche Wetterdienste und zeigt transparent, wie weit die Prognose für
+              den Zieltermin bereits reicht.
+            </p>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-topline">Zieltag in</div>
+            <div class="stat-value" id="countdown-days">--</div>
+            <div class="stat-foot">Tagen</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-grid animate-rise delay-1">
+        <article class="panel forecast-focus">
+          <div class="card-label">Verdichtete Prognose</div>
+          <div class="temperature-band">
+            <span id="temp-min">--</span>
+            <span class="separator">/</span>
+            <span id="temp-max">--</span>
+          </div>
+          <p class="condition" id="condition-summary">Wartet auf erste belastbare Werte.</p>
+          <div class="metric-row">
+            <div>
+              <span class="metric-label">Regenchance</span>
+              <strong id="precip-probability">--</strong>
+            </div>
+            <div>
+              <span class="metric-label">Wind</span>
+              <strong id="wind-speed">--</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel confidence-card">
+          <div class="card-label">Vertrauen</div>
+          <div class="confidence-meter">
+            <div class="confidence-fill" id="confidence-fill"></div>
+          </div>
+          <div class="confidence-copy">
+            <strong id="confidence-value">0%</strong>
+            <p id="consensus-note">Noch kein belastbarer Konsens.</p>
+          </div>
+          <dl class="facts">
+            <div>
+              <dt>Aktive Quellen</dt>
+              <dd id="coverage-value">0 / 10</dd>
+            </div>
+            <div>
+              <dt>Letztes Update</dt>
+              <dd id="generated-at">--</dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+
+      <section class="panel consensus-panel animate-rise delay-2">
+        <div class="section-header">
+          <div>
+            <p class="kicker">Einordnung</p>
+            <h2>Warum die Seite manchmal bewusst nichts verspricht</h2>
+          </div>
+          <p class="section-copy">
+            Wenn der 1. Mai noch außerhalb des Vorhersagefensters liegt, bleibt die Prognose leer. Das ist Absicht:
+            keine Halluzinationen, nur veröffentlichte Werte.
+          </p>
+        </div>
+        <div class="spread-grid" id="spread-grid"></div>
+      </section>
+
+      <section class="panel animate-rise delay-3">
+        <div class="section-header">
+          <div>
+            <p class="kicker">Quellenradar</p>
+            <h2>Zehn Dienste, ein Zieltermin</h2>
+          </div>
+          <p class="section-copy">
+            Jede Karte zeigt, ob die Quelle den Zieltag bereits publiziert und welche Werte sich extrahieren ließen.
+          </p>
+        </div>
+        <div class="sources-grid" id="sources-grid"></div>
+      </section>
+
+      <section class="panel animate-rise delay-4">
+        <div class="section-header">
+          <div>
+            <p class="kicker">Historie</p>
+            <h2>Wie sich die Prognose annähert</h2>
+          </div>
+          <p class="section-copy">
+            Mit jedem Fetch landet ein weiterer Snapshot im Archiv. So lässt sich später nachvollziehen, wie sich der
+            Konsens vor dem Feiertagswochenende entwickelt hat.
+          </p>
+        </div>
+        <div class="history-card">
+          <svg id="history-chart" viewBox="0 0 600 180" preserveAspectRatio="none" aria-label="Historischer Verlauf"></svg>
+          <div class="history-legend" id="history-legend"></div>
+        </div>
+      </section>
+    </main>
+
+    <template id="source-card-template">
+      <article class="source-card">
+        <div class="source-card-header">
+          <div>
+            <span class="badge"></span>
+            <h3></h3>
+          </div>
+          <a target="_blank" rel="noreferrer">Quelle öffnen</a>
+        </div>
+        <p class="source-note"></p>
+        <dl class="source-stats"></dl>
+      </article>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+  </html>

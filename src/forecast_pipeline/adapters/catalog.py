@@ -1,0 +1,87 @@
+from __future__ import annotations
+
+from .base import SourceDefinition
+
+
+SOURCE_DEFINITIONS = (
+    SourceDefinition(
+        source_id="dwd",
+        source_name="DWD",
+        source_url="https://www.dwd.de/DE/wetter/vorhersage_aktuell/wettervorhersage_node.html",
+        method="html",
+        weight=1.0,
+        horizon_days=10,
+    ),
+    SourceDefinition(
+        source_id="wetteronline",
+        source_name="WetterOnline",
+        source_url="https://www.wetteronline.de/wetter/haltern-am-see",
+        method="html",
+        weight=0.95,
+        horizon_days=14,
+    ),
+    SourceDefinition(
+        source_id="wettercom",
+        source_name="wetter.com",
+        source_url="https://www.wetter.com/deutschland/haltern-am-see/DE0004513.html",
+        method="html",
+        weight=0.92,
+        horizon_days=16,
+    ),
+    SourceDefinition(
+        source_id="kachelmannwetter",
+        source_name="Kachelmannwetter",
+        source_url="https://kachelmannwetter.com/de/wetter/2911396-haltern-am-see",
+        method="html",
+        weight=0.9,
+        horizon_days=14,
+    ),
+    SourceDefinition(
+        source_id="meteoblue",
+        source_name="meteoblue",
+        source_url="https://www.meteoblue.com/en/weather/week/haltern-am-see_germany_2911396",
+        method="html",
+        weight=0.88,
+        horizon_days=7,
+    ),
+    SourceDefinition(
+        source_id="wetterde",
+        source_name="wetter.de",
+        source_url="https://www.wetter.de/deutschland/wetter-haltern-am-see-18217553.html",
+        method="html",
+        weight=0.82,
+        horizon_days=14,
+    ),
+    SourceDefinition(
+        source_id="daswetter",
+        source_name="Das Wetter / Meteored",
+        source_url="https://www.daswetter.com/wetter_Haltern+am+See-Europa-Deutschland-Nordrhein+Westfalen--1-17886.html",
+        method="html",
+        weight=0.8,
+        horizon_days=14,
+    ),
+    SourceDefinition(
+        source_id="wetternet",
+        source_name="wetter.net",
+        source_url="https://www.wetter.net/wetter/heute/morgen/deutschland/haltern-am-see",
+        method="html",
+        weight=0.76,
+        horizon_days=14,
+    ),
+    SourceDefinition(
+        source_id="accuweather",
+        source_name="AccuWeather",
+        source_url="https://www.accuweather.com/de/de/haltern-am-see/182194/weather-forecast/182194",
+        method="html",
+        weight=0.84,
+        horizon_days=30,
+    ),
+    SourceDefinition(
+        source_id="timeanddate",
+        source_name="timeanddate",
+        source_url="https://www.timeanddate.com/weather/germany/haltern-am-see/ext",
+        method="html",
+        weight=0.74,
+        horizon_days=14,
+    ),
+)

@@ -1,0 +1,156 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+from forecast_pipeline.config import DATA_DIR, LOCATION, TARGET_DATE
+from forecast_pipeline.models import ConsensusForecast, SourceForecast
+
+
+def _has_signal(source: SourceForecast) -> bool:
+    return any(
+        value is not None
+        for value in (
+            source.metrics.temp_min_c,
+            source.metrics.temp_max_c,
+            source.metrics.precip_probability_pct,
+            source.metrics.precip_mm,
+            source.metrics.wind_kph,
+            source.metrics.condition_summary,
+        )
+    )
+
+
+def ensure_data_dir() -> None:
+    """Ensure that the static JSON output directory exists."""
+
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def _dump_json(path: Path, payload: dict[str, Any]) -> None:
+    path.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+
+
+def _location_payload() -> dict[str, Any]:
+    return {
+        "name": LOCATION.name,
+        "country": LOCATION.country,
+        "region": LOCATION.region,
+        "latitude": LOCATION.latitude,
+        "longitude": LOCATION.longitude,
+        "timezone": LOCATION.timezone,
+    }
+
+
+def _available_count(sources: list[SourceForecast]) -> int:
+    return len(
+        [
+            source
+            for source in sources
+            if source.status in {"available", "partial"} and _has_signal(source)
+        ]
+    )
+
+
+def _latest_payload(
+    *, generated_at: str, sources: list[SourceForecast], consensus: ConsensusForecast
+) -> dict[str, Any]:
+    return {
+        "location": _location_payload(),
+        "target_date": TARGET_DATE.isoformat(),
+        "generated_at": generated_at,
+        "best_forecast": consensus.to_dict(),
+        "coverage": {
+            "total_sources": len(sources),
+            "available_sources": _available_count(sources),
+        },
+        "confidence": consensus.confidence,
+        "sources": [source.to_dict() for source in sources],
+    }
+
+
+def write_latest(
+    *, generated_at: str, sources: list[SourceForecast], consensus: ConsensusForecast
+) -> Path:
+    """Write the latest normalized forecast snapshot for frontend consumption."""
+
+    ensure_data_dir()
+    latest_path = DATA_DIR / "latest.json"
+    _dump_json(
+        latest_path,
+        _latest_payload(
+            generated_at=generated_at, sources=sources, consensus=consensus
+        ),
+    )
+    return latest_path
+
+
+def write_meta(
+    *, generated_at: str, sources: list[SourceForecast], consensus: ConsensusForecast
+) -> Path:
+    """Write operational metadata about the last fetch run."""
+
+    ensure_data_dir()
+    meta_path = DATA_DIR / "meta.json"
+    payload = {
+        "generated_at": generated_at,
+        "target_date": TARGET_DATE.isoformat(),
+        "location": LOCATION.name,
+        "source_status": {
+            "available": len(
+                [source for source in sources if source.status == "available"]
+            ),
+            "partial": len(
+                [source for source in sources if source.status == "partial"]
+            ),
+            "unavailable": len(
+                [source for source in sources if source.status == "unavailable"]
+            ),
+            "error": len([source for source in sources if source.status == "error"]),
+        },
+        "best_forecast_status": consensus.status,
+    }
+    _dump_json(meta_path, payload)
+    return meta_path
+
+
+def read_latest() -> dict[str, Any]:
+    """Read the latest generated frontend payload."""
+
+    latest_path = DATA_DIR / "latest.json"
+    return json.loads(latest_path.read_text(encoding="utf-8"))
+
+
+def _load_history(history_path: Path) -> dict[str, Any]:
+    if history_path.exists():
+        return json.loads(history_path.read_text(encoding="utf-8"))
+    return {"target_date": TARGET_DATE.isoformat(), "snapshots": []}
+
+
+def _snapshot_from_latest(latest: dict[str, Any], generated_at: str) -> dict[str, Any]:
+    return {
+        "fetched_at": generated_at,
+        "best_forecast": latest["best_forecast"],
+        "source_count": latest["coverage"]["available_sources"],
+        "spread": latest["best_forecast"]["spread"],
+    }
+
+
+def update_history(*, generated_at: str) -> Path:
+    """Append the current latest snapshot to history.json."""
+
+    ensure_data_dir()
+    latest = read_latest()
+    history_path = DATA_DIR / "history.json"
+    history = _load_history(history_path)
+    snapshots = [
+        item for item in history["snapshots"] if item["fetched_at"] != generated_at
+    ]
+    snapshots.append(_snapshot_from_latest(latest, generated_at))
+    snapshots.sort(key=lambda item: item["fetched_at"])
+    history["snapshots"] = snapshots
+    _dump_json(history_path, history)
+    return history_path
