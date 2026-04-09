@@ -1,15 +1,13 @@
-const dataUrls = {
-  latest: "./data/latest.json",
-  history: "./data/history.json",
-};
+const MAY_2026 = "2026-05-01";
 
 const formatPercent = (value) => (value == null ? "—" : `${Math.round(value)}%`);
-const formatHours = (value) => (value == null ? "—" : `${Math.round(value * 10) / 10} h`);
+
 const formatDateTime = (value) =>
   new Intl.DateTimeFormat("de-DE", {
     dateStyle: "medium",
     timeStyle: "short",
   }).format(new Date(value));
+
 const formatDateLabel = (value) =>
   new Intl.DateTimeFormat("de-DE", {
     weekday: "long",
@@ -24,130 +22,171 @@ const daypartLabels = {
   evening: "Abend",
 };
 
-function renderCountdown(targetDate) {
-  const target = new Date(`${targetDate}T12:00:00+02:00`);
-  const now = new Date();
-  const diffMs = target - now;
-  const days = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
-  document.querySelector("#countdown-days").textContent = String(days);
+const delayClass = ["delay-1", "delay-2", "delay-3"];
+
+function escapeAttr(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
 }
 
-function renderDaypartCards(container, dayparts, withSpread = false) {
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/"/g, "&quot;");
+}
+
+/** @param {string | null | undefined} condition @param {number | null | undefined} pct */
+function classifyWeather(condition, pct) {
+  const raw = (condition || "").toLowerCase();
+  const c = raw.normalize("NFD").replace(/\p{M}/gu, "");
+  const p = pct == null ? null : Math.min(100, Math.max(0, Number(pct)));
+
+  if (/regen|schauer|niesel|gewitter/.test(c)) return "rain";
+  if (/sonne|klar|heiter|licht/.test(c)) {
+    if (p == null || p < 45) return "sun";
+    if (p < 70) return "cloud";
+    return "rain";
+  }
+  if (/bewolk|wolk|nebel|bedeckt|trub|dunst/.test(c)) return "cloud";
+  if (p != null) {
+    if (p >= 60) return "rain";
+    if (p <= 22) return "sun";
+  }
+  return "cloud";
+}
+
+function pickPrimarySource(sources) {
+  const candidates = (sources || []).filter(
+    (s) =>
+      s.status === "available" &&
+      typeof s.source_url === "string" &&
+      /^https?:\/\//i.test(s.source_url),
+  );
+  if (!candidates.length) return null;
+  candidates.sort((a, b) => (b.confidence ?? 0) - (a.confidence ?? 0));
+  const top = candidates[0];
+  return { name: top.source_name, url: top.source_url };
+}
+
+function renderSourceLine(latest) {
+  const line = document.querySelector("#source-line");
+  line.textContent = "";
+  line.hidden = true;
+
+  const src = pickPrimarySource(latest.sources);
+  if (!src) return;
+
+  try {
+    new URL(src.url);
+  } catch {
+    return;
+  }
+
+  line.hidden = false;
+  const intro = document.createTextNode("Rohdaten einsehbar bei ");
+  const link = document.createElement("a");
+  link.href = src.url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.className = "source-link";
+  link.textContent = src.name;
+  const outro = document.createTextNode(" — verdichtet aus mehreren Diensten.");
+  line.appendChild(intro);
+  line.appendChild(link);
+  line.appendChild(outro);
+}
+
+function weatherSceneMarkup(weather) {
+  return `
+    <div class="weather-scene weather-scene--${weather}" aria-hidden="true">
+      <div class="ws-sun">
+        <span class="ws-sun-body"></span>
+        <span class="ws-sun-glow"></span>
+        <span class="ws-sun-rays"></span>
+      </div>
+      <div class="ws-cloud ws-cloud--a"></div>
+      <div class="ws-cloud ws-cloud--b"></div>
+      <div class="ws-rain">
+        <span class="ws-rain-strip ws-rain-strip--1"></span>
+        <span class="ws-rain-strip ws-rain-strip--2"></span>
+        <span class="ws-rain-strip ws-rain-strip--3"></span>
+      </div>
+    </div>
+  `;
+}
+
+function render(latest) {
+  const locationName = latest.location?.name ?? "Haltern am See";
+  document.querySelector("#location-line").textContent = locationName;
+
+  document.title = "Haltern · 1. Mai";
+  document.querySelector("#primary-title").textContent = "1. Mai 2026";
+
+  const fallbackEl = document.querySelector("#fallback-note");
+  if (latest.target_date === MAY_2026) {
+    fallbackEl.hidden = true;
+    fallbackEl.textContent = "";
+  } else {
+    fallbackEl.hidden = false;
+    const actual = formatDateLabel(latest.target_date);
+    fallbackEl.textContent = `Die Werte gelten für ${actual}, weil für den 1. Mai 2026 noch nicht alle Quellen einen vollständigen Tag liefern.`;
+  }
+
+  const dayparts = latest.best_forecast?.dayparts;
+  const container = document.querySelector("#dayparts-container");
+  if (!dayparts) {
+    container.innerHTML = "";
+    renderSourceLine(latest);
+    return;
+  }
+
   container.innerHTML = Object.entries(daypartLabels)
-    .map(([key, label]) => {
-      const values = dayparts[key];
-      const weather = values.condition_summary || "—";
-      const rain = formatPercent(values.precip_probability_pct);
-      const sun = formatHours(values.sunshine_hours);
-      const title = withSpread ? `${label} Spannweite` : label;
+    .map(([key, label], i) => {
+      const values = dayparts[key] ?? {};
+      const condition = values.condition_summary || "—";
+      const pct = values.precip_probability_pct;
+      const rainLabel = `Regen ${formatPercent(pct)}`;
+      const width = pct == null ? 0 : Math.min(100, Math.max(0, pct));
+      const weather = classifyWeather(condition, pct);
+      const aria = escapeAttr(`${label}: ${condition}, ${rainLabel}`);
+      const safeCondition = escapeHtml(condition);
       return `
-        <article class="spread-card">
-          <span class="card-label">${title}</span>
-          <strong>${weather}</strong>
-          <span>Regen ${rain}</span>
-          <span>Sonne ${sun}</span>
+        <article class="daypart tile animate-in ${delayClass[i]}" data-weather="${weather}" style="--rain-pct: ${width}%" aria-label="${aria}">
+          ${weatherSceneMarkup(weather)}
+          <div class="daypart-inner">
+            <span class="daypart-label">${label}</span>
+            <p class="condition">${safeCondition}</p>
+            <div class="rain-track" role="presentation" aria-hidden="true">
+              <span class="rain-fill"></span>
+            </div>
+            <span class="rain-value">${rainLabel}</span>
+          </div>
         </article>
       `;
     })
     .join("");
-}
 
-function renderSummary(latest) {
-  const forecast = latest.best_forecast;
-  const targetLabel = formatDateLabel(latest.target_date);
-  document.title = `Haltern am See • Tagesabschnitte für ${targetLabel}`;
-  document.querySelector("#hero-date").textContent = `Haltern am See · ${targetLabel}`;
-  document.querySelector("#condition-summary").textContent = forecast.note;
-  document.querySelector("#confidence-value").textContent = `${Math.round((latest.confidence || 0) * 100)}%`;
-  document.querySelector("#consensus-note").textContent = forecast.note;
-  document.querySelector("#coverage-value").textContent =
-    `${latest.coverage.available_sources} / ${latest.coverage.total_sources}`;
-  document.querySelector("#generated-at").textContent = formatDateTime(latest.generated_at);
-  document.querySelector("#hero-note").textContent =
-    "Die Seite zeigt den naechsten vollstaendigen Tag, fuer den zehn Quellen Wetter, Regenchance und Sonnenstunden in Tagesabschnitten liefern.";
-  document.querySelector("#confidence-fill").style.width = `${Math.round((latest.confidence || 0) * 100)}%`;
-  renderDaypartCards(document.querySelector("#daypart-summary-grid"), forecast.dayparts);
-}
+  document.querySelector("#generated-at-footer").textContent =
+    `Aktualisiert ${formatDateTime(latest.generated_at)}`;
 
-function renderSpread(forecast) {
-  renderDaypartCards(document.querySelector("#spread-grid"), forecast.spread, true);
-}
-
-function sourceBadge(status) {
-  if (status === "available") return { label: "Live", className: "" };
-  if (status === "partial") return { label: "Teilweise", className: "" };
-  if (status === "error") return { label: "Fehler", className: "error" };
-  return { label: "Noch nicht", className: "pending" };
-}
-
-function renderSources(latest) {
-  const grid = document.querySelector("#sources-grid");
-  const template = document.querySelector("#source-card-template");
-  grid.innerHTML = "";
-
-  latest.sources.forEach((source) => {
-    const fragment = template.content.cloneNode(true);
-    const article = fragment.querySelector(".source-card");
-    const badge = fragment.querySelector(".badge");
-    const title = fragment.querySelector("h3");
-    const link = fragment.querySelector("a");
-    const note = fragment.querySelector(".source-note");
-    const stats = fragment.querySelector(".source-stats");
-    const badgeMeta = sourceBadge(source.status);
-
-    badge.textContent = badgeMeta.label;
-    badge.classList.add(...badgeMeta.className.split(" ").filter(Boolean));
-    title.textContent = source.source_name;
-    link.href = source.source_url;
-    note.textContent = source.note || "Tagesabschnitte erfolgreich eingelesen.";
-
-    stats.innerHTML = Object.entries(daypartLabels)
-      .map(([key, label]) => {
-        const values = source.dayparts[key];
-        return `
-          <div>
-            <dt>${label}</dt>
-            <dd>${values.condition_summary || "—"} · ${formatPercent(values.precip_probability_pct)} · ${formatHours(values.sunshine_hours)}</dd>
-          </div>
-        `;
-      })
-      .join("");
-    article.dataset.status = source.status;
-    grid.appendChild(fragment);
-  });
-}
-
-function renderHistory(history) {
-  const legend = document.querySelector("#history-legend");
-  const snapshots = history.snapshots || [];
-  if (!snapshots.length) {
-    legend.textContent = "Noch keine Historie vorhanden.";
-    return;
-  }
-  legend.innerHTML = snapshots
-    .map(
-      (item) =>
-        `<p>${formatDateTime(item.fetched_at)} · ${item.source_count} vollstaendige Quellen</p>`,
-    )
-    .join("");
+  renderSourceLine(latest);
 }
 
 async function main() {
-  const [latestResponse, historyResponse] = await Promise.all([
-    fetch(dataUrls.latest),
-    fetch(dataUrls.history),
-  ]);
-
-  const latest = await latestResponse.json();
-  const history = await historyResponse.json();
-  renderCountdown(latest.target_date);
-  renderSummary(latest);
-  renderSpread(latest.best_forecast);
-  renderSources(latest);
-  renderHistory(history);
+  const response = await fetch("./data/latest.json");
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+  const latest = await response.json();
+  render(latest);
 }
 
 main().catch((error) => {
   console.error(error);
-  document.querySelector("#hero-note").textContent = "Die Daten konnten lokal nicht geladen werden.";
+  const msg = document.querySelector("#status-message");
+  msg.hidden = false;
+  msg.textContent = "Die Daten konnten nicht geladen werden.";
 });
