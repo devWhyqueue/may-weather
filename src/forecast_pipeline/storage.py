@@ -7,31 +7,26 @@ from typing import Any
 
 from forecast_pipeline.config import DATA_DIR, LOCATION
 from forecast_pipeline.models import ConsensusForecast, SourceForecast
+from forecast_pipeline.scoring import DAYPARTS
 
 
 def _has_signal(source: SourceForecast) -> bool:
-    return any(
-        value is not None
-        for value in (
-            source.metrics.temp_min_c,
-            source.metrics.temp_max_c,
-            source.metrics.precip_probability_pct,
-            source.metrics.precip_mm,
-            source.metrics.wind_kph,
-            source.metrics.condition_summary,
-        )
+    return all(
+        getattr(source.dayparts, daypart).condition_summary is not None
+        and getattr(source.dayparts, daypart).precip_probability_pct is not None
+        and getattr(source.dayparts, daypart).sunshine_hours is not None
+        for daypart in DAYPARTS
     )
 
 
 def ensure_data_dir() -> None:
-    """Ensure that the static JSON output directory exists."""
-
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def _dump_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
     )
 
 
@@ -47,13 +42,7 @@ def _location_payload() -> dict[str, Any]:
 
 
 def _available_count(sources: list[SourceForecast]) -> int:
-    return len(
-        [
-            source
-            for source in sources
-            if source.status in {"available", "partial"} and _has_signal(source)
-        ]
-    )
+    return len([source for source in sources if source.status == "available" and _has_signal(source)])
 
 
 def _latest_payload(
@@ -84,8 +73,6 @@ def write_latest(
     sources: list[SourceForecast],
     consensus: ConsensusForecast,
 ) -> Path:
-    """Write the latest normalized forecast snapshot for frontend consumption."""
-
     ensure_data_dir()
     latest_path = DATA_DIR / "latest.json"
     _dump_json(
@@ -107,8 +94,6 @@ def write_meta(
     sources: list[SourceForecast],
     consensus: ConsensusForecast,
 ) -> Path:
-    """Write operational metadata about the last fetch run."""
-
     ensure_data_dir()
     meta_path = DATA_DIR / "meta.json"
     payload = {
@@ -116,15 +101,9 @@ def write_meta(
         "target_date": target_date.isoformat(),
         "location": LOCATION.name,
         "source_status": {
-            "available": len(
-                [source for source in sources if source.status == "available"]
-            ),
-            "partial": len(
-                [source for source in sources if source.status == "partial"]
-            ),
-            "unavailable": len(
-                [source for source in sources if source.status == "unavailable"]
-            ),
+            "available": len([source for source in sources if source.status == "available"]),
+            "partial": len([source for source in sources if source.status == "partial"]),
+            "unavailable": len([source for source in sources if source.status == "unavailable"]),
             "error": len([source for source in sources if source.status == "error"]),
         },
         "best_forecast_status": consensus.status,
@@ -134,8 +113,6 @@ def write_meta(
 
 
 def read_latest() -> dict[str, Any]:
-    """Read the latest generated frontend payload."""
-
     latest_path = DATA_DIR / "latest.json"
     return json.loads(latest_path.read_text(encoding="utf-8"))
 
@@ -152,22 +129,17 @@ def _snapshot_from_latest(latest: dict[str, Any], generated_at: str) -> dict[str
         "fetched_at": generated_at,
         "best_forecast": latest["best_forecast"],
         "source_count": latest["coverage"]["available_sources"],
-        "spread": latest["best_forecast"]["spread"],
     }
 
 
 def update_history(*, generated_at: str) -> Path:
-    """Append the current latest snapshot to history.json."""
-
     ensure_data_dir()
     latest = read_latest()
     history_path = DATA_DIR / "history.json"
     history = _load_history(history_path)
     if history["target_date"] != latest["target_date"]:
         history = {"target_date": latest["target_date"], "snapshots": []}
-    snapshots = [
-        item for item in history["snapshots"] if item["fetched_at"] != generated_at
-    ]
+    snapshots = [item for item in history["snapshots"] if item["fetched_at"] != generated_at]
     snapshots.append(_snapshot_from_latest(latest, generated_at))
     snapshots.sort(key=lambda item: item["fetched_at"])
     history["snapshots"] = snapshots

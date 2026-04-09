@@ -42,22 +42,8 @@
       <section class="summary-grid animate-rise delay-1">
         <article class="panel forecast-focus">
           <div class="card-label">Verdichtete Prognose</div>
-          <div class="temperature-band">
-            <span id="temp-min">--</span>
-            <span class="separator">/</span>
-            <span id="temp-max">--</span>
-          </div>
           <p class="condition" id="condition-summary">Wartet auf erste belastbare Werte.</p>
-          <div class="metric-row">
-            <div>
-              <span class="metric-label">Regenchance</span>
-              <strong id="precip-probability">--</strong>
-            </div>
-            <div>
-              <span class="metric-label">Wind</span>
-              <strong id="wind-speed">--</strong>
-            </div>
-          </div>
+          <div class="spread-grid" id="daypart-summary-grid"></div>
         </article>
 
         <article class="panel confidence-card">
@@ -86,7 +72,7 @@
         <div class="section-header">
           <div>
             <p class="kicker">Einordnung</p>
-            <h2>Warum die Seite manchmal bewusst nichts verspricht</h2>
+            <h2>Warum die Seite manchmal auf morgen springt</h2>
           </div>
           <p class="section-copy">
             Wenn der 1. Mai noch nicht veröffentlicht ist, weicht die Seite auf den verfügbaren Termin mit dem
@@ -103,7 +89,7 @@
             <h2>Zehn Dienste, immer möglichst nah am 1. Mai</h2>
           </div>
           <p class="section-copy">
-            Jede Karte zeigt, ob die Quelle den Zieltag bereits publiziert und welche Werte sich extrahieren ließen.
+            Jede Karte zeigt Wetter, Regenchance und Sonnenstunden fuer Morgen, Nachmittag und Abend.
           </p>
         </div>
         <div class="sources-grid" id="sources-grid"></div>
@@ -116,14 +102,11 @@
             <h2>Wie sich die Prognose annähert</h2>
           </div>
           <p class="section-copy">
-            Mit jedem Fetch landet ein weiterer Snapshot im Archiv. So lässt sich nachvollziehen, wann der 1. Mai
-            selbst übernimmt und wie sich der nächstliegende Ausweichtermin davor entwickelt.
+            Mit jedem Fetch landet ein weiterer Snapshot im Archiv. Im Moment zaehlt vor allem, wie viele Quellen
+            einen vollstaendigen Tagesblock liefern.
           </p>
         </div>
-        <div class="history-card">
-          <svg id="history-chart" viewBox="0 0 600 180" preserveAspectRatio="none" aria-label="Historischer Verlauf"></svg>
-          <div class="history-legend" id="history-legend"></div>
-        </div>
+        <div class="history-card" id="history-legend"></div>
       </section>
     </main>
 

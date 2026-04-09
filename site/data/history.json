@@ -1,34 +1,47 @@
 {
-  "target_date": "2026-04-30",
+  "target_date": "2026-04-11",
   "snapshots": [
     {
-      "fetched_at": "2026-04-09T19:48:19Z",
+      "fetched_at": "2026-04-09T20:58:50Z",
       "best_forecast": {
         "status": "available",
-        "label": "Verdichtete Prognose",
-        "note": "1 Quellen liefern bereits Werte für den Zieltermin.",
-        "source_count": 1,
-        "confidence": 0.52,
+        "label": "Verdichtete Tagesabschnitte",
+        "note": "10 Quellen liefern vollstaendige Morgen-, Nachmittags- und Abendwerte.",
+        "source_count": 10,
+        "confidence": 0.1,
         "spread": {
-          "temp_max_c": null,
-          "temp_min_c": null,
-          "precip_probability_pct": null,
-          "wind_kph": null
+          "morning": {
+            "precip_probability_pct": 82.0,
+            "sunshine_hours": 7.2
+          },
+          "afternoon": {
+            "precip_probability_pct": 82.0,
+            "sunshine_hours": 7.2
+          },
+          "evening": {
+            "precip_probability_pct": 100.0,
+            "sunshine_hours": 3.0
+          }
         },
-        "temp_min_c": null,
-        "temp_max_c": null,
-        "precip_probability_pct": null,
-        "precip_mm": null,
-        "wind_kph": null,
-        "condition_summary": "Regen"
+        "dayparts": {
+          "morning": {
+            "condition_summary": "Regen",
+            "precip_probability_pct": 28.2,
+            "sunshine_hours": 2.0
+          },
+          "afternoon": {
+            "condition_summary": "Regen",
+            "precip_probability_pct": 19.7,
+            "sunshine_hours": 2.4
+          },
+          "evening": {
+            "condition_summary": "Regen",
+            "precip_probability_pct": 39.9,
+            "sunshine_hours": 1.0
+          }
+        }
       },
-      "source_count": 1,
-      "spread": {
-        "temp_max_c": null,
-        "temp_min_c": null,
-        "precip_probability_pct": null,
-        "wind_kph": null
-      }
+      "source_count": 10
     }
   ]
 }

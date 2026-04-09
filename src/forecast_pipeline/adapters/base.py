@@ -13,3 +13,8 @@ class SourceDefinition:
     method: str
     weight: float
     horizon_days: int | None = None
+    fetch_mode: str = "http"
+    language: str = "de"
+    location_markers: tuple[str, ...] = ()
+    invalid_markers: tuple[str, ...] = ()
+    wait_for_ms: int = 0

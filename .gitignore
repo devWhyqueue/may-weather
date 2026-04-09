@@ -1,6 +1,7 @@
 .venv/
 __pycache__/
 .pytest_cache/
+.playwright-cli/
 .ruff_cache/
 .coverage
 coverage.xml
@@ -8,4 +9,4 @@ htmlcov/
 dist/
 build/
 *.pyc
-
+.venv_win/

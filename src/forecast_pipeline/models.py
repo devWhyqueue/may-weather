@@ -6,15 +6,21 @@ from typing import Any
 
 
 @dataclass(frozen=True)
-class ForecastMetrics:
-    """Normalized weather metrics shared by every source and the blended forecast."""
+class DaypartForecast:
+    """Normalized forecast values for one part of the day."""
 
-    temp_min_c: float | None = None
-    temp_max_c: float | None = None
-    precip_probability_pct: float | None = None
-    precip_mm: float | None = None
-    wind_kph: float | None = None
     condition_summary: str | None = None
+    precip_probability_pct: float | None = None
+    sunshine_hours: float | None = None
+
+
+@dataclass(frozen=True)
+class ForecastDayparts:
+    """Normalized weather values split into morning, afternoon, and evening."""
+
+    morning: DaypartForecast = field(default_factory=DaypartForecast)
+    afternoon: DaypartForecast = field(default_factory=DaypartForecast)
+    evening: DaypartForecast = field(default_factory=DaypartForecast)
 
 
 @dataclass(frozen=True)
@@ -30,14 +36,10 @@ class SourceForecast:
     confidence: float
     status: str
     note: str | None = None
-    metrics: ForecastMetrics = field(default_factory=ForecastMetrics)
+    dayparts: ForecastDayparts = field(default_factory=ForecastDayparts)
 
     def to_dict(self) -> dict[str, Any]:
-        """Flatten nested metrics into the JSON shape consumed by the frontend."""
-
-        payload = asdict(self)
-        payload.update(payload.pop("metrics"))
-        return payload
+        return asdict(self)
 
 
 @dataclass(frozen=True)
@@ -49,17 +51,11 @@ class ConsensusForecast:
     note: str
     source_count: int
     confidence: float
-    spread: dict[str, float | None]
-    metrics: ForecastMetrics = field(default_factory=ForecastMetrics)
+    spread: dict[str, dict[str, float | None]]
+    dayparts: ForecastDayparts = field(default_factory=ForecastDayparts)
 
     def to_dict(self) -> dict[str, Any]:
-        """Flatten nested metrics while explicitly preserving the source-count field."""
-
-        payload = asdict(self)
-        payload.update(payload.pop("metrics"))
-        payload["label"] = self.label
-        payload["source_count"] = self.source_count
-        return payload
+        return asdict(self)
 
 
 def now_utc_iso() -> str:
