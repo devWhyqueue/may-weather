@@ -11,6 +11,13 @@ const formatDateTime = (value) =>
     dateStyle: "medium",
     timeStyle: "short",
   }).format(new Date(value));
+const formatDateLabel = (value) =>
+  new Intl.DateTimeFormat("de-DE", {
+    weekday: "long",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }).format(new Date(`${value}T12:00:00`));
 
 function renderCountdown(targetDate) {
   const target = new Date(`${targetDate}T12:00:00+02:00`);
@@ -22,6 +29,9 @@ function renderCountdown(targetDate) {
 
 function renderSummary(latest) {
   const forecast = latest.best_forecast;
+  const targetLabel = formatDateLabel(latest.target_date);
+  document.title = `Haltern am See • Wetter für ${targetLabel}`;
+  document.querySelector("#hero-date").textContent = `Haltern am See · ${targetLabel}`;
   document.querySelector("#temp-min").textContent = formatTemp(forecast.temp_min_c);
   document.querySelector("#temp-max").textContent = formatTemp(forecast.temp_max_c);
   document.querySelector("#condition-summary").textContent = forecast.condition_summary || forecast.note;
@@ -34,8 +44,8 @@ function renderSummary(latest) {
   document.querySelector("#generated-at").textContent = formatDateTime(latest.generated_at);
   document.querySelector("#hero-note").textContent =
     forecast.status === "available"
-      ? "Mehrere Dienste liefern bereits Werte für den Zieltermin. Die Seite verdichtet sie zu einer transparenten Gesamtsicht."
-      : "Noch ist der Zieltermin bei den meisten Diensten nicht live. Die Seite zeigt deshalb statt einer erfundenen Prognose sauber den Veröffentlichungsstand.";
+      ? "Mehrere Dienste liefern bereits Werte für den Zieltag, der aktuell am nächsten am 1. Mai liegt. Die Seite verdichtet sie zu einer transparenten Gesamtsicht."
+      : "Der 1. Mai ist noch nicht sauber belegt. Die Seite zeigt deshalb den nächstliegenden verfügbaren Termin statt einer erfundenen Prognose.";
 
   const width = `${Math.round((latest.confidence || 0) * 100)}%`;
   document.querySelector("#confidence-fill").style.width = width;
@@ -170,4 +180,3 @@ main().catch((error) => {
   console.error(error);
   document.querySelector("#hero-note").textContent = "Die Daten konnten lokal nicht geladen werden.";
 });
-

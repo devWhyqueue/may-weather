@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Haltern am See • Wetter für den 01.05.2026</title>
+    <title>Haltern am See • Wetter möglichst nah am 1. Mai</title>
     <meta
       name="description"
-      content="Atmosphärische Wetter-Microsite für Haltern am See mit aggregierter Prognose für den 01.05.2026."
+      content="Atmosphärische Wetter-Microsite für Haltern am See mit aggregierter Prognose für den verfügbaren Zieltag, der dem 1. Mai am nächsten kommt."
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,14 +21,14 @@
     <div class="grain"></div>
     <main class="shell">
       <section class="hero panel animate-rise">
-        <div class="eyebrow">Haltern am See · Freitag, 01.05.2026</div>
+        <div class="eyebrow" id="hero-date">Haltern am See · Zieltag möglichst nah am 1. Mai</div>
         <div class="hero-grid">
           <div>
             <p class="kicker">Lake Forecast Ledger</p>
-            <h1>Der Mai beginnt am See mit einer Prognose, die sich mit jeder Quelle verdichtet.</h1>
+            <h1>Die Prognose am See bleibt so nah wie möglich am 1. Mai und verdichtet sich mit jeder Quelle.</h1>
             <p class="lede" id="hero-note">
-              Die Microsite bündelt zehn deutsche Wetterdienste und zeigt transparent, wie weit die Prognose für
-              den Zieltermin bereits reicht.
+              Die Microsite bündelt zehn deutsche Wetterdienste und zeigt transparent, ob der 1. Mai schon
+              vorliegt oder welcher nahe Ausweichtermin aktuell am belastbarsten ist.
             </p>
           </div>
           <div class="hero-stat">
@@ -89,8 +89,8 @@
             <h2>Warum die Seite manchmal bewusst nichts verspricht</h2>
           </div>
           <p class="section-copy">
-            Wenn der 1. Mai noch außerhalb des Vorhersagefensters liegt, bleibt die Prognose leer. Das ist Absicht:
-            keine Halluzinationen, nur veröffentlichte Werte.
+            Wenn der 1. Mai noch nicht veröffentlicht ist, weicht die Seite auf den verfügbaren Termin mit dem
+            kleinsten Abstand aus. Keine Halluzinationen, nur veröffentlichte Werte.
           </p>
         </div>
         <div class="spread-grid" id="spread-grid"></div>
@@ -100,7 +100,7 @@
         <div class="section-header">
           <div>
             <p class="kicker">Quellenradar</p>
-            <h2>Zehn Dienste, ein Zieltermin</h2>
+            <h2>Zehn Dienste, immer möglichst nah am 1. Mai</h2>
           </div>
           <p class="section-copy">
             Jede Karte zeigt, ob die Quelle den Zieltag bereits publiziert und welche Werte sich extrahieren ließen.
@@ -116,8 +116,8 @@
             <h2>Wie sich die Prognose annähert</h2>
           </div>
           <p class="section-copy">
-            Mit jedem Fetch landet ein weiterer Snapshot im Archiv. So lässt sich später nachvollziehen, wie sich der
-            Konsens vor dem Feiertagswochenende entwickelt hat.
+            Mit jedem Fetch landet ein weiterer Snapshot im Archiv. So lässt sich nachvollziehen, wann der 1. Mai
+            selbst übernimmt und wie sich der nächstliegende Ausweichtermin davor entwickelt.
           </p>
         </div>
         <div class="history-card">

@@ -1,4 +1,5 @@
 import json
+from datetime import date
 
 from forecast_pipeline.models import ConsensusForecast, ForecastMetrics, SourceForecast
 from forecast_pipeline.storage import write_latest
@@ -28,8 +29,13 @@ def test_write_latest(tmp_path, monkeypatch) -> None:
         metrics=ForecastMetrics(temp_min_c=8.0, temp_max_c=18.0, precip_probability_pct=20.0),
     )
 
-    target = write_latest(generated_at="2026-04-09T12:00:00Z", sources=[source], consensus=consensus)
+    target = write_latest(
+        generated_at="2026-04-09T12:00:00Z",
+        target_date=date(2026, 4, 30),
+        sources=[source],
+        consensus=consensus,
+    )
     payload = json.loads(target.read_text(encoding="utf-8"))
     assert payload["coverage"]["available_sources"] == 1
     assert payload["best_forecast"]["temp_max_c"] == 18.0
-
+    assert payload["target_date"] == "2026-04-30"

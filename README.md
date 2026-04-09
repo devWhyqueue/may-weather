@@ -1,6 +1,6 @@
 # Haltern am See Wetter-Microsite
 
-Static, GitHub Pages-friendly microsite for the weather on `2026-05-01` in Haltern am See, backed by a Python `uv` forecast pipeline.
+Static, GitHub Pages-friendly microsite for the forecast date closest to May 1 that is currently available in Haltern am See, backed by a Python `uv` forecast pipeline.
 
 ## Local setup
 
@@ -30,6 +30,5 @@ pytest
 
 ## Notes
 
-- The pipeline never fabricates unavailable forecasts. If a provider does not publish that date yet, it is marked as unavailable and excluded from the weighted consensus.
-- Because `2026-05-01` can fall outside normal forecast horizons, the microsite may temporarily show a waiting state until providers begin publishing the target date.
-
+- The pipeline never fabricates unavailable forecasts. It tries to use May 1 first and otherwise picks the available date in the current horizon with the smallest distance to May 1.
+- If no source yields usable data, the microsite falls back to today and shows the waiting state.

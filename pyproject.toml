@@ -1,7 +1,7 @@
 [project]
 name = "may-weather"
 version = "0.1.0"
-description = "Static microsite and forecast pipeline for Haltern am See on 2026-05-01."
+description = "Static microsite and forecast pipeline for the latest forecastable date in Haltern am See."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [

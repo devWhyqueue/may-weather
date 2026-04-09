@@ -1,8 +1,7 @@
 import logging
 import argparse
 
-from forecast_pipeline.config import TARGET_DATE
-from forecast_pipeline.fetcher import fetch_and_score
+from forecast_pipeline.fetcher import fetch_and_score, resolve_best_target_date
 from forecast_pipeline.models import now_utc_iso
 from forecast_pipeline.storage import update_history, write_latest, write_meta
 
@@ -24,16 +23,23 @@ def _fetch_parser() -> argparse.ArgumentParser:
 
 def _run_fetch(source_filter: str | None) -> tuple[str, str]:
     generated_at = now_utc_iso()
+    target_date = resolve_best_target_date(fetched_at=generated_at)
     sources, consensus = fetch_and_score(
-        target_date=TARGET_DATE,
+        target_date=target_date,
         fetched_at=generated_at,
         source_filter=source_filter,
     )
     latest_path = write_latest(
-        generated_at=generated_at, sources=sources, consensus=consensus
+        generated_at=generated_at,
+        target_date=target_date,
+        sources=sources,
+        consensus=consensus,
     )
     meta_path = write_meta(
-        generated_at=generated_at, sources=sources, consensus=consensus
+        generated_at=generated_at,
+        target_date=target_date,
+        sources=sources,
+        consensus=consensus,
     )
     return str(latest_path), str(meta_path)
 

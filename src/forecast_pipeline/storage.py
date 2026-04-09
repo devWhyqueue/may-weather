@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 import json
+from datetime import date
 from pathlib import Path
 from typing import Any
 
-from forecast_pipeline.config import DATA_DIR, LOCATION, TARGET_DATE
+from forecast_pipeline.config import DATA_DIR, LOCATION
 from forecast_pipeline.models import ConsensusForecast, SourceForecast
 
 
@@ -56,11 +57,15 @@ def _available_count(sources: list[SourceForecast]) -> int:
 
 
 def _latest_payload(
-    *, generated_at: str, sources: list[SourceForecast], consensus: ConsensusForecast
+    *,
+    generated_at: str,
+    target_date: date,
+    sources: list[SourceForecast],
+    consensus: ConsensusForecast,
 ) -> dict[str, Any]:
     return {
         "location": _location_payload(),
-        "target_date": TARGET_DATE.isoformat(),
+        "target_date": target_date.isoformat(),
         "generated_at": generated_at,
         "best_forecast": consensus.to_dict(),
         "coverage": {
@@ -73,7 +78,11 @@ def _latest_payload(
 
 
 def write_latest(
-    *, generated_at: str, sources: list[SourceForecast], consensus: ConsensusForecast
+    *,
+    generated_at: str,
+    target_date: date,
+    sources: list[SourceForecast],
+    consensus: ConsensusForecast,
 ) -> Path:
     """Write the latest normalized forecast snapshot for frontend consumption."""
 
@@ -82,14 +91,21 @@ def write_latest(
     _dump_json(
         latest_path,
         _latest_payload(
-            generated_at=generated_at, sources=sources, consensus=consensus
+            generated_at=generated_at,
+            target_date=target_date,
+            sources=sources,
+            consensus=consensus,
         ),
     )
     return latest_path
 
 
 def write_meta(
-    *, generated_at: str, sources: list[SourceForecast], consensus: ConsensusForecast
+    *,
+    generated_at: str,
+    target_date: date,
+    sources: list[SourceForecast],
+    consensus: ConsensusForecast,
 ) -> Path:
     """Write operational metadata about the last fetch run."""
 
@@ -97,7 +113,7 @@ def write_meta(
     meta_path = DATA_DIR / "meta.json"
     payload = {
         "generated_at": generated_at,
-        "target_date": TARGET_DATE.isoformat(),
+        "target_date": target_date.isoformat(),
         "location": LOCATION.name,
         "source_status": {
             "available": len(
@@ -127,7 +143,8 @@ def read_latest() -> dict[str, Any]:
 def _load_history(history_path: Path) -> dict[str, Any]:
     if history_path.exists():
         return json.loads(history_path.read_text(encoding="utf-8"))
-    return {"target_date": TARGET_DATE.isoformat(), "snapshots": []}
+    latest = read_latest()
+    return {"target_date": latest["target_date"], "snapshots": []}
 
 
 def _snapshot_from_latest(latest: dict[str, Any], generated_at: str) -> dict[str, Any]:
@@ -146,6 +163,8 @@ def update_history(*, generated_at: str) -> Path:
     latest = read_latest()
     history_path = DATA_DIR / "history.json"
     history = _load_history(history_path)
+    if history["target_date"] != latest["target_date"]:
+        history = {"target_date": latest["target_date"], "snapshots": []}
     snapshots = [
         item for item in history["snapshots"] if item["fetched_at"] != generated_at
     ]

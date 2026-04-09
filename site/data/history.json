@@ -1,14 +1,14 @@
 {
-  "target_date": "2026-05-01",
+  "target_date": "2026-04-30",
   "snapshots": [
     {
-      "fetched_at": "2026-04-09T19:17:18Z",
+      "fetched_at": "2026-04-09T19:48:19Z",
       "best_forecast": {
-        "status": "pending",
-        "label": "Noch kein belastbarer Konsens",
-        "note": "Der Zieltermin liegt bei den abgefragten Wetterdiensten aktuell noch außerhalb des veröffentlichten Vorhersagefensters.",
-        "source_count": 0,
-        "confidence": 0.0,
+        "status": "available",
+        "label": "Verdichtete Prognose",
+        "note": "1 Quellen liefern bereits Werte für den Zieltermin.",
+        "source_count": 1,
+        "confidence": 0.52,
         "spread": {
           "temp_max_c": null,
           "temp_min_c": null,
@@ -20,96 +20,9 @@
         "precip_probability_pct": null,
         "precip_mm": null,
         "wind_kph": null,
-        "condition_summary": null
+        "condition_summary": "Regen"
       },
-      "source_count": 0,
-      "spread": {
-        "temp_max_c": null,
-        "temp_min_c": null,
-        "precip_probability_pct": null,
-        "wind_kph": null
-      }
-    },
-    {
-      "fetched_at": "2026-04-09T19:30:51Z",
-      "best_forecast": {
-        "status": "pending",
-        "label": "Noch kein belastbarer Konsens",
-        "note": "Der Zieltermin liegt bei den abgefragten Wetterdiensten aktuell noch außerhalb des veröffentlichten Vorhersagefensters.",
-        "source_count": 0,
-        "confidence": 0.0,
-        "spread": {
-          "temp_max_c": null,
-          "temp_min_c": null,
-          "precip_probability_pct": null,
-          "wind_kph": null
-        },
-        "temp_min_c": null,
-        "temp_max_c": null,
-        "precip_probability_pct": null,
-        "precip_mm": null,
-        "wind_kph": null,
-        "condition_summary": null
-      },
-      "source_count": 0,
-      "spread": {
-        "temp_max_c": null,
-        "temp_min_c": null,
-        "precip_probability_pct": null,
-        "wind_kph": null
-      }
-    },
-    {
-      "fetched_at": "2026-04-09T19:33:48Z",
-      "best_forecast": {
-        "status": "pending",
-        "label": "Noch kein belastbarer Konsens",
-        "note": "Der Zieltermin liegt bei den abgefragten Wetterdiensten aktuell noch außerhalb des veröffentlichten Vorhersagefensters.",
-        "source_count": 0,
-        "confidence": 0.0,
-        "spread": {
-          "temp_max_c": null,
-          "temp_min_c": null,
-          "precip_probability_pct": null,
-          "wind_kph": null
-        },
-        "temp_min_c": null,
-        "temp_max_c": null,
-        "precip_probability_pct": null,
-        "precip_mm": null,
-        "wind_kph": null,
-        "condition_summary": null
-      },
-      "source_count": 0,
-      "spread": {
-        "temp_max_c": null,
-        "temp_min_c": null,
-        "precip_probability_pct": null,
-        "wind_kph": null
-      }
-    },
-    {
-      "fetched_at": "2026-04-09T19:34:18Z",
-      "best_forecast": {
-        "status": "pending",
-        "label": "Noch kein belastbarer Konsens",
-        "note": "Der Zieltermin liegt bei den abgefragten Wetterdiensten aktuell noch außerhalb des veröffentlichten Vorhersagefensters.",
-        "source_count": 0,
-        "confidence": 0.0,
-        "spread": {
-          "temp_max_c": null,
-          "temp_min_c": null,
-          "precip_probability_pct": null,
-          "wind_kph": null
-        },
-        "temp_min_c": null,
-        "temp_max_c": null,
-        "precip_probability_pct": null,
-        "precip_mm": null,
-        "wind_kph": null,
-        "condition_summary": null
-      },
-      "source_count": 0,
+      "source_count": 1,
       "spread": {
         "temp_max_c": null,
         "temp_min_c": null,

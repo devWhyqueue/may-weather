@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, timedelta
 
 import httpx
 
 from forecast_pipeline.adapters.sources import build_source_adapters
+from forecast_pipeline.config import max_horizon_days, preferred_target_date
 from forecast_pipeline.models import ConsensusForecast, SourceForecast
 from forecast_pipeline.scoring import build_consensus
 
@@ -44,3 +45,27 @@ def fetch_and_score(
         target_date=target_date, fetched_at=fetched_at, source_filter=source_filter
     )
     return sources, build_consensus(sources)
+
+
+def resolve_best_target_date(*, fetched_at: str) -> date:
+    """Pick the available forecast date closest to May 1, preferring an exact match when present."""
+
+    today = date.today()
+    preferred = preferred_target_date(today)
+    best_candidate: date | None = None
+    best_distance: tuple[int, int] | None = None
+    for offset in range(max_horizon_days(), -1, -1):
+        candidate = today + timedelta(days=offset)
+        _, consensus = fetch_and_score(target_date=candidate, fetched_at=fetched_at)
+        if consensus.source_count == 0:
+            continue
+        distance = (
+            abs((candidate - preferred).days),
+            0 if candidate <= preferred else 1,
+        )
+        if best_distance is None or distance < best_distance:
+            best_candidate = candidate
+            best_distance = distance
+    if best_candidate is not None:
+        return best_candidate
+    return today
