@@ -26,6 +26,9 @@ addopts = "-s"
 pythonpath = ["src"]
 testpaths = ["tests"]
 
+[tool.vulture]
+paths = ["src"]
+
 [dependency-groups]
 dev = [
   "click>=8.3.2",

@@ -2,6 +2,8 @@ const MAY_2026 = "2026-05-01";
 
 const formatPercent = (value) => (value == null ? "—" : `${Math.round(value)}%`);
 
+const formatTemp = (value) => (value == null ? "—" : `${Math.round(value)} °C`);
+
 const formatDateTime = (value) =>
   new Intl.DateTimeFormat("de-DE", {
     dateStyle: "medium",
@@ -58,42 +60,30 @@ function classifyWeather(condition, pct) {
   return "cloud";
 }
 
-function pickPrimarySource(sources) {
-  const candidates = (sources || []).filter(
-    (s) =>
-      s.status === "available" &&
-      typeof s.source_url === "string" &&
-      /^https?:\/\//i.test(s.source_url),
-  );
-  if (!candidates.length) return null;
-  candidates.sort((a, b) => (b.confidence ?? 0) - (a.confidence ?? 0));
-  const top = candidates[0];
-  return { name: top.source_name, url: top.source_url };
-}
-
 function renderSourceLine(latest) {
   const line = document.querySelector("#source-line");
   line.textContent = "";
   line.hidden = true;
 
-  const src = pickPrimarySource(latest.sources);
-  if (!src) return;
+  const sel = latest.selected_source;
+  if (!sel || typeof sel.source_url !== "string" || typeof sel.source_name !== "string") return;
+  if (!/^https?:\/\//i.test(sel.source_url)) return;
 
   try {
-    new URL(src.url);
+    new URL(sel.source_url);
   } catch {
     return;
   }
 
   line.hidden = false;
-  const intro = document.createTextNode("Rohdaten einsehbar bei ");
+  const intro = document.createTextNode("Vorhersage von ");
   const link = document.createElement("a");
-  link.href = src.url;
+  link.href = sel.source_url;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   link.className = "source-link";
-  link.textContent = src.name;
-  const outro = document.createTextNode(" — verdichtet aus mehreren Diensten.");
+  link.textContent = sel.source_name;
+  const outro = document.createTextNode(" — optimistischste Quelle (Regen ↓, Sonne ↑, Temperatur ↑).");
   line.appendChild(intro);
   line.appendChild(link);
   line.appendChild(outro);
@@ -132,7 +122,7 @@ function render(latest) {
   } else {
     fallbackEl.hidden = false;
     const actual = formatDateLabel(latest.target_date);
-    fallbackEl.textContent = `Die Werte gelten für ${actual}, weil für den 1. Mai 2026 noch nicht alle Quellen einen vollständigen Tag liefern.`;
+    fallbackEl.textContent = `Die Werte gelten für ${actual}, weil für den 1. Mai 2026 noch nicht genügend Quellen einen vollständigen Tag mit Temperatur liefern.`;
   }
 
   const dayparts = latest.best_forecast?.dayparts;
@@ -148,10 +138,12 @@ function render(latest) {
       const values = dayparts[key] ?? {};
       const condition = values.condition_summary || "—";
       const pct = values.precip_probability_pct;
+      const temp = values.temperature_celsius;
       const rainLabel = `Regen ${formatPercent(pct)}`;
+      const tempLabel = formatTemp(temp);
       const width = pct == null ? 0 : Math.min(100, Math.max(0, pct));
       const weather = classifyWeather(condition, pct);
-      const aria = escapeAttr(`${label}: ${condition}, ${rainLabel}`);
+      const aria = escapeAttr(`${label}: ${condition}, ${rainLabel}, ${tempLabel}`);
       const safeCondition = escapeHtml(condition);
       return `
         <article class="daypart tile animate-in ${delayClass[i]}" data-weather="${weather}" style="--rain-pct: ${width}%" aria-label="${aria}">
@@ -163,6 +155,7 @@ function render(latest) {
               <span class="rain-fill"></span>
             </div>
             <span class="rain-value">${rainLabel}</span>
+            <span class="temp-value">${tempLabel}</span>
           </div>
         </article>
       `;

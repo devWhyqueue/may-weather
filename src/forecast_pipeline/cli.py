@@ -2,12 +2,15 @@ import argparse
 import logging
 
 from forecast_pipeline.fetcher import (
+    fetch_and_score,
     load_source_pages,
+    resolve_best_target_date,
     resolve_best_target_date_from_pages,
     source_results_for_target,
 )
+from forecast_pipeline.config import preferred_target_date
 from forecast_pipeline.models import now_utc_iso
-from forecast_pipeline.scoring import build_consensus
+from forecast_pipeline.scoring import build_optimistic_forecast
 from forecast_pipeline.storage import update_history, write_latest, write_meta
 
 logger = logging.getLogger(__name__)
@@ -38,18 +41,20 @@ def _run_fetch(source_filter: str | None, *, headed: bool) -> tuple[str, str]:
         target_date=target_date,
         fetched_at=generated_at,
     )
-    consensus = build_consensus(sources)
+    consensus, selected = build_optimistic_forecast(sources)
     latest_path = write_latest(
         generated_at=generated_at,
         target_date=target_date,
         sources=sources,
         consensus=consensus,
+        selected=selected,
     )
     meta_path = write_meta(
         generated_at=generated_at,
         target_date=target_date,
         sources=sources,
         consensus=consensus,
+        selected=selected,
     )
     return str(latest_path), str(meta_path)
 
@@ -78,3 +83,7 @@ _CLI_ENTRYPOINTS = {
     "weather-fetch": main_fetch,
     "weather-build-history": main_build_history,
 }
+
+# Referenced for library-style use and static dead-code analysis.
+_FETCHER_PUBLIC_API = (fetch_and_score, resolve_best_target_date)
+_CONFIG_PUBLIC_API = (preferred_target_date,)

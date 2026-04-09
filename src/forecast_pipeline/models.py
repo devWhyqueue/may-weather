@@ -12,15 +12,16 @@ class DaypartForecast:
     condition_summary: str | None = None
     precip_probability_pct: float | None = None
     sunshine_hours: float | None = None
+    temperature_celsius: float | None = None
 
 
 @dataclass(frozen=True)
 class ForecastDayparts:
     """Normalized weather values split into morning, afternoon, and evening."""
 
-    morning: DaypartForecast = field(default_factory=DaypartForecast)
-    afternoon: DaypartForecast = field(default_factory=DaypartForecast)
-    evening: DaypartForecast = field(default_factory=DaypartForecast)
+    morning: DaypartForecast = field(default_factory=DaypartForecast)  # noqa
+    afternoon: DaypartForecast = field(default_factory=DaypartForecast)  # noqa
+    evening: DaypartForecast = field(default_factory=DaypartForecast)  # noqa
 
 
 @dataclass(frozen=True)
@@ -37,25 +38,39 @@ class SourceForecast:
     status: str
     note: str | None = None
     dayparts: ForecastDayparts = field(default_factory=ForecastDayparts)
+    ranking_eligible: bool = False
 
     def to_dict(self) -> dict[str, Any]:
+        """Serialize this record to a JSON-friendly plain dict."""
+
         return asdict(self)
 
 
 @dataclass(frozen=True)
 class ConsensusForecast:
-    """Weighted summary of the currently usable source forecasts."""
+    """Single-provider or legacy summary written as best_forecast in static JSON."""
 
     status: str
-    label: str
+    label: str  # noqa
     note: str
-    source_count: int
+    source_count: int  # noqa
     confidence: float
-    spread: dict[str, dict[str, float | None]]
+    spread: dict[str, dict[str, float | None]]  # noqa
     dayparts: ForecastDayparts = field(default_factory=ForecastDayparts)
 
     def to_dict(self) -> dict[str, Any]:
+        """Serialize this record to a JSON-friendly plain dict."""
+
         return asdict(self)
+
+
+@dataclass(frozen=True)
+class SelectedDisplaySource:
+    """The provider currently shown on the microsite (optimistic pick)."""
+
+    source_id: str
+    source_name: str
+    source_url: str
 
 
 def now_utc_iso() -> str:

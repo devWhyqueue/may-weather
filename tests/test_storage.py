@@ -5,6 +5,7 @@ from forecast_pipeline.models import (
     ConsensusForecast,
     DaypartForecast,
     ForecastDayparts,
+    SelectedDisplaySource,
     SourceForecast,
 )
 from forecast_pipeline.storage import write_latest
@@ -13,9 +14,24 @@ from forecast_pipeline.storage import write_latest
 def test_write_latest(tmp_path, monkeypatch) -> None:
     monkeypatch.setattr("forecast_pipeline.storage.DATA_DIR", tmp_path)
     dayparts = ForecastDayparts(
-        morning=DaypartForecast(condition_summary="Bewölkt", precip_probability_pct=20.0, sunshine_hours=2.0),
-        afternoon=DaypartForecast(condition_summary="Wolkig", precip_probability_pct=10.0, sunshine_hours=3.0),
-        evening=DaypartForecast(condition_summary="Sonnig", precip_probability_pct=5.0, sunshine_hours=1.0),
+        morning=DaypartForecast(
+            condition_summary="Bewölkt",
+            precip_probability_pct=20.0,
+            sunshine_hours=2.0,
+            temperature_celsius=14.0,
+        ),
+        afternoon=DaypartForecast(
+            condition_summary="Wolkig",
+            precip_probability_pct=10.0,
+            sunshine_hours=3.0,
+            temperature_celsius=16.0,
+        ),
+        evening=DaypartForecast(
+            condition_summary="Sonnig",
+            precip_probability_pct=5.0,
+            sunshine_hours=1.0,
+            temperature_celsius=12.0,
+        ),
     )
     source = SourceForecast(
         source_id="demo",
@@ -28,10 +44,11 @@ def test_write_latest(tmp_path, monkeypatch) -> None:
         status="available",
         note=None,
         dayparts=dayparts,
+        ranking_eligible=True,
     )
     consensus = ConsensusForecast(
         status="available",
-        label="Verdichtete Tagesabschnitte",
+        label="Optimistischste Quelle",
         note="1 Quelle",
         source_count=1,
         confidence=0.8,
@@ -42,14 +59,23 @@ def test_write_latest(tmp_path, monkeypatch) -> None:
         },
         dayparts=dayparts,
     )
+    selected = SelectedDisplaySource(
+        source_id="demo",
+        source_name="Demo",
+        source_url="https://example.com",
+    )
 
     target = write_latest(
         generated_at="2026-04-09T12:00:00Z",
         target_date=date(2026, 4, 10),
         sources=[source],
         consensus=consensus,
+        selected=selected,
     )
     payload = json.loads(target.read_text(encoding="utf-8"))
     assert payload["coverage"]["available_sources"] == 1
+    assert payload["coverage"]["ranking_candidates"] == 1
     assert payload["best_forecast"]["dayparts"]["morning"]["sunshine_hours"] == 2.0
+    assert payload["best_forecast"]["dayparts"]["morning"]["temperature_celsius"] == 14.0
+    assert payload["selected_source"]["source_id"] == "demo"
     assert payload["target_date"] == "2026-04-10"

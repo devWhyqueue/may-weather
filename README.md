@@ -30,5 +30,7 @@ pytest
 
 ## Notes
 
-- The pipeline never fabricates unavailable forecasts. It tries to use May 1 first and otherwise picks the available date in the current horizon with the smallest distance to May 1.
-- If no source yields usable data, the microsite falls back to today and shows the waiting state.
+- The pipeline picks a **target day** (today / next days) that maximizes how many sources qualify as **ranking candidates** (parser-backed forecasts with morning, afternoon, and evening each including condition, rain probability, sunshine, and temperature).
+- The microsite shows **one** provider: the **most optimistic** among those candidates by whole-day **lowest mean rain**, then **highest total sunshine hours**, then **highest mean temperature**, with ties broken by source confidence and id.
+- **Open-Meteo** (API, coordinates from config) is included for a stable baseline; scraper-only HTML sources that fail the completeness rules do not drive the displayed pick.
+- If no source qualifies, the site shows the waiting state for that target date.

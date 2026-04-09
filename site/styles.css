@@ -447,6 +447,14 @@ body {
   letter-spacing: 0.02em;
 }
 
+.temp-value {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
 .meta {
   text-align: center;
 }

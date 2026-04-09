@@ -5,10 +5,15 @@ from datetime import date, timedelta
 
 import httpx
 
-from forecast_pipeline.adapters.sources import BaseSourceAdapter, PagePayload, build_source_adapters
+from forecast_pipeline.adapters.html_payloads import PagePayload
+from forecast_pipeline.adapters.sources import BaseSourceAdapter, build_source_adapters
 from forecast_pipeline.config import max_horizon_days
-from forecast_pipeline.models import ConsensusForecast, SourceForecast
-from forecast_pipeline.scoring import build_consensus
+from forecast_pipeline.models import (
+    ConsensusForecast,
+    SelectedDisplaySource,
+    SourceForecast,
+)
+from forecast_pipeline.scoring import build_optimistic_forecast, is_ranking_candidate
 
 
 @dataclass(frozen=True)
@@ -34,6 +39,8 @@ def load_source_pages(
     source_filter: str | None = None,
     headed: bool = False,
 ) -> list[LoadedSourcePage]:
+    """Fetch every configured source page and return payloads or transport errors."""
+
     adapters = build_source_adapters(headed=headed)
     if source_filter:
         adapters = [
@@ -46,7 +53,9 @@ def load_source_pages(
     with _build_client() as client:
         for adapter in adapters:
             try:
-                loaded.append(LoadedSourcePage(adapter=adapter, page=adapter.load_page(client)))
+                loaded.append(
+                    LoadedSourcePage(adapter=adapter, page=adapter.load_page(client))
+                )
             except Exception as exc:
                 loaded.append(LoadedSourcePage(adapter=adapter, error=exc))
     return loaded
@@ -58,6 +67,8 @@ def source_results_for_target(
     target_date: date,
     fetched_at: str,
 ) -> list[SourceForecast]:
+    """Run each adapter parser for a single calendar target date."""
+
     results: list[SourceForecast] = []
     for loaded in loaded_pages:
         if loaded.page is None:
@@ -87,6 +98,8 @@ def fetch_all_sources(
     source_filter: str | None = None,
     headed: bool = False,
 ) -> list[SourceForecast]:
+    """Load pages and parse them into `SourceForecast` rows for one date."""
+
     loaded_pages = load_source_pages(source_filter=source_filter, headed=headed)
     return source_results_for_target(
         loaded_pages,
@@ -101,14 +114,17 @@ def fetch_and_score(
     fetched_at: str,
     source_filter: str | None = None,
     headed: bool = False,
-) -> tuple[list[SourceForecast], ConsensusForecast]:
+) -> tuple[list[SourceForecast], ConsensusForecast, SelectedDisplaySource | None]:
+    """Fetch all sources and compute the optimistic single-provider display forecast."""
+
     sources = fetch_all_sources(
         target_date=target_date,
         fetched_at=fetched_at,
         source_filter=source_filter,
         headed=headed,
     )
-    return sources, build_consensus(sources)
+    consensus, selected = build_optimistic_forecast(sources)
+    return sources, consensus, selected
 
 
 def resolve_best_target_date(
@@ -117,6 +133,8 @@ def resolve_best_target_date(
     headed: bool = False,
     source_filter: str | None = None,
 ) -> date:
+    """Pick the near-term date with the most ranking-eligible source coverage."""
+
     loaded_pages = load_source_pages(source_filter=source_filter, headed=headed)
     return resolve_best_target_date_from_pages(loaded_pages, fetched_at=fetched_at)
 
@@ -126,6 +144,8 @@ def resolve_best_target_date_from_pages(
     *,
     fetched_at: str,
 ) -> date:
+    """Same as `resolve_best_target_date`, but reuses already-loaded pages."""
+
     today = date.today()
     best_candidate: date | None = None
     best_score: tuple[int, int] | None = None
@@ -137,7 +157,7 @@ def resolve_best_target_date_from_pages(
             target_date=candidate,
             fetched_at=fetched_at,
         )
-        available = len([source for source in sources if source.status == "available"])
+        available = len([source for source in sources if is_ranking_candidate(source)])
         score = (available, offset)
         if best_score is None or score > best_score:
             best_candidate = candidate
