@@ -1,7 +1,7 @@
 [project]
 name = "may-weather"
 version = "0.1.0"
-description = "Static microsite and forecast pipeline for the latest forecastable date in Haltern am See."
+description = "Static microsite and forecast pipeline for May 1 (capped by a shared multi-day horizon) in Haltern am See."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -11,8 +11,8 @@ dependencies = [
 ]
 
 [project.scripts]
-weather-fetch = "forecast_pipeline.cli:main_fetch"
-weather-build-history = "forecast_pipeline.cli:main_build_history"
+weather-fetch = "forecast_pipeline.fetcher:main_fetch"
+weather-build-history = "forecast_pipeline.fetcher:main_build_history"
 
 [build-system]
 requires = ["hatchling"]

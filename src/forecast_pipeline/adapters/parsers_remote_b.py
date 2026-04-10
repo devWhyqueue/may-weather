@@ -26,10 +26,9 @@ from .parsers_remote_a import (
     _parse_msn,
     _parse_timeanddate,
     _parse_weatherandradar,
-    _parse_weathercom,
     _parse_ventusky,
-    _parse_yr,
 )
+from .parsers_remote_com import _parse_weathercom, _parse_yr
 
 
 def _parse_meteoblue(page: PagePayload, target_date: date) -> ForecastDayparts | None:

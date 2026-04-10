@@ -9,7 +9,7 @@ from html import unescape
 
 from forecast_pipeline.models import DaypartForecast, ForecastDayparts
 
-from forecast_pipeline.config import SourceDefinition
+from forecast_pipeline.config import SourceDefinition, max_horizon_days
 from .html_payloads import (
     DAYPARTS,
     PagePayload,
@@ -37,10 +37,17 @@ def _fallback_dayparts_from_text(
     page: PagePayload,
     target_date: date,
 ) -> ForecastDayparts | None:
+    stripped = page.text.lstrip()
+    if stripped.startswith("{") or stripped.startswith("["):
+        return None
+    if "calendarDayTemperatureMax" in page.html:
+        return None
     window = _extract_text_window(
         page.text, _date_markers(target_date, definition.language)
     )
-    if window is None and target_date <= date.today() + timedelta(days=2):
+    if window is None and target_date <= date.today() + timedelta(
+        days=max_horizon_days()
+    ):
         window = page.text[:3000]
     if window is None:
         return None
@@ -172,21 +179,35 @@ def _wetteronline_interval_temp(interval: object) -> float | None:
     if not isinstance(interval, dict):
         return None
     precip = interval.get("precipitation")
-    if isinstance(precip, dict):
-        t = _float(precip.get("temperature"))
-        if t is not None:
-            return t
+    if (
+        isinstance(precip, dict)
+        and (t := _float(precip.get("temperature"))) is not None
+    ):
+        return t
     for key in ("temperature", "airTemperature", "temp"):
         block = interval.get(key)
         if isinstance(block, dict):
             t = _float(block.get("value") or block.get("avg") or block.get("max"))
             if t is not None:
                 return t
-        else:
-            t = _float(block)
-            if t is not None:
-                return t
+        elif (t := _float(block)) is not None:
+            return t
     return None
+
+
+def _wetteronline_daypart(
+    iv: object, sunshine: list[float], sun_from: int, sun_to: int
+) -> DaypartForecast:
+    d = iv if isinstance(iv, dict) else {}
+    pc = d.get("precipitation", {})
+    return DaypartForecast(
+        condition_summary=_canonical_condition(str(d.get("symbol", ""))),
+        precip_probability_pct=_float(pc.get("probability"))
+        if isinstance(pc, dict)
+        else None,
+        sunshine_hours=round(sum(sunshine[sun_from:sun_to]), 1),
+        temperature_celsius=_wetteronline_interval_temp(iv),
+    )
 
 
 def _parse_wetteronline(
@@ -204,44 +225,8 @@ def _parse_wetteronline(
     sunshine = [
         _float(value) or 0.0 for value in match.get("absoluteSunshineDuration", [])
     ]
-    m_iv = intervals.get("morning", {})
-    a_iv = intervals.get("afternoon", {})
-    e_iv = intervals.get("evening", {})
     return ForecastDayparts(
-        morning=DaypartForecast(
-            condition_summary=_canonical_condition(
-                str(m_iv.get("symbol", "") if isinstance(m_iv, dict) else "")
-            ),
-            precip_probability_pct=_float(
-                m_iv.get("precipitation", {}).get("probability")
-                if isinstance(m_iv, dict)
-                else None
-            ),
-            sunshine_hours=round(sum(sunshine[2:4]), 1),
-            temperature_celsius=_wetteronline_interval_temp(m_iv),
-        ),
-        afternoon=DaypartForecast(
-            condition_summary=_canonical_condition(
-                str(a_iv.get("symbol", "") if isinstance(a_iv, dict) else "")
-            ),
-            precip_probability_pct=_float(
-                a_iv.get("precipitation", {}).get("probability")
-                if isinstance(a_iv, dict)
-                else None
-            ),
-            sunshine_hours=round(sum(sunshine[4:6]), 1),
-            temperature_celsius=_wetteronline_interval_temp(a_iv),
-        ),
-        evening=DaypartForecast(
-            condition_summary=_canonical_condition(
-                str(e_iv.get("symbol", "") if isinstance(e_iv, dict) else "")
-            ),
-            precip_probability_pct=_float(
-                e_iv.get("precipitation", {}).get("probability")
-                if isinstance(e_iv, dict)
-                else None
-            ),
-            sunshine_hours=round(sum(sunshine[6:8]), 1),
-            temperature_celsius=_wetteronline_interval_temp(e_iv),
-        ),
+        morning=_wetteronline_daypart(intervals.get("morning", {}), sunshine, 2, 4),
+        afternoon=_wetteronline_daypart(intervals.get("afternoon", {}), sunshine, 4, 6),
+        evening=_wetteronline_daypart(intervals.get("evening", {}), sunshine, 6, 8),
     )

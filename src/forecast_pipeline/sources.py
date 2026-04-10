@@ -10,14 +10,14 @@ from playwright.sync_api import sync_playwright
 from forecast_pipeline.models import SourceForecast
 
 from forecast_pipeline.config import SOURCE_DEFINITIONS, SourceDefinition
-from .html_payloads import (
+from forecast_pipeline.adapters.html_payloads import (
     PagePayload,
     _extract_title,
     _normalize_whitespace,
     _strip_html,
 )
-from .parsers_remote_b import openmeteo_forecast_url
-from .source_forecast_build import (
+from forecast_pipeline.adapters.parsers_remote_b import openmeteo_forecast_url
+from forecast_pipeline.adapters.source_forecast_build import (
     _empty_result,
     _maybe_http_unavailable,
     _maybe_invalid_content,
@@ -131,6 +131,25 @@ class OpenMeteoSourceAdapter(BaseSourceAdapter):
         )
 
 
+class YrApiSourceAdapter(BaseSourceAdapter):
+    """Fetches JSON from the official yr.no location forecast API."""
+
+    def _fetch_page(self, client: httpx.Client) -> PagePayload:
+        response = client.get(
+            self.definition.source_url,
+            follow_redirects=True,
+            headers={"Accept": "application/json"},
+        )
+        body = response.text
+        return PagePayload(
+            html=body,
+            text=body,
+            title="yr.no",
+            final_url=str(response.url),
+            status_code=response.status_code,
+        )
+
+
 def _playwright_page_payload(
     definition: SourceDefinition, *, headed: bool
 ) -> PagePayload:
@@ -175,6 +194,8 @@ def build_source_adapters(*, headed: bool = False) -> list[BaseSourceAdapter]:
             adapters.append(PlaywrightSourceAdapter(definition, headed=headed))
         elif definition.fetch_mode == "openmeteo":
             adapters.append(OpenMeteoSourceAdapter(definition, headed=headed))
+        elif definition.fetch_mode == "yr_api":
+            adapters.append(YrApiSourceAdapter(definition, headed=headed))
         else:
             adapters.append(HttpSourceAdapter(definition, headed=headed))
     return adapters

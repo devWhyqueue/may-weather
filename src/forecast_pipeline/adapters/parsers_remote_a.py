@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import re
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 
 from bs4 import BeautifulSoup
 
@@ -19,6 +19,17 @@ from .html_payloads import (
     _sunshine_from_condition,
 )
 from .html_regions import _json_longest_segment
+
+# Weather & Radar: day-interval objects embedded in the SSR HTML (morning/afternoon/evening).
+_WAR_INTERVAL_RE = re.compile(
+    r'\{"air_pressure":\{[^}]+\}.{0,400}?'
+    r'"air_temperature":\{"celsius":(?P<temp>-?\d+)[^}]*\}.{0,400}?'
+    r'"date":"(?P<ds>\d{4}-\d{2}-\d{2})T[^"]+".{0,500}?'
+    r'"precipitation":\{"probability":(?P<prob>[\d.]+)[^}]*\}.{0,400}?'
+    r'"symbol":"(?P<sym>[^"]+)".{0,200}?'
+    r'"type":"(?P<typ>morning|afternoon|evening)"',
+    re.DOTALL,
+)
 
 
 def _parse_timeanddate(page: PagePayload, target_date: date) -> ForecastDayparts | None:
@@ -42,65 +53,6 @@ def _parse_timeanddate(page: PagePayload, target_date: date) -> ForecastDayparts
                 precip_probability_pct=float(match.group("pc")),
                 sunshine_hours=_sunshine_from_condition(match.group("desc")),
                 temperature_celsius=_float(match.group("temp")),
-            )
-        )
-    return _aggregate_hourly(points, target_date) if points else None
-
-
-def _parse_weathercom(page: PagePayload, target_date: date) -> ForecastDayparts | None:
-    points: list[HourlyPoint] = []
-    current_date = date.today()
-    previous_hour = -1
-    pattern = re.compile(
-        r"(?P<hour>\d{2}:\d{2})\s+(?P<cond>[A-Za-zäöüÄÖÜß ]+)\s+(?P<air>\d+)\s*°\s+Rain drop\s+(?P<pc>\d+)%.*?UV-Index\s+(?P<uv>\d+)",
-        re.IGNORECASE,
-    )
-    for match in pattern.finditer(page.text):
-        hour, minute = [int(part) for part in match.group("hour").split(":")]
-        if previous_hour > hour:
-            current_date = current_date + timedelta(days=1)
-        previous_hour = hour
-        condition = _canonical_condition(match.group("cond"))
-        points.append(
-            HourlyPoint(
-                local_time=datetime(
-                    current_date.year,
-                    current_date.month,
-                    current_date.day,
-                    hour,
-                    minute,
-                ),
-                condition_summary=condition,
-                precip_probability_pct=_float(match.group("pc")),
-                sunshine_hours=_sunshine_from_condition(
-                    match.group("cond"),
-                    uv_index=_float(match.group("uv")),
-                ),
-                temperature_celsius=_float(match.group("air")),
-            )
-        )
-    return _aggregate_hourly(points, target_date) if points else None
-
-
-def _parse_yr(page: PagePayload, target_date: date) -> ForecastDayparts | None:
-    points: list[HourlyPoint] = []
-    pattern = re.compile(
-        r'\{\\"symbol\\":\{.*?\\"symbolCode\\":\{\\"next1Hour\\":\\"(?P<symbol>[^"]+)\\".*?\\"precipitation\\":\{\\"value\\":(?P<precip>[\d.]+)\}.*?\\"uvIndex\\":\{\\"value\\":(?P<uv>[\d.]+)\}.*?\\"cloudCover\\":\{\\"value\\":(?P<cloud>[\d.]+).*?\\"start\\":\\"(?P<start>[^"]+)\\"',
-    )
-    for match in pattern.finditer(page.html):
-        local_time = datetime.fromisoformat(match.group("start"))
-        condition = _canonical_condition(match.group("symbol"))
-        precip_amount = _float(match.group("precip")) or 0.0
-        points.append(
-            HourlyPoint(
-                local_time=local_time.replace(tzinfo=None),
-                condition_summary=condition,
-                precip_probability_pct=100.0 if precip_amount > 0 else 0.0,
-                sunshine_hours=_sunshine_from_condition(
-                    match.group("symbol"),
-                    uv_index=_float(match.group("uv")),
-                    cloud_cover=_float(match.group("cloud")),
-                ),
             )
         )
     return _aggregate_hourly(points, target_date) if points else None
@@ -158,10 +110,44 @@ def _parse_msn(page: PagePayload, target_date: date) -> ForecastDayparts | None:
 def _parse_weatherandradar(
     page: PagePayload, target_date: date
 ) -> ForecastDayparts | None:
-    del target_date
+    wanted = target_date.isoformat()
+    by_part: dict[str, tuple[float, float, str]] = {}
+    # Intervals are embedded in raw HTML/JSON; stripped `page.text` often omits them.
+    for match in _WAR_INTERVAL_RE.finditer(page.html):
+        if match.group("ds") != wanted:
+            continue
+        typ = match.group("typ")
+        temp = float(match.group("temp"))
+        prob = float(match.group("prob")) * 100.0
+        sym = match.group("sym")
+        cond = _canonical_condition(sym) or "Bewölkt"
+        by_part[typ] = (temp, prob, cond)
+
+    if {"morning", "afternoon", "evening"}.issubset(by_part):
+
+        def _dp(key: str) -> DaypartForecast:
+            t_c, p_c, c = by_part[key]
+            sun = (
+                _sunshine_from_condition(c)
+                * 3.0
+                * (0.3 if key == "morning" else (0.45 if key == "afternoon" else 0.25))
+            )
+            return DaypartForecast(
+                condition_summary=c,
+                precip_probability_pct=round(p_c, 1),
+                sunshine_hours=round(sun, 1),
+                temperature_celsius=round(t_c, 1),
+            )
+
+        return ForecastDayparts(
+            morning=_dp("morning"),
+            afternoon=_dp("afternoon"),
+            evening=_dp("evening"),
+        )
+
     summary_match = re.search(
         r"Morning\s+(?P<tm>\d+)\s*°\s+(?P<morning>\d+)\s*%\s+Afternoon\s+(?P<ta>\d+)\s*°\s+(?P<afternoon>\d+)\s*%\s+Evening\s+(?P<te>\d+)\s*°\s+(?P<evening>\d+)\s*%",
-        page.text,
+        page.html,
     )
     sunshine_match = re.search(
         r'aria-label="(?P<hours>\d+)hours of sunshine"', page.html
@@ -200,11 +186,18 @@ def _parse_ventusky(page: PagePayload, target_date: date) -> ForecastDayparts | 
     headers = forecast.select("thead th")
     cells = forecast.select("tbody tr:first-child td")
     points: list[HourlyPoint] = []
-    target_label = "morgen" if target_date > date.today() else None
+    today = date.today()
+    delta = (target_date - today).days
+    if delta < 0 or delta > 1:
+        return None
     header_cells = headers if len(headers) == len(cells) else headers[1:]
     for header, cell in zip(header_cells, cells, strict=False):
         header_text = _normalize_whitespace(header.get_text(" ", strip=True))
-        if target_label and target_label not in header_text.lower():
+        hlow = header_text.lower()
+        is_next = "morgen" in hlow or "tomorrow" in hlow
+        if delta == 0 and is_next:
+            continue
+        if delta == 1 and not is_next:
             continue
         time_match = re.search(r"(\d{2}):(\d{2})", header_text)
         if not time_match:

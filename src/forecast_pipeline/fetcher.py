@@ -1,19 +1,25 @@
 from __future__ import annotations
 
+import argparse
+import logging
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import date
 
 import httpx
 
 from forecast_pipeline.adapters.html_payloads import PagePayload
-from forecast_pipeline.adapters.sources import BaseSourceAdapter, build_source_adapters
-from forecast_pipeline.config import max_horizon_days
+from forecast_pipeline.sources import BaseSourceAdapter, build_source_adapters
+from forecast_pipeline.config import pipeline_target_date, preferred_target_date
 from forecast_pipeline.models import (
     ConsensusForecast,
     SelectedDisplaySource,
     SourceForecast,
+    now_utc_iso,
 )
-from forecast_pipeline.scoring import build_optimistic_forecast, is_ranking_candidate
+from forecast_pipeline.scoring import build_optimistic_forecast
+from forecast_pipeline.storage import update_history, write_latest, write_meta
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -133,10 +139,10 @@ def resolve_best_target_date(
     headed: bool = False,
     source_filter: str | None = None,
 ) -> date:
-    """Pick the near-term date with the most ranking-eligible source coverage."""
+    """Return the shared pipeline target date (May 1 capped by common provider horizon)."""
 
-    loaded_pages = load_source_pages(source_filter=source_filter, headed=headed)
-    return resolve_best_target_date_from_pages(loaded_pages, fetched_at=fetched_at)
+    del headed, source_filter
+    return resolve_best_target_date_from_pages([], fetched_at=fetched_at)
 
 
 def resolve_best_target_date_from_pages(
@@ -144,23 +150,79 @@ def resolve_best_target_date_from_pages(
     *,
     fetched_at: str,
 ) -> date:
-    """Same as `resolve_best_target_date`, but reuses already-loaded pages."""
+    """Same target as `resolve_best_target_date`; pages are ignored (kept for call-site reuse)."""
 
-    today = date.today()
-    best_candidate: date | None = None
-    best_score: tuple[int, int] | None = None
+    del loaded_pages, fetched_at
+    return pipeline_target_date()
 
-    for offset in range(0, min(2, max_horizon_days()) + 1):
-        candidate = today + timedelta(days=offset)
-        sources = source_results_for_target(
-            loaded_pages,
-            target_date=candidate,
-            fetched_at=fetched_at,
-        )
-        available = len([source for source in sources if is_ranking_candidate(source)])
-        score = (available, offset)
-        if best_score is None or score > best_score:
-            best_candidate = candidate
-            best_score = score
 
-    return best_candidate or today
+def _fetch_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Fetch forecast data for Haltern am See."
+    )
+    parser.add_argument(
+        "--headed",
+        action="store_true",
+        help="Open browser-backed sources in headed mode for debugging.",
+    )
+    parser.add_argument("--source", help="Restrict fetches to one source ID.")
+    return parser
+
+
+def _run_fetch(source_filter: str | None, *, headed: bool) -> tuple[str, str]:
+    generated_at = now_utc_iso()
+    loaded_pages = load_source_pages(source_filter=source_filter, headed=headed)
+    target_date = pipeline_target_date()
+    sources = source_results_for_target(
+        loaded_pages,
+        target_date=target_date,
+        fetched_at=generated_at,
+    )
+    consensus, selected = build_optimistic_forecast(sources)
+    latest_path = write_latest(
+        generated_at=generated_at,
+        target_date=target_date,
+        sources=sources,
+        consensus=consensus,
+        selected=selected,
+    )
+    meta_path = write_meta(
+        generated_at=generated_at,
+        target_date=target_date,
+        sources=sources,
+        consensus=consensus,
+        selected=selected,
+    )
+    return str(latest_path), str(meta_path)
+
+
+def main_fetch() -> None:
+    """Fetch source data and regenerate the latest static JSON artifacts."""
+
+    args = _fetch_parser().parse_args()
+    latest_path, meta_path = _run_fetch(args.source, headed=args.headed)
+    logger.info(f"Wrote {latest_path}")
+    logger.info(f"Wrote {meta_path}")
+
+
+def main_build_history() -> None:
+    """Append the current latest snapshot to the history JSON file."""
+
+    parser = argparse.ArgumentParser(
+        description="Update history.json from latest.json."
+    )
+    parser.parse_args()
+    history_path = update_history(generated_at=now_utc_iso())
+    logger.info(f"Wrote {history_path}")
+
+
+_CLI_ENTRYPOINTS = {
+    "weather-fetch": main_fetch,
+    "weather-build-history": main_build_history,
+}
+_FETCHER_PUBLIC_API = (
+    fetch_and_score,
+    resolve_best_target_date,
+    preferred_target_date,
+    pipeline_target_date,
+)

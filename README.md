@@ -30,7 +30,8 @@ pytest
 
 ## Notes
 
-- The pipeline picks a **target day** (today / next days) that maximizes how many sources qualify as **ranking candidates** (parser-backed forecasts with morning, afternoon, and evening each including condition, rain probability, sunshine, and temperature).
-- The microsite shows **one** provider: the **most optimistic** among those candidates by whole-day **lowest mean rain**, then **highest total sunshine hours**, then **highest mean temperature**, with ties broken by source confidence and id.
+- The pipeline sets **target day** to `min(May 1, today + common horizon)`, where **common horizon** is the smallest `horizon_days` among sources that participate in the cap (`include_in_common_horizon=True`). That reaches up to **14 days** ahead while still aiming at May 1 when it falls inside that window.
+- Some sources are excluded from that cap (e.g. **meteoblue**, **yr.no**, **Ventusky**) because their public pages or APIs do not reliably expose the full 14-day window in one fetch; they still run for the chosen target day when data is present.
+- The microsite shows **one** provider: the **most optimistic** among **ranking candidates** by whole-day **lowest mean rain**, then **highest total sunshine hours**, then **highest mean temperature**, with ties broken by source confidence and id.
 - **Open-Meteo** (API, coordinates from config) is included for a stable baseline; scraper-only HTML sources that fail the completeness rules do not drive the displayed pick.
 - If no source qualifies, the site shows the waiting state for that target date.

@@ -232,3 +232,19 @@ def _aggregate_hourly(points: list[HourlyPoint], target_date: date) -> ForecastD
             else None,
         )
     return ForecastDayparts(**payload)
+
+
+def _balanced_json_array(text: str, open_bracket_index: int) -> str | None:
+    o = open_bracket_index
+    if o < 0 or o >= len(text) or text[o] != "[":
+        return None
+    depth = 0
+    for k in range(o, len(text)):
+        c = text[k]
+        if c == "[":
+            depth += 1
+        elif c == "]":
+            depth -= 1
+            if depth == 0:
+                return text[o : k + 1]
+    return None

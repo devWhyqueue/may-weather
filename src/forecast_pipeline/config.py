@@ -45,6 +45,8 @@ class SourceDefinition:
     location_markers: tuple[str, ...] = ()
     invalid_markers: tuple[str, ...] = ()
     wait_for_ms: int = 0
+    # If False, omitted when computing `common_horizon_days()` / pipeline target cap.
+    include_in_common_horizon: bool = True
 
 
 COMMON_INVALID_MARKERS = (
@@ -80,6 +82,7 @@ SOURCE_DEFINITIONS = (
         language="en",
         location_markers=("Haltern am See",),
         invalid_markers=COMMON_INVALID_MARKERS,
+        include_in_common_horizon=False,
     ),
     SourceDefinition(
         source_id="daswetter",
@@ -106,10 +109,10 @@ SOURCE_DEFINITIONS = (
     SourceDefinition(
         source_id="weathercom",
         source_name="weather.com",
-        source_url="https://weather.com/de-DE/wetter/stundlich/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6",
+        source_url="https://weather.com/de-DE/wetter/10tage/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6",
         method="html",
         weight=0.86,
-        horizon_days=10,
+        horizon_days=14,
         language="de",
         location_markers=("Haltern am See",),
         invalid_markers=COMMON_INVALID_MARKERS,
@@ -117,13 +120,15 @@ SOURCE_DEFINITIONS = (
     SourceDefinition(
         source_id="yr",
         source_name="yr.no",
-        source_url="https://www.yr.no/en/forecast/hourly-table/2-2911396/Germany/North%20Rhine-Westphalia/Regierungsbezirk%20M%C3%BCnster/Haltern%20am%20See",
-        method="html",
+        source_url="https://www.yr.no/api/v0/locations/2-2911396/forecast",
+        method="json",
         weight=0.79,
-        horizon_days=10,
+        horizon_days=14,
         language="en",
-        location_markers=("Haltern am See",),
-        invalid_markers=COMMON_INVALID_MARKERS,
+        location_markers=(),
+        invalid_markers=(),
+        fetch_mode="yr_api",
+        include_in_common_horizon=False,
     ),
     SourceDefinition(
         source_id="openmeteo",
@@ -143,7 +148,7 @@ SOURCE_DEFINITIONS = (
         source_url="https://www.weatherandradar.com/weather/haltern-am-see/5497243",
         method="html",
         weight=0.75,
-        horizon_days=10,
+        horizon_days=14,
         language="en",
         location_markers=("Haltern am See",),
         invalid_markers=COMMON_INVALID_MARKERS,
@@ -154,10 +159,11 @@ SOURCE_DEFINITIONS = (
         source_url="https://www.ventusky.com/haltern-am-see",
         method="html",
         weight=0.74,
-        horizon_days=10,
+        horizon_days=14,
         language="de",
         location_markers=("Haltern am See",),
         invalid_markers=COMMON_INVALID_MARKERS,
+        include_in_common_horizon=False,
     ),
 )
 
@@ -173,6 +179,17 @@ def max_horizon_days() -> int:
     return max(horizons, default=14)
 
 
+def common_horizon_days() -> int:
+    """Return the shortest horizon among sources that cap the shared pipeline target date."""
+
+    horizons = [
+        definition.horizon_days
+        for definition in SOURCE_DEFINITIONS
+        if definition.horizon_days is not None and definition.include_in_common_horizon
+    ]
+    return min(horizons, default=14)
+
+
 def preferred_target_date(today: date | None = None) -> date:
     """Return the May 1 date the site should try to approximate."""
 
@@ -181,3 +198,12 @@ def preferred_target_date(today: date | None = None) -> date:
     if candidate < today - timedelta(days=max_horizon_days()):
         return date(today.year + 1, 5, 1)
     return candidate
+
+
+def pipeline_target_date(today: date | None = None) -> date:
+    """Pick the forecast day: closest approach to May 1 without exceeding any provider horizon."""
+
+    today = today or date.today()
+    may1 = preferred_target_date(today)
+    limit = today + timedelta(days=common_horizon_days())
+    return min(may1, limit)

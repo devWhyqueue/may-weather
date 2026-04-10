@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import forecast_pipeline.fetcher as fetcher_mod
-from forecast_pipeline.adapters.sources import BaseSourceAdapter
+from forecast_pipeline.sources import BaseSourceAdapter
 
 
 def test_fetcher_exports_are_callable() -> None:
     assert callable(fetcher_mod.fetch_and_score)
     assert callable(fetcher_mod.resolve_best_target_date)
+    assert callable(fetcher_mod.resolve_best_target_date_from_pages)
 
 
 def test_base_adapter_defines_fetch() -> None:
