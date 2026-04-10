@@ -26,6 +26,8 @@ from .parsers_remote_a import (
     _parse_msn,
     _parse_timeanddate,
     _parse_weatherandradar,
+    _parse_wetterde,
+    _parse_wettertv,
     _parse_ventusky,
 )
 from .parsers_remote_com import _parse_weathercom, _parse_yr
@@ -180,6 +182,8 @@ SOURCE_PARSERS: dict[str, Callable[[PagePayload, date], ForecastDayparts | None]
     "foreca": _parse_foreca,
     "msn": _parse_msn,
     "weatherandradar": _parse_weatherandradar,
+    "wetterde": _parse_wetterde,
     "ventusky": _parse_ventusky,
+    "wettertv": _parse_wettertv,
     "openmeteo": _parse_openmeteo,
 }

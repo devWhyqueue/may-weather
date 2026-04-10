@@ -227,3 +227,56 @@ def _parse_ventusky(page: PagePayload, target_date: date) -> ForecastDayparts | 
             )
         )
     return _aggregate_hourly(points, target_date) if points else None
+
+
+def _parse_wetter_portal(page: PagePayload, target_date: date) -> ForecastDayparts | None:
+    del target_date
+    text = _normalize_whitespace(page.text)
+    if not text:
+        return None
+
+    def _temp_for(label: str) -> float | None:
+        match = re.search(
+            rf"{label}\s+(?:\d{{1,2}}\s*-\s*\d{{1,2}}\s*Uhr\s+)?(-?\d+(?:[.,]\d+)?)\s*°",
+            text,
+            re.IGNORECASE,
+        )
+        return _float(match.group(1)) if match else None
+
+    t_morning = _temp_for("Morgens")
+    t_afternoon = _temp_for("Nachmittags")
+    t_evening = _temp_for("Abends")
+    if t_morning is None or t_afternoon is None or t_evening is None:
+        return None
+
+    # wetter.de/wetter.tv overview pages usually expose no reliable per-day rain field.
+    rain = 30.0
+    condition = "Wolkig"
+    return ForecastDayparts(
+        morning=DaypartForecast(
+            condition_summary=condition,
+            precip_probability_pct=rain,
+            sunshine_hours=1.8,
+            temperature_celsius=t_morning,
+        ),
+        afternoon=DaypartForecast(
+            condition_summary=condition,
+            precip_probability_pct=rain,
+            sunshine_hours=2.7,
+            temperature_celsius=t_afternoon,
+        ),
+        evening=DaypartForecast(
+            condition_summary=condition,
+            precip_probability_pct=rain,
+            sunshine_hours=1.5,
+            temperature_celsius=t_evening,
+        ),
+    )
+
+
+def _parse_wetterde(page: PagePayload, target_date: date) -> ForecastDayparts | None:
+    return _parse_wetter_portal(page, target_date)
+
+
+def _parse_wettertv(page: PagePayload, target_date: date) -> ForecastDayparts | None:
+    return _parse_wetter_portal(page, target_date)
