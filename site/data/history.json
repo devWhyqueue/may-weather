@@ -1,47 +1,51 @@
 {
-  "target_date": "2026-04-11",
+  "target_date": "2026-04-24",
   "snapshots": [
     {
-      "fetched_at": "2026-04-09T20:58:50Z",
+      "fetched_at": "2026-04-10T08:25:19Z",
       "best_forecast": {
         "status": "available",
-        "label": "Verdichtete Tagesabschnitte",
-        "note": "10 Quellen liefern vollstaendige Morgen-, Nachmittags- und Abendwerte.",
-        "source_count": 10,
-        "confidence": 0.1,
+        "label": "Optimistischste Quelle",
+        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (8.4 h), dann hoechste Mitteltemperatur (9.9 °C).",
+        "source_count": 1,
+        "confidence": 0.79,
         "spread": {
           "morning": {
-            "precip_probability_pct": 82.0,
-            "sunshine_hours": 7.2
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
           },
           "afternoon": {
-            "precip_probability_pct": 82.0,
-            "sunshine_hours": 7.2
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
           },
           "evening": {
-            "precip_probability_pct": 100.0,
-            "sunshine_hours": 3.0
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
           }
         },
         "dayparts": {
           "morning": {
-            "condition_summary": "Regen",
-            "precip_probability_pct": 28.2,
-            "sunshine_hours": 2.0
+            "condition_summary": "Wolkig",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 1.2,
+            "temperature_celsius": 9.5
           },
           "afternoon": {
-            "condition_summary": "Regen",
-            "precip_probability_pct": 19.7,
-            "sunshine_hours": 2.4
+            "condition_summary": "Wolkig",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 3.6,
+            "temperature_celsius": 11.4
           },
           "evening": {
-            "condition_summary": "Regen",
-            "precip_probability_pct": 39.9,
-            "sunshine_hours": 1.0
+            "condition_summary": "Wolkig",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 3.6,
+            "temperature_celsius": 8.8
           }
         }
       },
-      "source_count": 10
+      "source_count": 8,
+      "selected_source_id": "daswetter"
     }
   ]
 }
