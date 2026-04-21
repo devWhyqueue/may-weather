@@ -8,11 +8,11 @@
     "timezone": "Europe/Berlin"
   },
   "target_date": "2026-05-01",
-  "generated_at": "2026-04-21T12:28:36Z",
+  "generated_at": "2026-04-21T18:24:36Z",
   "best_forecast": {
     "status": "available",
     "label": "Optimistischste Quelle",
-    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (318.5 h), dann hoechste Mitteltemperatur (8.6 °C).",
+    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (314.2 h), dann hoechste Mitteltemperatur (7.7 °C).",
     "source_count": 1,
     "confidence": 0.79,
     "spread": {
@@ -33,20 +33,20 @@
       "morning": {
         "condition_summary": "Regen",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 307.5,
-        "temperature_celsius": 3.0
+        "sunshine_hours": 307.2,
+        "temperature_celsius": 0.0
       },
       "afternoon": {
         "condition_summary": "Sonnig",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 4.0,
-        "temperature_celsius": 13.2
+        "sunshine_hours": 1.0,
+        "temperature_celsius": 13.0
       },
       "evening": {
         "condition_summary": "Sonnig",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 7.0,
-        "temperature_celsius": 9.6
+        "sunshine_hours": 6.0,
+        "temperature_celsius": 10.0
       }
     }
   },
@@ -65,7 +65,7 @@
     {
       "source_id": "wetteronline",
       "source_name": "WetterOnline",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.wetteronline.de/wetter/haltern-am-see",
       "method": "text",
@@ -74,22 +74,22 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "G 21.04. aachen 13°c bielefeld 13°c bonn 15°c dortmund 13°c düsseldorf 15°c eifel 11°c kleve 14°c köln 15°c münster 13°c paderborn 13°c rothaargeb. 7°c siegen 14°c hier werben 14-tage-wetter haltern am see di, 21.04. mi, 22.04. do, 23.04. fr, 24.04. sa, 25.04. so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. haltern am see aktuell wetternews größerer hagel in italien wuchtiger start in die gewittersaison die beeträuber kommen aprilwetter bringt schnecken in fahrt wetterticker 13:00 uhr wuchtiger start in die gewittersaison 11:34 uhr aprilwetter bringt schnecken in fahrt wetter haltern am s",
+          "condition_summary": "N, mittwoch 22.04. aachen 17°c bielefeld 16°c bonn 19°c dortmund 17°c düsseldorf 18°c eifel 14°c kleve 17°c köln 19°c münster 17°c paderborn 16°c rothaargeb. 11°c siegen 17°c hier werben 14-tage-wetter haltern am see mi, 22.04. do, 23.04. fr, 24.04. sa, 25.04. so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. haltern am see aktuell wetternews obstblüte bedroht mittwoch früh verbreitet frost 14-tage-wetter trockene phase steht an urlaub trifft abenteuer malta: schatztruhe für aktive entdecker wetterticker 17:06 uhr mittwoch früh verbreitet frost 15:33 uhr trockene phase steht an 1",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 13.0
+          "temperature_celsius": 17.0
         },
         "afternoon": {
-          "condition_summary": "G 21.04. aachen 13°c bielefeld 13°c bonn 15°c dortmund 13°c düsseldorf 15°c eifel 11°c kleve 14°c köln 15°c münster 13°c paderborn 13°c rothaargeb. 7°c siegen 14°c hier werben 14-tage-wetter haltern am see di, 21.04. mi, 22.04. do, 23.04. fr, 24.04. sa, 25.04. so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. haltern am see aktuell wetternews größerer hagel in italien wuchtiger start in die gewittersaison die beeträuber kommen aprilwetter bringt schnecken in fahrt wetterticker 13:00 uhr wuchtiger start in die gewittersaison 11:34 uhr aprilwetter bringt schnecken in fahrt wetter haltern am s",
+          "condition_summary": "N, mittwoch 22.04. aachen 17°c bielefeld 16°c bonn 19°c dortmund 17°c düsseldorf 18°c eifel 14°c kleve 17°c köln 19°c münster 17°c paderborn 16°c rothaargeb. 11°c siegen 17°c hier werben 14-tage-wetter haltern am see mi, 22.04. do, 23.04. fr, 24.04. sa, 25.04. so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. haltern am see aktuell wetternews obstblüte bedroht mittwoch früh verbreitet frost 14-tage-wetter trockene phase steht an urlaub trifft abenteuer malta: schatztruhe für aktive entdecker wetterticker 17:06 uhr mittwoch früh verbreitet frost 15:33 uhr trockene phase steht an 1",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 13.0
+          "temperature_celsius": 17.0
         },
         "evening": {
-          "condition_summary": "G 21.04. aachen 13°c bielefeld 13°c bonn 15°c dortmund 13°c düsseldorf 15°c eifel 11°c kleve 14°c köln 15°c münster 13°c paderborn 13°c rothaargeb. 7°c siegen 14°c hier werben 14-tage-wetter haltern am see di, 21.04. mi, 22.04. do, 23.04. fr, 24.04. sa, 25.04. so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. haltern am see aktuell wetternews größerer hagel in italien wuchtiger start in die gewittersaison die beeträuber kommen aprilwetter bringt schnecken in fahrt wetterticker 13:00 uhr wuchtiger start in die gewittersaison 11:34 uhr aprilwetter bringt schnecken in fahrt wetter haltern am s",
+          "condition_summary": "N, mittwoch 22.04. aachen 17°c bielefeld 16°c bonn 19°c dortmund 17°c düsseldorf 18°c eifel 14°c kleve 17°c köln 19°c münster 17°c paderborn 16°c rothaargeb. 11°c siegen 17°c hier werben 14-tage-wetter haltern am see mi, 22.04. do, 23.04. fr, 24.04. sa, 25.04. so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. haltern am see aktuell wetternews obstblüte bedroht mittwoch früh verbreitet frost 14-tage-wetter trockene phase steht an urlaub trifft abenteuer malta: schatztruhe für aktive entdecker wetterticker 17:06 uhr mittwoch früh verbreitet frost 15:33 uhr trockene phase steht an 1",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 13.0
+          "temperature_celsius": 17.0
         }
       },
       "ranking_eligible": false
@@ -97,7 +97,7 @@
     {
       "source_id": "meteoblue",
       "source_name": "meteoblue",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.meteoblue.com/en/weather/today/haltern-am-see_germany_2911396",
       "method": "html",
@@ -129,7 +129,7 @@
     {
       "source_id": "daswetter",
       "source_name": "Das Wetter / Meteored",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.daswetter.com/wetter_Haltern%2Bam%2BSee-Europa-Deutschland-Nordrhein%2BWestfalen--1-26703.html",
       "method": "text",
@@ -140,20 +140,20 @@
         "morning": {
           "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 307.5,
-          "temperature_celsius": 3.0
+          "sunshine_hours": 307.2,
+          "temperature_celsius": 0.0
         },
         "afternoon": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 4.0,
-          "temperature_celsius": 13.2
+          "sunshine_hours": 1.0,
+          "temperature_celsius": 13.0
         },
         "evening": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 7.0,
-          "temperature_celsius": 9.6
+          "sunshine_hours": 6.0,
+          "temperature_celsius": 10.0
         }
       },
       "ranking_eligible": true
@@ -161,7 +161,7 @@
     {
       "source_id": "timeanddate",
       "source_name": "timeanddate",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.timeanddate.com/weather/germany/haltern-am-see/hourly",
       "method": "html",
@@ -193,7 +193,7 @@
     {
       "source_id": "weathercom",
       "source_name": "weather.com",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://weather.com/de-DE/wetter/10tage/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6",
       "method": "html",
@@ -225,7 +225,7 @@
     {
       "source_id": "wetterde",
       "source_name": "wetter.de",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.wetter.de",
       "method": "html",
@@ -243,13 +243,13 @@
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 2.7,
-          "temperature_celsius": 13.0
+          "temperature_celsius": 14.0
         },
         "evening": {
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 1.5,
-          "temperature_celsius": 12.0
+          "temperature_celsius": 13.0
         }
       },
       "ranking_eligible": true
@@ -257,7 +257,7 @@
     {
       "source_id": "openmeteo",
       "source_name": "Open-Meteo",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://open-meteo.com",
       "method": "json",
@@ -267,19 +267,19 @@
       "dayparts": {
         "morning": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 8.0,
+          "precip_probability_pct": 4.0,
           "sunshine_hours": 5.6,
           "temperature_celsius": 5.2
         },
         "afternoon": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 6.0,
+          "precip_probability_pct": 11.0,
           "sunshine_hours": 6.0,
           "temperature_celsius": 12.7
         },
         "evening": {
           "condition_summary": "Wolkig",
-          "precip_probability_pct": 10.0,
+          "precip_probability_pct": 11.0,
           "sunshine_hours": 4.0,
           "temperature_celsius": 10.5
         }
@@ -289,7 +289,7 @@
     {
       "source_id": "weatherandradar",
       "source_name": "Weather & Radar",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.weatherandradar.com/weather/haltern-am-see/5497243",
       "method": "html",
@@ -321,7 +321,7 @@
     {
       "source_id": "ventusky",
       "source_name": "Ventusky",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.ventusky.com/haltern-am-see",
       "method": "html",
@@ -331,20 +331,20 @@
       "dayparts": {
         "morning": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 53.0,
-          "sunshine_hours": 307.2,
+          "precip_probability_pct": 42.0,
+          "sunshine_hours": 306.9,
           "temperature_celsius": 13.0
         },
         "afternoon": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 53.0,
-          "sunshine_hours": 460.8,
+          "precip_probability_pct": 42.0,
+          "sunshine_hours": 460.4,
           "temperature_celsius": 13.0
         },
         "evening": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 53.0,
-          "sunshine_hours": 256.0,
+          "precip_probability_pct": 42.0,
+          "sunshine_hours": 255.8,
           "temperature_celsius": 13.0
         }
       },
@@ -353,7 +353,7 @@
     {
       "source_id": "wettertv",
       "source_name": "wetter.tv",
-      "fetched_at": "2026-04-21T12:28:36Z",
+      "fetched_at": "2026-04-21T18:24:36Z",
       "target_date": "2026-05-01",
       "source_url": "https://wetter.tv",
       "method": "html",
