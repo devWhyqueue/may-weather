@@ -8,11 +8,11 @@
     "timezone": "Europe/Berlin"
   },
   "target_date": "2026-05-01",
-  "generated_at": "2026-04-23T00:33:57Z",
+  "generated_at": "2026-04-23T06:40:31Z",
   "best_forecast": {
     "status": "available",
     "label": "Optimistischste Quelle",
-    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (17.8 h), dann hoechste Mitteltemperatur (10.9 °C).",
+    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (15.6 h), dann hoechste Mitteltemperatur (11.6 °C).",
     "source_count": 1,
     "confidence": 0.79,
     "spread": {
@@ -33,8 +33,8 @@
       "morning": {
         "condition_summary": "Vereinzelt wolken",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 2.8,
-        "temperature_celsius": 5.0
+        "sunshine_hours": 0.6,
+        "temperature_celsius": 7.0
       },
       "afternoon": {
         "condition_summary": "Sonnig",
@@ -65,7 +65,7 @@
     {
       "source_id": "wetteronline",
       "source_name": "WetterOnline",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.wetteronline.de/wetter/haltern-am-see",
       "method": "text",
@@ -74,21 +74,21 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "Sonnig",
+          "condition_summary": "Für heute, donnerstag 23.04. aachen 18°c bielefeld 18°c bonn 20°c dortmund 18°c düsseldorf 19°c eifel 16°c kleve 19°c köln 19°c münster 18°c paderborn 17°c rothaargeb. 13°c siegen 19°c hier werben 14-tage-wetter haltern am see do, 23.04. fr, 24.04. sa, 25.04. so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. haltern am see aktuell wetternews 14-tage-wetter kühlere luft im anmarsch im südwesten am wärmsten im norden braucht die sonne anlauf wetterticker 19:20 uhr kühlere luft im anmarsch 08:25 uhr im norden braucht die sonne anlauf wetter haltern am see das wetter für",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 0.9,
+          "sunshine_hours": 0.0,
           "temperature_celsius": 18.0
         },
         "afternoon": {
-          "condition_summary": "Sonnig",
+          "condition_summary": "Für heute, donnerstag 23.04. aachen 18°c bielefeld 18°c bonn 20°c dortmund 18°c düsseldorf 19°c eifel 16°c kleve 19°c köln 19°c münster 18°c paderborn 17°c rothaargeb. 13°c siegen 19°c hier werben 14-tage-wetter haltern am see do, 23.04. fr, 24.04. sa, 25.04. so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. haltern am see aktuell wetternews 14-tage-wetter kühlere luft im anmarsch im südwesten am wärmsten im norden braucht die sonne anlauf wetterticker 19:20 uhr kühlere luft im anmarsch 08:25 uhr im norden braucht die sonne anlauf wetter haltern am see das wetter für",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 1.4,
+          "sunshine_hours": 0.0,
           "temperature_celsius": 18.0
         },
         "evening": {
-          "condition_summary": "Sonnig",
+          "condition_summary": "Für heute, donnerstag 23.04. aachen 18°c bielefeld 18°c bonn 20°c dortmund 18°c düsseldorf 19°c eifel 16°c kleve 19°c köln 19°c münster 18°c paderborn 17°c rothaargeb. 13°c siegen 19°c hier werben 14-tage-wetter haltern am see do, 23.04. fr, 24.04. sa, 25.04. so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. haltern am see aktuell wetternews 14-tage-wetter kühlere luft im anmarsch im südwesten am wärmsten im norden braucht die sonne anlauf wetterticker 19:20 uhr kühlere luft im anmarsch 08:25 uhr im norden braucht die sonne anlauf wetter haltern am see das wetter für",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 0.8,
+          "sunshine_hours": 0.0,
           "temperature_celsius": 18.0
         }
       },
@@ -97,7 +97,7 @@
     {
       "source_id": "meteoblue",
       "source_name": "meteoblue",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.meteoblue.com/en/weather/today/haltern-am-see_germany_2911396",
       "method": "html",
@@ -129,7 +129,7 @@
     {
       "source_id": "daswetter",
       "source_name": "Das Wetter / Meteored",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.daswetter.com/wetter_Haltern%2Bam%2BSee-Europa-Deutschland-Nordrhein%2BWestfalen--1-26703.html",
       "method": "text",
@@ -140,8 +140,8 @@
         "morning": {
           "condition_summary": "Vereinzelt wolken",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 2.8,
-          "temperature_celsius": 5.0
+          "sunshine_hours": 0.6,
+          "temperature_celsius": 7.0
         },
         "afternoon": {
           "condition_summary": "Sonnig",
@@ -161,7 +161,7 @@
     {
       "source_id": "timeanddate",
       "source_name": "timeanddate",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.timeanddate.com/weather/germany/haltern-am-see/hourly",
       "method": "html",
@@ -193,7 +193,7 @@
     {
       "source_id": "weathercom",
       "source_name": "weather.com",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://weather.com/de-DE/wetter/10tage/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6",
       "method": "html",
@@ -225,7 +225,7 @@
     {
       "source_id": "wetterde",
       "source_name": "wetter.de",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.wetter.de",
       "method": "html",
@@ -237,7 +237,7 @@
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 1.8,
-          "temperature_celsius": 6.0
+          "temperature_celsius": 7.0
         },
         "afternoon": {
           "condition_summary": "Wolkig",
@@ -249,7 +249,7 @@
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 1.5,
-          "temperature_celsius": 16.0
+          "temperature_celsius": 15.0
         }
       },
       "ranking_eligible": true
@@ -257,7 +257,7 @@
     {
       "source_id": "openmeteo",
       "source_name": "Open-Meteo",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://open-meteo.com",
       "method": "json",
@@ -267,20 +267,20 @@
       "dayparts": {
         "morning": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 3.0,
-          "sunshine_hours": 5.2,
+          "precip_probability_pct": 4.0,
+          "sunshine_hours": 6.0,
           "temperature_celsius": 6.6
         },
         "afternoon": {
-          "condition_summary": "Wolkig",
-          "precip_probability_pct": 4.0,
-          "sunshine_hours": 3.6,
+          "condition_summary": "Sonnig",
+          "precip_probability_pct": 6.0,
+          "sunshine_hours": 6.0,
           "temperature_celsius": 13.7
         },
         "evening": {
-          "condition_summary": "Wolkig",
-          "precip_probability_pct": 3.0,
-          "sunshine_hours": 4.4,
+          "condition_summary": "Sonnig",
+          "precip_probability_pct": 8.0,
+          "sunshine_hours": 6.0,
           "temperature_celsius": 12.0
         }
       },
@@ -289,7 +289,7 @@
     {
       "source_id": "weatherandradar",
       "source_name": "Weather & Radar",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.weatherandradar.com/weather/haltern-am-see/5497243",
       "method": "html",
@@ -321,7 +321,7 @@
     {
       "source_id": "ventusky",
       "source_name": "Ventusky",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.ventusky.com/haltern-am-see",
       "method": "html",
@@ -330,22 +330,22 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "0 % nw 10 km/h 16 °c 0 mm 0 % nw 10 km/h 14 °c 0 mm 0 % nw 8 km/h 11 °c 0 mm 0 % n 7 km/h 9 °c 0 mm 0 % n 5 km/h 8 °c 0 mm 0 % n 5 km/h 6 °c 0 mm 0 % nw 4 km/h 5 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % n 5 km/h vorhersage 24.04.2026 25.04.2026 26.04.2026 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 fr 16 °c sa 16 °c so 15 °c mo 17 °c di 17 °c mi 16 °c do 14 °c fr 12 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 6 km/h 5 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % nw 8 km/h 13 °c 0 mm 0 % nw 10 km/h 16 °c 0 mm 0 % nw 10 km/h 14 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % nw 6 km/",
+          "condition_summary": "Mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 3 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % n 5 km/h 4 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 6 km/h 5 °c 0 mm 0 % nw 7 km/h vorhersage 24.04.2026 25.04.2026 26.04.2026 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 fr 17 °c sa 16 °c so 14 °c mo 18 °c di 14 °c mi 15 °c do 16 °c fr 14 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 3 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % nw 8 km/h 13 °c 0 mm 0 % nw 10 km/h 17 °c 0 mm 0 % nw 10 km/h 14 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % n 5 km/h",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 16.0
+          "temperature_celsius": 4.0
         },
         "afternoon": {
-          "condition_summary": "0 % nw 10 km/h 16 °c 0 mm 0 % nw 10 km/h 14 °c 0 mm 0 % nw 8 km/h 11 °c 0 mm 0 % n 7 km/h 9 °c 0 mm 0 % n 5 km/h 8 °c 0 mm 0 % n 5 km/h 6 °c 0 mm 0 % nw 4 km/h 5 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % n 5 km/h vorhersage 24.04.2026 25.04.2026 26.04.2026 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 fr 16 °c sa 16 °c so 15 °c mo 17 °c di 17 °c mi 16 °c do 14 °c fr 12 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 6 km/h 5 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % nw 8 km/h 13 °c 0 mm 0 % nw 10 km/h 16 °c 0 mm 0 % nw 10 km/h 14 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % nw 6 km/",
+          "condition_summary": "Mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 3 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % n 5 km/h 4 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 6 km/h 5 °c 0 mm 0 % nw 7 km/h vorhersage 24.04.2026 25.04.2026 26.04.2026 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 fr 17 °c sa 16 °c so 14 °c mo 18 °c di 14 °c mi 15 °c do 16 °c fr 14 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 3 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % nw 8 km/h 13 °c 0 mm 0 % nw 10 km/h 17 °c 0 mm 0 % nw 10 km/h 14 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % n 5 km/h",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 16.0
+          "temperature_celsius": 4.0
         },
         "evening": {
-          "condition_summary": "0 % nw 10 km/h 16 °c 0 mm 0 % nw 10 km/h 14 °c 0 mm 0 % nw 8 km/h 11 °c 0 mm 0 % n 7 km/h 9 °c 0 mm 0 % n 5 km/h 8 °c 0 mm 0 % n 5 km/h 6 °c 0 mm 0 % nw 4 km/h 5 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % n 5 km/h vorhersage 24.04.2026 25.04.2026 26.04.2026 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 fr 16 °c sa 16 °c so 15 °c mo 17 °c di 17 °c mi 16 °c do 14 °c fr 12 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 6 km/h 5 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % nw 8 km/h 13 °c 0 mm 0 % nw 10 km/h 16 °c 0 mm 0 % nw 10 km/h 14 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % nw 6 km/",
+          "condition_summary": "Mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 3 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % n 5 km/h 4 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 4 km/h 4 °c 0 mm 0 % nw 6 km/h 5 °c 0 mm 0 % nw 7 km/h vorhersage 24.04.2026 25.04.2026 26.04.2026 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 fr 17 °c sa 16 °c so 14 °c mo 18 °c di 14 °c mi 15 °c do 16 °c fr 14 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 3 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 4 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % nw 8 km/h 13 °c 0 mm 0 % nw 10 km/h 17 °c 0 mm 0 % nw 10 km/h 14 °c 0 mm 0 % nw 6 km/h 8 °c 0 mm 0 % n 5 km/h",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 16.0
+          "temperature_celsius": 4.0
         }
       },
       "ranking_eligible": false
@@ -353,7 +353,7 @@
     {
       "source_id": "wettertv",
       "source_name": "wetter.tv",
-      "fetched_at": "2026-04-23T00:33:57Z",
+      "fetched_at": "2026-04-23T06:40:31Z",
       "target_date": "2026-05-01",
       "source_url": "https://wetter.tv",
       "method": "html",
@@ -364,19 +364,19 @@
         "morning": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 2.1,
+          "sunshine_hours": 2.4,
           "temperature_celsius": 19.0
         },
         "afternoon": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 3.1,
+          "sunshine_hours": 3.6,
           "temperature_celsius": 19.0
         },
         "evening": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 1.8,
+          "sunshine_hours": 2.0,
           "temperature_celsius": 19.0
         }
       },
