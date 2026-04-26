@@ -8,11 +8,11 @@
     "timezone": "Europe/Berlin"
   },
   "target_date": "2026-05-01",
-  "generated_at": "2026-04-26T00:32:54Z",
+  "generated_at": "2026-04-26T06:40:03Z",
   "best_forecast": {
     "status": "available",
     "label": "Optimistischste Quelle",
-    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (8.0 h), dann hoechste Mitteltemperatur (11.8 °C).",
+    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (5.0 h), dann hoechste Mitteltemperatur (12.4 °C).",
     "source_count": 1,
     "confidence": 0.79,
     "spread": {
@@ -33,8 +33,8 @@
       "morning": {
         "condition_summary": "Sonnig",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 5.0,
-        "temperature_celsius": 7.4
+        "sunshine_hours": 2.0,
+        "temperature_celsius": 9.3
       },
       "afternoon": {
         "condition_summary": "Vereinzelt wolken",
@@ -65,7 +65,7 @@
     {
       "source_id": "wetteronline",
       "source_name": "WetterOnline",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.wetteronline.de/wetter/haltern-am-see",
       "method": "text",
@@ -74,19 +74,19 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "Ter nordrhein-westfalen – vorhersage für heute, sonntag 26.04. aachen 17°c bielefeld 16°c bonn 19°c dortmund 17°c düsseldorf 18°c eifel 16°c kleve 17°c köln 19°c münster 17°c paderborn 16°c rothaargeb. 12°c siegen 18°c hier werben 14-tage-wetter haltern am see so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. do, 07.05. fr, 08.05. sa, 09.05. dülmen aktuell wetternews nahe oklahoma city usa: tornado verwüstet kleinstadt die gräserblüte beginnt kaum verschnaufpause für allergiker sommer wie im bilderbuch familienauszeit im alpbachtal wetterticker 12:15 uhr usa: tornado v",
+          "condition_summary": "Ter nordrhein-westfalen – vorhersage für heute, sonntag 26.04. aachen 17°c bielefeld 16°c bonn 19°c dortmund 17°c düsseldorf 18°c eifel 16°c kleve 17°c köln 19°c münster 17°c paderborn 16°c rothaargeb. 12°c siegen 18°c hier werben 14-tage-wetter haltern am see so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. do, 07.05. fr, 08.05. sa, 09.05. haltern am see aktuell wetternews nahe oklahoma city usa: tornado verwüstet kleinstadt die gräserblüte beginnt kaum verschnaufpause für allergiker sommer wie im bilderbuch familienauszeit im alpbachtal wetterticker 12:15 uhr usa: t",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
           "temperature_celsius": 17.0
         },
         "afternoon": {
-          "condition_summary": "Ter nordrhein-westfalen – vorhersage für heute, sonntag 26.04. aachen 17°c bielefeld 16°c bonn 19°c dortmund 17°c düsseldorf 18°c eifel 16°c kleve 17°c köln 19°c münster 17°c paderborn 16°c rothaargeb. 12°c siegen 18°c hier werben 14-tage-wetter haltern am see so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. do, 07.05. fr, 08.05. sa, 09.05. dülmen aktuell wetternews nahe oklahoma city usa: tornado verwüstet kleinstadt die gräserblüte beginnt kaum verschnaufpause für allergiker sommer wie im bilderbuch familienauszeit im alpbachtal wetterticker 12:15 uhr usa: tornado v",
+          "condition_summary": "Ter nordrhein-westfalen – vorhersage für heute, sonntag 26.04. aachen 17°c bielefeld 16°c bonn 19°c dortmund 17°c düsseldorf 18°c eifel 16°c kleve 17°c köln 19°c münster 17°c paderborn 16°c rothaargeb. 12°c siegen 18°c hier werben 14-tage-wetter haltern am see so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. do, 07.05. fr, 08.05. sa, 09.05. haltern am see aktuell wetternews nahe oklahoma city usa: tornado verwüstet kleinstadt die gräserblüte beginnt kaum verschnaufpause für allergiker sommer wie im bilderbuch familienauszeit im alpbachtal wetterticker 12:15 uhr usa: t",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
           "temperature_celsius": 17.0
         },
         "evening": {
-          "condition_summary": "Ter nordrhein-westfalen – vorhersage für heute, sonntag 26.04. aachen 17°c bielefeld 16°c bonn 19°c dortmund 17°c düsseldorf 18°c eifel 16°c kleve 17°c köln 19°c münster 17°c paderborn 16°c rothaargeb. 12°c siegen 18°c hier werben 14-tage-wetter haltern am see so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. do, 07.05. fr, 08.05. sa, 09.05. dülmen aktuell wetternews nahe oklahoma city usa: tornado verwüstet kleinstadt die gräserblüte beginnt kaum verschnaufpause für allergiker sommer wie im bilderbuch familienauszeit im alpbachtal wetterticker 12:15 uhr usa: tornado v",
+          "condition_summary": "Ter nordrhein-westfalen – vorhersage für heute, sonntag 26.04. aachen 17°c bielefeld 16°c bonn 19°c dortmund 17°c düsseldorf 18°c eifel 16°c kleve 17°c köln 19°c münster 17°c paderborn 16°c rothaargeb. 12°c siegen 18°c hier werben 14-tage-wetter haltern am see so, 26.04. mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. do, 07.05. fr, 08.05. sa, 09.05. haltern am see aktuell wetternews nahe oklahoma city usa: tornado verwüstet kleinstadt die gräserblüte beginnt kaum verschnaufpause für allergiker sommer wie im bilderbuch familienauszeit im alpbachtal wetterticker 12:15 uhr usa: t",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
           "temperature_celsius": 17.0
@@ -97,7 +97,7 @@
     {
       "source_id": "meteoblue",
       "source_name": "meteoblue",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.meteoblue.com/en/weather/today/haltern-am-see_germany_2911396",
       "method": "html",
@@ -129,7 +129,7 @@
     {
       "source_id": "daswetter",
       "source_name": "Das Wetter / Meteored",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.daswetter.com/wetter_Haltern%2Bam%2BSee-Europa-Deutschland-Nordrhein%2BWestfalen--1-26703.html",
       "method": "text",
@@ -140,8 +140,8 @@
         "morning": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 5.0,
-          "temperature_celsius": 7.4
+          "sunshine_hours": 2.0,
+          "temperature_celsius": 9.3
         },
         "afternoon": {
           "condition_summary": "Vereinzelt wolken",
@@ -161,7 +161,7 @@
     {
       "source_id": "timeanddate",
       "source_name": "timeanddate",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.timeanddate.com/weather/germany/haltern-am-see/hourly",
       "method": "html",
@@ -193,7 +193,7 @@
     {
       "source_id": "weathercom",
       "source_name": "weather.com",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://weather.com/de-DE/wetter/10tage/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6",
       "method": "html",
@@ -225,7 +225,7 @@
     {
       "source_id": "wetterde",
       "source_name": "wetter.de",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.wetter.de",
       "method": "html",
@@ -249,7 +249,7 @@
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 1.5,
-          "temperature_celsius": 13.0
+          "temperature_celsius": 12.0
         }
       },
       "ranking_eligible": true
@@ -257,7 +257,7 @@
     {
       "source_id": "openmeteo",
       "source_name": "Open-Meteo",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://open-meteo.com",
       "method": "json",
@@ -267,20 +267,20 @@
       "dayparts": {
         "morning": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 0.0,
+          "precip_probability_pct": 2.0,
           "sunshine_hours": 6.0,
           "temperature_celsius": 10.4
         },
         "afternoon": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 0.0,
+          "precip_probability_pct": 2.0,
           "sunshine_hours": 6.0,
           "temperature_celsius": 20.0
         },
         "evening": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 1.0,
-          "sunshine_hours": 5.2,
+          "precip_probability_pct": 2.0,
+          "sunshine_hours": 6.0,
           "temperature_celsius": 20.4
         }
       },
@@ -289,7 +289,7 @@
     {
       "source_id": "weatherandradar",
       "source_name": "Weather & Radar",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.weatherandradar.com/weather/haltern-am-see/5497243",
       "method": "html",
@@ -321,7 +321,7 @@
     {
       "source_id": "ventusky",
       "source_name": "Ventusky",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.ventusky.com/haltern-am-see",
       "method": "html",
@@ -330,22 +330,22 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "5 °c 0 mm 0 % no 6 km/h 15 °c 0 mm 0 % no 6 km/h 14 °c 0 mm 0 % no 6 km/h 13 °c 0 mm 0 % n 3 km/h 10 °c 0 mm 0 % n 3 km/h 9 °c 0 mm 0 % no 4 km/h 8 °c 0 mm 0 % no 4 km/h 7 °c 0 mm 0 % no 4 km/h 6 °c 0 mm 0 % n 5 km/h 6 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h vorhersage 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 mo 15 °c di 18 °c mi 17 °c do 20 °c fr 23 °c sa 24 °c so 19 °c mo 17 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 6 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h 6 °c 0 mm 0 % o 5 km/h 11 °c 0 mm 0 % no 7 km/h 15 °c 0 mm 0 % no 10 km/h 15 °c 0 mm 0 % no 10 km/h 13 °c 0 mm 0 %",
+          "condition_summary": "Km/h 8 °c 0 mm 0 % n 3 km/h 7 °c 0 mm 0 % n 3 km/h 6 °c 0 mm 0 % no 4 km/h 5 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % o 3 km/h 6 °c 0 mm 0 % o 3 km/h 8 °c 0 mm 0 % no 8 km/h vorhersage 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 mo 17 °c di 19 °c mi 18 °c do 19 °c fr 24 °c sa 19 °c so 18 °c mo 12 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 5 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % no 4 km/h 6 °c 0 mm 0 % o 3 km/h 12 °c 0 mm 0 % no 6 km/h 15 °c 0 mm 0 % no 6 km/h 17 °c 0 mm 0 % no 7 km/h 14 °c 0 mm 0 % n",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 5.0
+          "temperature_celsius": 8.0
         },
         "afternoon": {
-          "condition_summary": "5 °c 0 mm 0 % no 6 km/h 15 °c 0 mm 0 % no 6 km/h 14 °c 0 mm 0 % no 6 km/h 13 °c 0 mm 0 % n 3 km/h 10 °c 0 mm 0 % n 3 km/h 9 °c 0 mm 0 % no 4 km/h 8 °c 0 mm 0 % no 4 km/h 7 °c 0 mm 0 % no 4 km/h 6 °c 0 mm 0 % n 5 km/h 6 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h vorhersage 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 mo 15 °c di 18 °c mi 17 °c do 20 °c fr 23 °c sa 24 °c so 19 °c mo 17 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 6 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h 6 °c 0 mm 0 % o 5 km/h 11 °c 0 mm 0 % no 7 km/h 15 °c 0 mm 0 % no 10 km/h 15 °c 0 mm 0 % no 10 km/h 13 °c 0 mm 0 %",
+          "condition_summary": "Km/h 8 °c 0 mm 0 % n 3 km/h 7 °c 0 mm 0 % n 3 km/h 6 °c 0 mm 0 % no 4 km/h 5 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % o 3 km/h 6 °c 0 mm 0 % o 3 km/h 8 °c 0 mm 0 % no 8 km/h vorhersage 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 mo 17 °c di 19 °c mi 18 °c do 19 °c fr 24 °c sa 19 °c so 18 °c mo 12 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 5 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % no 4 km/h 6 °c 0 mm 0 % o 3 km/h 12 °c 0 mm 0 % no 6 km/h 15 °c 0 mm 0 % no 6 km/h 17 °c 0 mm 0 % no 7 km/h 14 °c 0 mm 0 % n",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 5.0
+          "temperature_celsius": 8.0
         },
         "evening": {
-          "condition_summary": "5 °c 0 mm 0 % no 6 km/h 15 °c 0 mm 0 % no 6 km/h 14 °c 0 mm 0 % no 6 km/h 13 °c 0 mm 0 % n 3 km/h 10 °c 0 mm 0 % n 3 km/h 9 °c 0 mm 0 % no 4 km/h 8 °c 0 mm 0 % no 4 km/h 7 °c 0 mm 0 % no 4 km/h 6 °c 0 mm 0 % n 5 km/h 6 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h vorhersage 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 mo 15 °c di 18 °c mi 17 °c do 20 °c fr 23 °c sa 24 °c so 19 °c mo 17 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 6 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h 6 °c 0 mm 0 % o 5 km/h 11 °c 0 mm 0 % no 7 km/h 15 °c 0 mm 0 % no 10 km/h 15 °c 0 mm 0 % no 10 km/h 13 °c 0 mm 0 %",
+          "condition_summary": "Km/h 8 °c 0 mm 0 % n 3 km/h 7 °c 0 mm 0 % n 3 km/h 6 °c 0 mm 0 % no 4 km/h 5 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h 4 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % o 3 km/h 6 °c 0 mm 0 % o 3 km/h 8 °c 0 mm 0 % no 8 km/h vorhersage 27.04.2026 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 mo 17 °c di 19 °c mi 18 °c do 19 °c fr 24 °c sa 19 °c so 18 °c mo 12 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 5 °c 0 mm 0 % no 4 km/h 3 °c 0 mm 0 % no 4 km/h 6 °c 0 mm 0 % o 3 km/h 12 °c 0 mm 0 % no 6 km/h 15 °c 0 mm 0 % no 6 km/h 17 °c 0 mm 0 % no 7 km/h 14 °c 0 mm 0 % n",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 5.0
+          "temperature_celsius": 8.0
         }
       },
       "ranking_eligible": false
@@ -353,7 +353,7 @@
     {
       "source_id": "wettertv",
       "source_name": "wetter.tv",
-      "fetched_at": "2026-04-26T00:32:54Z",
+      "fetched_at": "2026-04-26T06:40:03Z",
       "target_date": "2026-05-01",
       "source_url": "https://wetter.tv",
       "method": "html",
