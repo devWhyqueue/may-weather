@@ -8,13 +8,13 @@
     "timezone": "Europe/Berlin"
   },
   "target_date": "2026-05-01",
-  "generated_at": "2026-04-27T06:55:43Z",
+  "generated_at": "2026-04-27T12:34:25Z",
   "best_forecast": {
     "status": "available",
     "label": "Optimistischste Quelle",
-    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (3.6 h), dann hoechste Mitteltemperatur (14.2 °C).",
+    "note": "Angezeigt: Weather & Radar — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (0.0 h), dann hoechste Mitteltemperatur (19.3 °C).",
     "source_count": 1,
-    "confidence": 0.79,
+    "confidence": 0.68,
     "spread": {
       "morning": {
         "precip_probability_pct": 0.0,
@@ -31,41 +31,41 @@
     },
     "dayparts": {
       "morning": {
-        "condition_summary": "Wolkig",
+        "condition_summary": "So____",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 1.2,
-        "temperature_celsius": 10.0
+        "sunshine_hours": 0.0,
+        "temperature_celsius": 13.0
       },
       "afternoon": {
-        "condition_summary": "Bewölkt",
+        "condition_summary": "So____",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 0.6,
-        "temperature_celsius": 17.5
+        "sunshine_hours": 0.0,
+        "temperature_celsius": 24.0
       },
       "evening": {
-        "condition_summary": "Bewölkt",
+        "condition_summary": "Mo____",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 1.8,
-        "temperature_celsius": 15.1
+        "sunshine_hours": 0.0,
+        "temperature_celsius": 21.0
       }
     }
   },
   "selected_source": {
-    "source_id": "daswetter",
-    "source_name": "Das Wetter / Meteored",
-    "source_url": "https://www.daswetter.com/wetter_Haltern%2Bam%2BSee-Europa-Deutschland-Nordrhein%2BWestfalen--1-26703.html"
+    "source_id": "weatherandradar",
+    "source_name": "Weather & Radar",
+    "source_url": "https://www.weatherandradar.com/weather/haltern-am-see/5497243"
   },
   "coverage": {
     "total_sources": 10,
     "available_sources": 8,
     "ranking_candidates": 4
   },
-  "confidence": 0.79,
+  "confidence": 0.68,
   "sources": [
     {
       "source_id": "wetteronline",
       "source_name": "WetterOnline",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.wetteronline.de/wetter/haltern-am-see",
       "method": "text",
@@ -74,21 +74,21 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "Sonnig",
+          "condition_summary": "N wochen wetter nordrhein-westfalen – vorhersage für heute, montag 27.04. aachen 18°c bielefeld 17°c bonn 20°c dortmund 18°c düsseldorf 20°c eifel 16°c kleve 18°c köln 20°c münster 18°c paderborn 18°c rothaargeb. 13°c siegen 19°c hier werben 14-tage-wetter haltern am see mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. do, 07.05. fr, 08.05. sa, 09.05. so, 10.05. haltern am see aktuell wetternews 14-tage-wetter frühsommerluft zum start in den mai was ist eine nebensonne? doppelte sonne über dem rhein wetterticker 11:30 uhr frühsommerluft zum start in den mai 09:38 uhr doppelte so",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 0.9,
+          "sunshine_hours": 0.0,
           "temperature_celsius": 18.0
         },
         "afternoon": {
-          "condition_summary": "Sonnig",
+          "condition_summary": "N wochen wetter nordrhein-westfalen – vorhersage für heute, montag 27.04. aachen 18°c bielefeld 17°c bonn 20°c dortmund 18°c düsseldorf 20°c eifel 16°c kleve 18°c köln 20°c münster 18°c paderborn 18°c rothaargeb. 13°c siegen 19°c hier werben 14-tage-wetter haltern am see mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. do, 07.05. fr, 08.05. sa, 09.05. so, 10.05. haltern am see aktuell wetternews 14-tage-wetter frühsommerluft zum start in den mai was ist eine nebensonne? doppelte sonne über dem rhein wetterticker 11:30 uhr frühsommerluft zum start in den mai 09:38 uhr doppelte so",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 1.4,
+          "sunshine_hours": 0.0,
           "temperature_celsius": 18.0
         },
         "evening": {
-          "condition_summary": "Sonnig",
+          "condition_summary": "N wochen wetter nordrhein-westfalen – vorhersage für heute, montag 27.04. aachen 18°c bielefeld 17°c bonn 20°c dortmund 18°c düsseldorf 20°c eifel 16°c kleve 18°c köln 20°c münster 18°c paderborn 18°c rothaargeb. 13°c siegen 19°c hier werben 14-tage-wetter haltern am see mo, 27.04. di, 28.04. mi, 29.04. do, 30.04. fr, 01.05. sa, 02.05. so, 03.05. mo, 04.05. di, 05.05. mi, 06.05. do, 07.05. fr, 08.05. sa, 09.05. so, 10.05. haltern am see aktuell wetternews 14-tage-wetter frühsommerluft zum start in den mai was ist eine nebensonne? doppelte sonne über dem rhein wetterticker 11:30 uhr frühsommerluft zum start in den mai 09:38 uhr doppelte so",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 0.8,
+          "sunshine_hours": 0.0,
           "temperature_celsius": 18.0
         }
       },
@@ -97,7 +97,7 @@
     {
       "source_id": "meteoblue",
       "source_name": "meteoblue",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.meteoblue.com/en/weather/today/haltern-am-see_germany_2911396",
       "method": "html",
@@ -129,7 +129,7 @@
     {
       "source_id": "daswetter",
       "source_name": "Das Wetter / Meteored",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.daswetter.com/wetter_Haltern%2Bam%2BSee-Europa-Deutschland-Nordrhein%2BWestfalen--1-26703.html",
       "method": "text",
@@ -138,22 +138,22 @@
       "note": null,
       "dayparts": {
         "morning": {
+          "condition_summary": "Regen",
+          "precip_probability_pct": 50.0,
+          "sunshine_hours": 0.0,
+          "temperature_celsius": 9.0
+        },
+        "afternoon": {
           "condition_summary": "Wolkig",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 1.2,
-          "temperature_celsius": 10.0
-        },
-        "afternoon": {
-          "condition_summary": "Bewölkt",
-          "precip_probability_pct": 0.0,
-          "sunshine_hours": 0.6,
-          "temperature_celsius": 17.5
+          "temperature_celsius": 19.0
         },
         "evening": {
           "condition_summary": "Bewölkt",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 1.8,
-          "temperature_celsius": 15.1
+          "sunshine_hours": 1.2,
+          "temperature_celsius": 14.7
         }
       },
       "ranking_eligible": true
@@ -161,7 +161,7 @@
     {
       "source_id": "timeanddate",
       "source_name": "timeanddate",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.timeanddate.com/weather/germany/haltern-am-see/hourly",
       "method": "html",
@@ -193,7 +193,7 @@
     {
       "source_id": "weathercom",
       "source_name": "weather.com",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://weather.com/de-DE/wetter/10tage/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6",
       "method": "html",
@@ -225,7 +225,7 @@
     {
       "source_id": "wetterde",
       "source_name": "wetter.de",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.wetter.de",
       "method": "html",
@@ -237,7 +237,7 @@
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 1.8,
-          "temperature_celsius": 9.0
+          "temperature_celsius": 10.0
         },
         "afternoon": {
           "condition_summary": "Wolkig",
@@ -257,7 +257,7 @@
     {
       "source_id": "openmeteo",
       "source_name": "Open-Meteo",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://open-meteo.com",
       "method": "json",
@@ -269,19 +269,19 @@
           "condition_summary": "Sonnig",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 6.0,
-          "temperature_celsius": 12.3
+          "temperature_celsius": 12.1
         },
         "afternoon": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 6.0,
-          "temperature_celsius": 22.8
+          "temperature_celsius": 22.6
         },
         "evening": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 4.0,
-          "sunshine_hours": 6.0,
-          "temperature_celsius": 20.9
+          "sunshine_hours": 4.8,
+          "temperature_celsius": 20.8
         }
       },
       "ranking_eligible": true
@@ -289,7 +289,7 @@
     {
       "source_id": "weatherandradar",
       "source_name": "Weather & Radar",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.weatherandradar.com/weather/haltern-am-see/5497243",
       "method": "html",
@@ -311,9 +311,9 @@
         },
         "evening": {
           "condition_summary": "Mo____",
-          "precip_probability_pct": 10.0,
+          "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 20.0
+          "temperature_celsius": 21.0
         }
       },
       "ranking_eligible": true
@@ -321,7 +321,7 @@
     {
       "source_id": "ventusky",
       "source_name": "Ventusky",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://www.ventusky.com/haltern-am-see",
       "method": "html",
@@ -330,22 +330,22 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "H 10 °c 0 mm 0 % no 7 km/h 8 °c 0 mm 0 % no 9 km/h 8 °c 0 mm 0 % no 10 km/h 7 °c 0 mm 0 % no 10 km/h 7 °c 0 mm 0 % no 10 km/h 6 °c 0 mm 0 % no 9 km/h 6 °c 0 mm 0 % no 9 km/h 6 °c 0 mm 10 % no 9 km/h 6 °c 0 mm 10 % no 8 km/h 7 °c 0 mm 10 % no 10 km/h 9 °c 0 mm 10 % no 13 km/h vorhersage 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 05.05.2026 di 17 °c mi 17 °c do 18 °c fr 23 °c sa 22 °c so 14 °c mo 17 °c di 19 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 7 °c 0 mm 0 % no 10 km/h 6 °c 0 mm 0 % no 9 km/h 7 °c 0 mm 10 % no 10 km/h 13 °c 0 mm 10 % no 13 km/h 16 °c 0 mm 10 % no 17 km/h böe: 43 km/h 17 °c 0 m",
+          "condition_summary": "0 mm 0 % no 10 km/h 6 °c 0 mm 0 % no 10 km/h 7 °c 0 mm 0 % no 10 km/h 9 °c 0 mm 0 % no 11 km/h 10 °c 0 mm 0 % no 13 km/h 12 °c 0 mm 0 % no 13 km/h 14 °c 0 mm 0 % no 15 km/h 16 °c 0 mm 0 % no 17 km/h 17 °c 0 mm 0 % o 18 km/h böe: 43 km/h 17 °c 0 mm 0 % no 19 km/h böe: 47 km/h vorhersage 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 05.05.2026 di 17 °c mi 17 °c do 18 °c fr 23 °c sa 22 °c so 14 °c mo 16 °c di 20 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 7 °c 0 mm 0 % no 9 km/h 6 °c 0 mm 0 % no 9 km/h 7 °c 0 mm 0 % no 10 km/h 12 °c 0 mm 0 % no 13 km/h 17 °c 0 mm 0 % o 18 km/h böe: 43 km/h 17 °c 0 mm 0 %",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 10.0
+          "temperature_celsius": 6.0
         },
         "afternoon": {
-          "condition_summary": "H 10 °c 0 mm 0 % no 7 km/h 8 °c 0 mm 0 % no 9 km/h 8 °c 0 mm 0 % no 10 km/h 7 °c 0 mm 0 % no 10 km/h 7 °c 0 mm 0 % no 10 km/h 6 °c 0 mm 0 % no 9 km/h 6 °c 0 mm 0 % no 9 km/h 6 °c 0 mm 10 % no 9 km/h 6 °c 0 mm 10 % no 8 km/h 7 °c 0 mm 10 % no 10 km/h 9 °c 0 mm 10 % no 13 km/h vorhersage 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 05.05.2026 di 17 °c mi 17 °c do 18 °c fr 23 °c sa 22 °c so 14 °c mo 17 °c di 19 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 7 °c 0 mm 0 % no 10 km/h 6 °c 0 mm 0 % no 9 km/h 7 °c 0 mm 10 % no 10 km/h 13 °c 0 mm 10 % no 13 km/h 16 °c 0 mm 10 % no 17 km/h böe: 43 km/h 17 °c 0 m",
+          "condition_summary": "0 mm 0 % no 10 km/h 6 °c 0 mm 0 % no 10 km/h 7 °c 0 mm 0 % no 10 km/h 9 °c 0 mm 0 % no 11 km/h 10 °c 0 mm 0 % no 13 km/h 12 °c 0 mm 0 % no 13 km/h 14 °c 0 mm 0 % no 15 km/h 16 °c 0 mm 0 % no 17 km/h 17 °c 0 mm 0 % o 18 km/h böe: 43 km/h 17 °c 0 mm 0 % no 19 km/h böe: 47 km/h vorhersage 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 05.05.2026 di 17 °c mi 17 °c do 18 °c fr 23 °c sa 22 °c so 14 °c mo 16 °c di 20 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 7 °c 0 mm 0 % no 9 km/h 6 °c 0 mm 0 % no 9 km/h 7 °c 0 mm 0 % no 10 km/h 12 °c 0 mm 0 % no 13 km/h 17 °c 0 mm 0 % o 18 km/h böe: 43 km/h 17 °c 0 mm 0 %",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 10.0
+          "temperature_celsius": 6.0
         },
         "evening": {
-          "condition_summary": "H 10 °c 0 mm 0 % no 7 km/h 8 °c 0 mm 0 % no 9 km/h 8 °c 0 mm 0 % no 10 km/h 7 °c 0 mm 0 % no 10 km/h 7 °c 0 mm 0 % no 10 km/h 6 °c 0 mm 0 % no 9 km/h 6 °c 0 mm 0 % no 9 km/h 6 °c 0 mm 10 % no 9 km/h 6 °c 0 mm 10 % no 8 km/h 7 °c 0 mm 10 % no 10 km/h 9 °c 0 mm 10 % no 13 km/h vorhersage 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 05.05.2026 di 17 °c mi 17 °c do 18 °c fr 23 °c sa 22 °c so 14 °c mo 17 °c di 19 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 7 °c 0 mm 0 % no 10 km/h 6 °c 0 mm 0 % no 9 km/h 7 °c 0 mm 10 % no 10 km/h 13 °c 0 mm 10 % no 13 km/h 16 °c 0 mm 10 % no 17 km/h böe: 43 km/h 17 °c 0 m",
+          "condition_summary": "0 mm 0 % no 10 km/h 6 °c 0 mm 0 % no 10 km/h 7 °c 0 mm 0 % no 10 km/h 9 °c 0 mm 0 % no 11 km/h 10 °c 0 mm 0 % no 13 km/h 12 °c 0 mm 0 % no 13 km/h 14 °c 0 mm 0 % no 15 km/h 16 °c 0 mm 0 % no 17 km/h 17 °c 0 mm 0 % o 18 km/h böe: 43 km/h 17 °c 0 mm 0 % no 19 km/h böe: 47 km/h vorhersage 28.04.2026 29.04.2026 30.04.2026 01.05.2026 02.05.2026 03.05.2026 04.05.2026 05.05.2026 di 17 °c mi 17 °c do 18 °c fr 23 °c sa 22 °c so 14 °c mo 16 °c di 20 °c 02:00 05:00 08:00 11:00 14:00 17:00 20:00 23:00 7 °c 0 mm 0 % no 9 km/h 6 °c 0 mm 0 % no 9 km/h 7 °c 0 mm 0 % no 10 km/h 12 °c 0 mm 0 % no 13 km/h 17 °c 0 mm 0 % o 18 km/h böe: 43 km/h 17 °c 0 mm 0 %",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 10.0
+          "temperature_celsius": 6.0
         }
       },
       "ranking_eligible": false
@@ -353,7 +353,7 @@
     {
       "source_id": "wettertv",
       "source_name": "wetter.tv",
-      "fetched_at": "2026-04-27T06:55:43Z",
+      "fetched_at": "2026-04-27T12:34:25Z",
       "target_date": "2026-05-01",
       "source_url": "https://wetter.tv",
       "method": "html",
@@ -364,20 +364,20 @@
         "morning": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 3.6,
-          "temperature_celsius": 20.0
+          "sunshine_hours": 3.9,
+          "temperature_celsius": 19.0
         },
         "afternoon": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 5.4,
-          "temperature_celsius": 20.0
+          "sunshine_hours": 5.9,
+          "temperature_celsius": 19.0
         },
         "evening": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 3.0,
-          "temperature_celsius": 20.0
+          "sunshine_hours": 3.2,
+          "temperature_celsius": 19.0
         }
       },
       "ranking_eligible": false
