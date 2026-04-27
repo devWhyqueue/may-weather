@@ -1978,6 +1978,52 @@
       },
       "source_count": 8,
       "selected_source_id": "weatherandradar"
+    },
+    {
+      "fetched_at": "2026-04-27T18:29:47Z",
+      "best_forecast": {
+        "status": "available",
+        "label": "Optimistischste Quelle",
+        "note": "Angezeigt: WetterOnline — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (14.0 h), dann hoechste Mitteltemperatur (20.0 °C).",
+        "source_count": 1,
+        "confidence": 0.86,
+        "spread": {
+          "morning": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          },
+          "afternoon": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          },
+          "evening": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          }
+        },
+        "dayparts": {
+          "morning": {
+            "condition_summary": "So____",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 6.0,
+            "temperature_celsius": 20.0
+          },
+          "afternoon": {
+            "condition_summary": "So____",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 6.0,
+            "temperature_celsius": 20.0
+          },
+          "evening": {
+            "condition_summary": "Mo____",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 2.0,
+            "temperature_celsius": 20.0
+          }
+        }
+      },
+      "source_count": 8,
+      "selected_source_id": "wetteronline"
     }
   ]
 }
