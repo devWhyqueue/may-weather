@@ -3312,6 +3312,52 @@
       },
       "source_count": 7,
       "selected_source_id": "wetterde"
+    },
+    {
+      "fetched_at": "2026-05-05T00:35:51Z",
+      "best_forecast": {
+        "status": "available",
+        "label": "Optimistischste Quelle",
+        "note": "Angezeigt: wetter.de — niedrigster Mittel-Regen (30.0 %), dann meiste Sonnenstunden (6.0 h), dann hoechste Mitteltemperatur (17.0 °C).",
+        "source_count": 1,
+        "confidence": 0.64,
+        "spread": {
+          "morning": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          },
+          "afternoon": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          },
+          "evening": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          }
+        },
+        "dayparts": {
+          "morning": {
+            "condition_summary": "Wolkig",
+            "precip_probability_pct": 30.0,
+            "sunshine_hours": 1.8,
+            "temperature_celsius": 14.0
+          },
+          "afternoon": {
+            "condition_summary": "Wolkig",
+            "precip_probability_pct": 30.0,
+            "sunshine_hours": 2.7,
+            "temperature_celsius": 20.0
+          },
+          "evening": {
+            "condition_summary": "Wolkig",
+            "precip_probability_pct": 30.0,
+            "sunshine_hours": 1.5,
+            "temperature_celsius": 17.0
+          }
+        }
+      },
+      "source_count": 7,
+      "selected_source_id": "wetterde"
     }
   ]
 }
