@@ -8,11 +8,11 @@
     "timezone": "Europe/Berlin"
   },
   "target_date": "2026-06-06",
-  "generated_at": "2026-05-23T12:22:07Z",
+  "generated_at": "2026-05-23T18:22:13Z",
   "best_forecast": {
     "status": "available",
     "label": "Optimistischste Quelle",
-    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (1.8 h), dann hoechste Mitteltemperatur (21.3 °C).",
+    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (308.1 h), dann hoechste Mitteltemperatur (21.9 °C).",
     "source_count": 1,
     "confidence": 0.79,
     "spread": {
@@ -33,20 +33,20 @@
       "morning": {
         "condition_summary": "Regen",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 1.8,
-        "temperature_celsius": 13.0
+        "sunshine_hours": 308.1,
+        "temperature_celsius": 14.0
       },
       "afternoon": {
         "condition_summary": "Dunstschleier",
         "precip_probability_pct": 0.0,
         "sunshine_hours": 0.0,
-        "temperature_celsius": 27.8
+        "temperature_celsius": 28.0
       },
       "evening": {
         "condition_summary": "Dunstschleier",
         "precip_probability_pct": 0.0,
         "sunshine_hours": 0.0,
-        "temperature_celsius": 23.1
+        "temperature_celsius": 23.7
       }
     }
   },
@@ -65,7 +65,7 @@
     {
       "source_id": "wetteronline",
       "source_name": "WetterOnline",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://www.wetteronline.de/wetter/haltern-am-see",
       "method": "text",
@@ -74,19 +74,19 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "Regen",
+          "condition_summary": "C bonn 28°c dortmund 26°c düsseldorf 27°c eifel 25°c kleve 25°c köln 28°c münster 25°c paderborn 25°c rothaargeb. 21°c siegen 28°c hier werben 14-tage-wetter haltern am see so, 24.05. mo, 25.05. di, 26.05. mi, 27.05. do, 28.05. fr, 29.05. sa, 30.05. so, 31.05. mo, 01.06. di, 02.06. mi, 03.06. do, 04.06. fr, 05.06. sa, 06.06. borkenberge aktuell airwork.de wetternews knapp 32 grad erster hitzetag des jahres 14-tage-wetter mai-sommer hält noch an kultur auf kurzen wegen malta: wo sonne auf geschichte trifft wetterticker 19:31 uhr erster hitzetag des jahres 17:15 uhr mai-sommer hält noch an 11:45 uhr malta: wo sonne auf geschichte trifft wet",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
           "temperature_celsius": 28.0
         },
         "afternoon": {
-          "condition_summary": "Regen",
+          "condition_summary": "C bonn 28°c dortmund 26°c düsseldorf 27°c eifel 25°c kleve 25°c köln 28°c münster 25°c paderborn 25°c rothaargeb. 21°c siegen 28°c hier werben 14-tage-wetter haltern am see so, 24.05. mo, 25.05. di, 26.05. mi, 27.05. do, 28.05. fr, 29.05. sa, 30.05. so, 31.05. mo, 01.06. di, 02.06. mi, 03.06. do, 04.06. fr, 05.06. sa, 06.06. borkenberge aktuell airwork.de wetternews knapp 32 grad erster hitzetag des jahres 14-tage-wetter mai-sommer hält noch an kultur auf kurzen wegen malta: wo sonne auf geschichte trifft wetterticker 19:31 uhr erster hitzetag des jahres 17:15 uhr mai-sommer hält noch an 11:45 uhr malta: wo sonne auf geschichte trifft wet",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
           "temperature_celsius": 28.0
         },
         "evening": {
-          "condition_summary": "Regen",
+          "condition_summary": "C bonn 28°c dortmund 26°c düsseldorf 27°c eifel 25°c kleve 25°c köln 28°c münster 25°c paderborn 25°c rothaargeb. 21°c siegen 28°c hier werben 14-tage-wetter haltern am see so, 24.05. mo, 25.05. di, 26.05. mi, 27.05. do, 28.05. fr, 29.05. sa, 30.05. so, 31.05. mo, 01.06. di, 02.06. mi, 03.06. do, 04.06. fr, 05.06. sa, 06.06. borkenberge aktuell airwork.de wetternews knapp 32 grad erster hitzetag des jahres 14-tage-wetter mai-sommer hält noch an kultur auf kurzen wegen malta: wo sonne auf geschichte trifft wetterticker 19:31 uhr erster hitzetag des jahres 17:15 uhr mai-sommer hält noch an 11:45 uhr malta: wo sonne auf geschichte trifft wet",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
           "temperature_celsius": 28.0
@@ -97,7 +97,7 @@
     {
       "source_id": "meteoblue",
       "source_name": "meteoblue",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://www.meteoblue.com/en/weather/today/haltern-am-see_germany_2911396",
       "method": "html",
@@ -129,7 +129,7 @@
     {
       "source_id": "daswetter",
       "source_name": "Das Wetter / Meteored",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://www.daswetter.com/wetter_Haltern%2Bam%2BSee-Europa-Deutschland-Nordrhein%2BWestfalen--1-26703.html",
       "method": "text",
@@ -140,20 +140,20 @@
         "morning": {
           "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 1.8,
-          "temperature_celsius": 13.0
+          "sunshine_hours": 308.1,
+          "temperature_celsius": 14.0
         },
         "afternoon": {
           "condition_summary": "Dunstschleier",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 27.8
+          "temperature_celsius": 28.0
         },
         "evening": {
           "condition_summary": "Dunstschleier",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 23.1
+          "temperature_celsius": 23.7
         }
       },
       "ranking_eligible": true
@@ -161,7 +161,7 @@
     {
       "source_id": "timeanddate",
       "source_name": "timeanddate",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://www.timeanddate.com/weather/germany/haltern-am-see/hourly",
       "method": "html",
@@ -193,7 +193,7 @@
     {
       "source_id": "weathercom",
       "source_name": "weather.com",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://weather.com/de-DE/wetter/10tage/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6",
       "method": "html",
@@ -225,7 +225,7 @@
     {
       "source_id": "wetterde",
       "source_name": "wetter.de",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://www.wetter.de",
       "method": "html",
@@ -257,7 +257,7 @@
     {
       "source_id": "openmeteo",
       "source_name": "Open-Meteo",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://open-meteo.com",
       "method": "json",
@@ -289,7 +289,7 @@
     {
       "source_id": "weatherandradar",
       "source_name": "Weather & Radar",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://www.weatherandradar.com/weather/haltern-am-see/5497243",
       "method": "html",
@@ -299,21 +299,21 @@
       "dayparts": {
         "morning": {
           "condition_summary": "Regen",
-          "precip_probability_pct": 0.0,
-          "sunshine_hours": 4.5,
-          "temperature_celsius": 82.0
+          "precip_probability_pct": 5.0,
+          "sunshine_hours": 3.6,
+          "temperature_celsius": 80.0
         },
         "afternoon": {
           "condition_summary": "Regen",
-          "precip_probability_pct": 0.0,
-          "sunshine_hours": 6.8,
-          "temperature_celsius": 82.0
+          "precip_probability_pct": 5.0,
+          "sunshine_hours": 5.4,
+          "temperature_celsius": 80.0
         },
         "evening": {
           "condition_summary": "Regen",
-          "precip_probability_pct": 0.0,
-          "sunshine_hours": 3.8,
-          "temperature_celsius": 82.0
+          "precip_probability_pct": 5.0,
+          "sunshine_hours": 3.0,
+          "temperature_celsius": 80.0
         }
       },
       "ranking_eligible": false
@@ -321,7 +321,7 @@
     {
       "source_id": "ventusky",
       "source_name": "Ventusky",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://www.ventusky.com/haltern-am-see",
       "method": "html",
@@ -331,21 +331,21 @@
       "dayparts": {
         "morning": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 40.0,
-          "sunshine_hours": 308.1,
-          "temperature_celsius": 27.0
+          "precip_probability_pct": 42.0,
+          "sunshine_hours": 307.8,
+          "temperature_celsius": 28.0
         },
         "afternoon": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 40.0,
-          "sunshine_hours": 462.2,
-          "temperature_celsius": 27.0
+          "precip_probability_pct": 42.0,
+          "sunshine_hours": 461.7,
+          "temperature_celsius": 28.0
         },
         "evening": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 40.0,
-          "sunshine_hours": 256.8,
-          "temperature_celsius": 27.0
+          "precip_probability_pct": 42.0,
+          "sunshine_hours": 256.5,
+          "temperature_celsius": 28.0
         }
       },
       "ranking_eligible": false
@@ -353,7 +353,7 @@
     {
       "source_id": "wettertv",
       "source_name": "wetter.tv",
-      "fetched_at": "2026-05-23T12:22:07Z",
+      "fetched_at": "2026-05-23T18:22:13Z",
       "target_date": "2026-06-06",
       "source_url": "https://wetter.tv",
       "method": "html",
@@ -364,19 +364,19 @@
         "morning": {
           "condition_summary": "Regen",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 3.9,
+          "sunshine_hours": 4.2,
           "temperature_celsius": 26.0
         },
         "afternoon": {
           "condition_summary": "Regen",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 5.9,
+          "sunshine_hours": 6.3,
           "temperature_celsius": 26.0
         },
         "evening": {
           "condition_summary": "Regen",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 3.2,
+          "sunshine_hours": 3.5,
           "temperature_celsius": 26.0
         }
       },
