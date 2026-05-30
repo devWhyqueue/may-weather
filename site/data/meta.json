@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T07:02:15Z",
+  "generated_at": "2026-05-30T12:27:11Z",
   "target_date": "2026-06-13",
   "location": "Haltern am See",
   "source_status": {
@@ -9,5 +9,5 @@
     "error": 0
   },
   "best_forecast_status": "available",
-  "selected_source_id": "daswetter"
+  "selected_source_id": "openmeteo"
 }
