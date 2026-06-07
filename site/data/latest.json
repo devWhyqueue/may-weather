@@ -7,12 +7,12 @@
     "longitude": 7.1815,
     "timezone": "Europe/Berlin"
   },
-  "target_date": "2026-06-20",
-  "generated_at": "2026-06-06T18:28:37Z",
+  "target_date": "2026-06-21",
+  "generated_at": "2026-06-07T00:47:06Z",
   "best_forecast": {
     "status": "available",
     "label": "Optimistischste Quelle",
-    "note": "Angezeigt: Open-Meteo — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (12.8 h), dann hoechste Mitteltemperatur (17.5 °C).",
+    "note": "Angezeigt: Open-Meteo — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (4.8 h), dann hoechste Mitteltemperatur (20.7 °C).",
     "source_count": 1,
     "confidence": 0.84,
     "spread": {
@@ -33,20 +33,20 @@
       "morning": {
         "condition_summary": "Sonnig",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 5.6,
-        "temperature_celsius": 13.4
+        "sunshine_hours": 3.0,
+        "temperature_celsius": 17.2
       },
       "afternoon": {
-        "condition_summary": "Wolkig",
+        "condition_summary": "Regen",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 3.6,
-        "temperature_celsius": 19.8
+        "sunshine_hours": 1.8,
+        "temperature_celsius": 25.1
       },
       "evening": {
-        "condition_summary": "Wolkig",
+        "condition_summary": "Regen",
         "precip_probability_pct": 0.0,
-        "sunshine_hours": 3.6,
-        "temperature_celsius": 19.3
+        "sunshine_hours": 0.0,
+        "temperature_celsius": 19.7
       }
     }
   },
@@ -57,16 +57,16 @@
   },
   "coverage": {
     "total_sources": 10,
-    "available_sources": 9,
-    "ranking_candidates": 4
+    "available_sources": 8,
+    "ranking_candidates": 3
   },
   "confidence": 0.84,
   "sources": [
     {
       "source_id": "wetteronline",
       "source_name": "WetterOnline",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://www.wetteronline.de/wetter/haltern-am-see",
       "method": "text",
       "confidence": 0.8636363636363635,
@@ -74,22 +74,22 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "C bonn 21°c dortmund 18°c düsseldorf 19°c eifel 18°c kleve 18°c köln 20°c münster 17°c paderborn 17°c rothaargeb. 13°c siegen 19°c hier werben 14-tage-wetter haltern am see so, 07.06. mo, 08.06. di, 09.06. mi, 10.06. do, 11.06. fr, 12.06. sa, 13.06. so, 14.06. mo, 15.06. di, 16.06. mi, 17.06. do, 18.06. fr, 19.06. sa, 20.06. haltern am see aktuell wetternews süden im vorteil sonntagswetter zweigeteilt sommer wie im bilderbuch familienauszeit im alpbachtal 14-tage-wetter tiefs bleiben am drücker wetterticker 15:23 uhr sonntagswetter zweigeteilt 12:12 uhr familienauszeit im alpbachtal 11:25 uhr tiefs bleiben am drücker wetter haltern am see",
+          "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 21.0
+          "temperature_celsius": 19.0
         },
         "afternoon": {
-          "condition_summary": "C bonn 21°c dortmund 18°c düsseldorf 19°c eifel 18°c kleve 18°c köln 20°c münster 17°c paderborn 17°c rothaargeb. 13°c siegen 19°c hier werben 14-tage-wetter haltern am see so, 07.06. mo, 08.06. di, 09.06. mi, 10.06. do, 11.06. fr, 12.06. sa, 13.06. so, 14.06. mo, 15.06. di, 16.06. mi, 17.06. do, 18.06. fr, 19.06. sa, 20.06. haltern am see aktuell wetternews süden im vorteil sonntagswetter zweigeteilt sommer wie im bilderbuch familienauszeit im alpbachtal 14-tage-wetter tiefs bleiben am drücker wetterticker 15:23 uhr sonntagswetter zweigeteilt 12:12 uhr familienauszeit im alpbachtal 11:25 uhr tiefs bleiben am drücker wetter haltern am see",
+          "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 21.0
+          "temperature_celsius": 19.0
         },
         "evening": {
-          "condition_summary": "C bonn 21°c dortmund 18°c düsseldorf 19°c eifel 18°c kleve 18°c köln 20°c münster 17°c paderborn 17°c rothaargeb. 13°c siegen 19°c hier werben 14-tage-wetter haltern am see so, 07.06. mo, 08.06. di, 09.06. mi, 10.06. do, 11.06. fr, 12.06. sa, 13.06. so, 14.06. mo, 15.06. di, 16.06. mi, 17.06. do, 18.06. fr, 19.06. sa, 20.06. haltern am see aktuell wetternews süden im vorteil sonntagswetter zweigeteilt sommer wie im bilderbuch familienauszeit im alpbachtal 14-tage-wetter tiefs bleiben am drücker wetterticker 15:23 uhr sonntagswetter zweigeteilt 12:12 uhr familienauszeit im alpbachtal 11:25 uhr tiefs bleiben am drücker wetter haltern am see",
+          "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": 21.0
+          "temperature_celsius": 19.0
         }
       },
       "ranking_eligible": false
@@ -97,8 +97,8 @@
     {
       "source_id": "meteoblue",
       "source_name": "meteoblue",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://www.meteoblue.com/en/weather/today/haltern-am-see_germany_2911396",
       "method": "html",
       "confidence": 0.8181818181818181,
@@ -129,8 +129,8 @@
     {
       "source_id": "daswetter",
       "source_name": "Das Wetter / Meteored",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://www.daswetter.com/wetter_Haltern%2Bam%2BSee-Europa-Deutschland-Nordrhein%2BWestfalen--1-26703.html",
       "method": "text",
       "confidence": 0.7909090909090909,
@@ -138,22 +138,22 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "Regen",
-          "precip_probability_pct": 80.0,
-          "sunshine_hours": 304.2,
-          "temperature_celsius": 11.0
+          "condition_summary": "Bewölkt",
+          "precip_probability_pct": 0.0,
+          "sunshine_hours": 0.0,
+          "temperature_celsius": 13.8
         },
         "afternoon": {
-          "condition_summary": "Regen",
-          "precip_probability_pct": 30.0,
-          "sunshine_hours": 0.0,
-          "temperature_celsius": 19.0
+          "condition_summary": "Bewölkt",
+          "precip_probability_pct": 0.0,
+          "sunshine_hours": 1.2,
+          "temperature_celsius": 16.5
         },
         "evening": {
-          "condition_summary": "Wolkig",
-          "precip_probability_pct": 60.0,
+          "condition_summary": "Vereinzelt wolken",
+          "precip_probability_pct": 0.0,
           "sunshine_hours": 1.8,
-          "temperature_celsius": 16.8
+          "temperature_celsius": 15.8
         }
       },
       "ranking_eligible": true
@@ -161,8 +161,8 @@
     {
       "source_id": "timeanddate",
       "source_name": "timeanddate",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://www.timeanddate.com/weather/germany/haltern-am-see/hourly",
       "method": "html",
       "confidence": 0.0,
@@ -193,40 +193,40 @@
     {
       "source_id": "weathercom",
       "source_name": "weather.com",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://weather.com/de-DE/wetter/10tage/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6",
       "method": "html",
-      "confidence": 0.7818181818181817,
-      "status": "available",
-      "note": null,
+      "confidence": 0.0,
+      "status": "unavailable",
+      "note": "Die Quelle veroeffentlicht fuer diesen Tag noch keinen vollstaendigen Tagesabschnitt.",
       "dayparts": {
         "morning": {
-          "condition_summary": "Wolkig",
-          "precip_probability_pct": 40.0,
-          "sunshine_hours": 0.5,
-          "temperature_celsius": 17.8
+          "condition_summary": null,
+          "precip_probability_pct": null,
+          "sunshine_hours": null,
+          "temperature_celsius": null
         },
         "afternoon": {
-          "condition_summary": "Wolkig",
-          "precip_probability_pct": 40.0,
-          "sunshine_hours": 0.8,
-          "temperature_celsius": 23.0
+          "condition_summary": null,
+          "precip_probability_pct": null,
+          "sunshine_hours": null,
+          "temperature_celsius": null
         },
         "evening": {
-          "condition_summary": "Wolkig",
-          "precip_probability_pct": 40.0,
-          "sunshine_hours": 0.4,
-          "temperature_celsius": 16.8
+          "condition_summary": null,
+          "precip_probability_pct": null,
+          "sunshine_hours": null,
+          "temperature_celsius": null
         }
       },
-      "ranking_eligible": true
+      "ranking_eligible": false
     },
     {
       "source_id": "wetterde",
       "source_name": "wetter.de",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://www.wetter.de",
       "method": "html",
       "confidence": 0.6363636363636362,
@@ -237,19 +237,19 @@
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 1.8,
-          "temperature_celsius": 17.0
+          "temperature_celsius": 18.0
         },
         "afternoon": {
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 2.7,
-          "temperature_celsius": 24.0
+          "temperature_celsius": 22.0
         },
         "evening": {
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 1.5,
-          "temperature_celsius": 24.0
+          "temperature_celsius": 21.0
         }
       },
       "ranking_eligible": true
@@ -257,8 +257,8 @@
     {
       "source_id": "openmeteo",
       "source_name": "Open-Meteo",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://open-meteo.com",
       "method": "json",
       "confidence": 0.8363636363636363,
@@ -268,20 +268,20 @@
         "morning": {
           "condition_summary": "Sonnig",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 5.6,
-          "temperature_celsius": 13.4
+          "sunshine_hours": 3.0,
+          "temperature_celsius": 17.2
         },
         "afternoon": {
-          "condition_summary": "Wolkig",
+          "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 3.6,
-          "temperature_celsius": 19.8
+          "sunshine_hours": 1.8,
+          "temperature_celsius": 25.1
         },
         "evening": {
-          "condition_summary": "Wolkig",
+          "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
-          "sunshine_hours": 3.6,
-          "temperature_celsius": 19.3
+          "sunshine_hours": 0.0,
+          "temperature_celsius": 19.7
         }
       },
       "ranking_eligible": true
@@ -289,8 +289,8 @@
     {
       "source_id": "weatherandradar",
       "source_name": "Weather & Radar",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://www.weatherandradar.com/weather/haltern-am-see/5497243",
       "method": "html",
       "confidence": 0.6818181818181818,
@@ -300,20 +300,20 @@
         "morning": {
           "condition_summary": "Regen",
           "precip_probability_pct": 40.0,
-          "sunshine_hours": 0.9,
-          "temperature_celsius": 61.0
+          "sunshine_hours": 0.6,
+          "temperature_celsius": 58.0
         },
         "afternoon": {
           "condition_summary": "Regen",
           "precip_probability_pct": 40.0,
-          "sunshine_hours": 1.4,
-          "temperature_celsius": 61.0
+          "sunshine_hours": 0.9,
+          "temperature_celsius": 58.0
         },
         "evening": {
           "condition_summary": "Regen",
           "precip_probability_pct": 40.0,
-          "sunshine_hours": 0.8,
-          "temperature_celsius": 61.0
+          "sunshine_hours": 0.5,
+          "temperature_celsius": 58.0
         }
       },
       "ranking_eligible": false
@@ -321,8 +321,8 @@
     {
       "source_id": "ventusky",
       "source_name": "Ventusky",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://www.ventusky.com/haltern-am-see",
       "method": "html",
       "confidence": 0.6727272727272726,
@@ -331,21 +331,21 @@
       "dayparts": {
         "morning": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 91.0,
-          "sunshine_hours": 304.2,
-          "temperature_celsius": 16.0
+          "precip_probability_pct": 87.0,
+          "sunshine_hours": 305.1,
+          "temperature_celsius": 14.0
         },
         "afternoon": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 91.0,
-          "sunshine_hours": 456.3,
-          "temperature_celsius": 16.0
+          "precip_probability_pct": 87.0,
+          "sunshine_hours": 457.7,
+          "temperature_celsius": 14.0
         },
         "evening": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 91.0,
-          "sunshine_hours": 253.5,
-          "temperature_celsius": 16.0
+          "precip_probability_pct": 87.0,
+          "sunshine_hours": 254.2,
+          "temperature_celsius": 14.0
         }
       },
       "ranking_eligible": false
@@ -353,8 +353,8 @@
     {
       "source_id": "wettertv",
       "source_name": "wetter.tv",
-      "fetched_at": "2026-06-06T18:28:37Z",
-      "target_date": "2026-06-20",
+      "fetched_at": "2026-06-07T00:47:06Z",
+      "target_date": "2026-06-21",
       "source_url": "https://wetter.tv",
       "method": "html",
       "confidence": 0.6363636363636362,
@@ -364,20 +364,20 @@
         "morning": {
           "condition_summary": "Regen",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 2.4,
-          "temperature_celsius": 25.0
+          "sunshine_hours": 3.6,
+          "temperature_celsius": 27.0
         },
         "afternoon": {
           "condition_summary": "Regen",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 3.6,
-          "temperature_celsius": 25.0
+          "sunshine_hours": 5.4,
+          "temperature_celsius": 27.0
         },
         "evening": {
           "condition_summary": "Regen",
           "precip_probability_pct": 5.0,
-          "sunshine_hours": 2.0,
-          "temperature_celsius": 25.0
+          "sunshine_hours": 3.0,
+          "temperature_celsius": 27.0
         }
       },
       "ranking_eligible": false
