@@ -138,6 +138,52 @@
       },
       "source_count": 9,
       "selected_source_id": "weathercom"
+    },
+    {
+      "fetched_at": "2026-06-18T18:51:25Z",
+      "best_forecast": {
+        "status": "available",
+        "label": "Optimistischste Quelle",
+        "note": "Angezeigt: Weather & Radar — niedrigster Mittel-Regen (6.7 %), dann meiste Sonnenstunden (0.0 h), dann hoechste Mitteltemperatur (21.3 °C).",
+        "source_count": 1,
+        "confidence": 0.68,
+        "spread": {
+          "morning": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          },
+          "afternoon": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          },
+          "evening": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          }
+        },
+        "dayparts": {
+          "morning": {
+            "condition_summary": "So____",
+            "precip_probability_pct": 10.0,
+            "sunshine_hours": 0.0,
+            "temperature_celsius": 18.0
+          },
+          "afternoon": {
+            "condition_summary": "So____",
+            "precip_probability_pct": 10.0,
+            "sunshine_hours": 0.0,
+            "temperature_celsius": 25.0
+          },
+          "evening": {
+            "condition_summary": "So____",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0,
+            "temperature_celsius": 21.0
+          }
+        }
+      },
+      "source_count": 9,
+      "selected_source_id": "weatherandradar"
     }
   ]
 }
