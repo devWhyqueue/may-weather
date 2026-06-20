@@ -1,14 +1,14 @@
 {
-  "target_date": "2026-07-03",
+  "target_date": "2026-07-04",
   "snapshots": [
     {
-      "fetched_at": "2026-06-19T00:55:19Z",
+      "fetched_at": "2026-06-20T00:45:34Z",
       "best_forecast": {
         "status": "available",
         "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Open-Meteo — niedrigster Mittel-Regen (15.7 %), dann meiste Sonnenstunden (7.2 h), dann hoechste Mitteltemperatur (20.9 °C).",
+        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (10.0 h), dann hoechste Mitteltemperatur (27.7 °C).",
         "source_count": 1,
-        "confidence": 0.84,
+        "confidence": 0.79,
         "spread": {
           "morning": {
             "precip_probability_pct": 0.0,
@@ -25,165 +25,27 @@
         },
         "dayparts": {
           "morning": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 19.0,
-            "sunshine_hours": 1.8,
-            "temperature_celsius": 16.5
+            "condition_summary": "Sonnig",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 8.0,
+            "temperature_celsius": 26.1
           },
           "afternoon": {
-            "condition_summary": "Regen",
-            "precip_probability_pct": 28.0,
-            "sunshine_hours": 1.8,
-            "temperature_celsius": 22.2
+            "condition_summary": "Vereinzelt wolken",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 2.0,
+            "temperature_celsius": 30.0
           },
           "evening": {
-            "condition_summary": "Wolkig",
+            "condition_summary": "Vereinzelt wolken",
             "precip_probability_pct": 0.0,
-            "sunshine_hours": 3.6,
-            "temperature_celsius": 24.0
+            "sunshine_hours": 0.0,
+            "temperature_celsius": 26.9
           }
         }
       },
       "source_count": 8,
-      "selected_source_id": "openmeteo"
-    },
-    {
-      "fetched_at": "2026-06-19T07:54:01Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: weather.com — niedrigster Mittel-Regen (4.0 %), dann meiste Sonnenstunden (0.0 h), dann hoechste Mitteltemperatur (20.7 °C).",
-        "source_count": 1,
-        "confidence": 0.78,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 4.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 19.1
-          },
-          "afternoon": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 4.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 25.0
-          },
-          "evening": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 4.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 18.0
-          }
-        }
-      },
-      "source_count": 9,
-      "selected_source_id": "weathercom"
-    },
-    {
-      "fetched_at": "2026-06-19T13:12:54Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: weather.com — niedrigster Mittel-Regen (3.0 %), dann meiste Sonnenstunden (0.0 h), dann hoechste Mitteltemperatur (21.7 °C).",
-        "source_count": 1,
-        "confidence": 0.78,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 3.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 20.1
-          },
-          "afternoon": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 3.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 26.0
-          },
-          "evening": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 3.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 19.0
-          }
-        }
-      },
-      "source_count": 9,
-      "selected_source_id": "weathercom"
-    },
-    {
-      "fetched_at": "2026-06-19T18:38:04Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: weather.com — niedrigster Mittel-Regen (3.0 %), dann meiste Sonnenstunden (0.0 h), dann hoechste Mitteltemperatur (20.2 °C).",
-        "source_count": 1,
-        "confidence": 0.78,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 3.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 18.8
-          },
-          "afternoon": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 3.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 24.0
-          },
-          "evening": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 3.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 17.8
-          }
-        }
-      },
-      "source_count": 9,
-      "selected_source_id": "weathercom"
+      "selected_source_id": "daswetter"
     }
   ]
 }
