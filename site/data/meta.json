@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-25T07:13:25Z",
+  "generated_at": "2026-06-25T12:49:28Z",
   "target_date": "2026-07-09",
   "location": "Haltern am See",
   "source_status": {
     "available": 8,
     "partial": 0,
-    "unavailable": 2,
-    "error": 0
+    "unavailable": 1,
+    "error": 1
   },
   "best_forecast_status": "available",
   "selected_source_id": "daswetter"
