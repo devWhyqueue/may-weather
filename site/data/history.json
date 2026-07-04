@@ -92,6 +92,52 @@
       },
       "source_count": 7,
       "selected_source_id": "daswetter"
+    },
+    {
+      "fetched_at": "2026-07-04T12:26:17Z",
+      "best_forecast": {
+        "status": "available",
+        "label": "Optimistischste Quelle",
+        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (20.0 %), dann meiste Sonnenstunden (309.3 h), dann hoechste Mitteltemperatur (18.8 °C).",
+        "source_count": 1,
+        "confidence": 0.79,
+        "spread": {
+          "morning": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          },
+          "afternoon": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          },
+          "evening": {
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 0.0
+          }
+        },
+        "dayparts": {
+          "morning": {
+            "condition_summary": "Regen",
+            "precip_probability_pct": 30.0,
+            "sunshine_hours": 306.9,
+            "temperature_celsius": 11.0
+          },
+          "afternoon": {
+            "condition_summary": "Bewölkt",
+            "precip_probability_pct": 0.0,
+            "sunshine_hours": 1.2,
+            "temperature_celsius": 24.2
+          },
+          "evening": {
+            "condition_summary": "Vereinzelt wolken",
+            "precip_probability_pct": 30.0,
+            "sunshine_hours": 1.2,
+            "temperature_celsius": 21.1
+          }
+        }
+      },
+      "source_count": 8,
+      "selected_source_id": "daswetter"
     }
   ]
 }
