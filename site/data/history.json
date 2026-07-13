@@ -1,12 +1,12 @@
 {
-  "target_date": "2026-07-26",
+  "target_date": "2026-07-27",
   "snapshots": [
     {
-      "fetched_at": "2026-07-12T00:32:58Z",
+      "fetched_at": "2026-07-13T00:32:41Z",
       "best_forecast": {
         "status": "available",
         "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (13.0 h), dann hoechste Mitteltemperatur (25.9 °C).",
+        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (10.0 %), dann meiste Sonnenstunden (11.2 h), dann hoechste Mitteltemperatur (25.4 °C).",
         "source_count": 1,
         "confidence": 0.79,
         "spread": {
@@ -27,163 +27,25 @@
           "morning": {
             "condition_summary": "Sonnig",
             "precip_probability_pct": 0.0,
-            "sunshine_hours": 5.0,
-            "temperature_celsius": 22.6
+            "sunshine_hours": 8.0,
+            "temperature_celsius": 19.6
           },
           "afternoon": {
             "condition_summary": "Vereinzelt wolken",
             "precip_probability_pct": 0.0,
-            "sunshine_hours": 1.0,
+            "sunshine_hours": 2.0,
             "temperature_celsius": 29.6
           },
           "evening": {
-            "condition_summary": "Sonnig",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 7.0,
-            "temperature_celsius": 25.4
+            "condition_summary": "Vereinzelt wolken",
+            "precip_probability_pct": 30.0,
+            "sunshine_hours": 1.2,
+            "temperature_celsius": 26.9
           }
         }
       },
       "source_count": 7,
       "selected_source_id": "daswetter"
-    },
-    {
-      "fetched_at": "2026-07-12T06:54:57Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (8.2 h), dann hoechste Mitteltemperatur (26.9 °C).",
-        "source_count": 1,
-        "confidence": 0.79,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Sonnig",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 2.0,
-            "temperature_celsius": 25.0
-          },
-          "afternoon": {
-            "condition_summary": "Vereinzelt wolken",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 1.2,
-            "temperature_celsius": 29.8
-          },
-          "evening": {
-            "condition_summary": "Sonnig",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 5.0,
-            "temperature_celsius": 25.9
-          }
-        }
-      },
-      "source_count": 9,
-      "selected_source_id": "daswetter"
-    },
-    {
-      "fetched_at": "2026-07-12T12:19:46Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (5.8 h), dann hoechste Mitteltemperatur (23.0 °C).",
-        "source_count": 1,
-        "confidence": 0.79,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Regen",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 1.8,
-            "temperature_celsius": 13.0
-          },
-          "afternoon": {
-            "condition_summary": "Vereinzelt wolken",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 1.0,
-            "temperature_celsius": 30.2
-          },
-          "evening": {
-            "condition_summary": "Vereinzelt wolken",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 3.0,
-            "temperature_celsius": 25.9
-          }
-        }
-      },
-      "source_count": 9,
-      "selected_source_id": "daswetter"
-    },
-    {
-      "fetched_at": "2026-07-12T18:19:46Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: weather.com — niedrigster Mittel-Regen (16.0 %), dann meiste Sonnenstunden (0.0 h), dann hoechste Mitteltemperatur (21.2 °C).",
-        "source_count": 1,
-        "confidence": 0.78,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 16.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 19.5
-          },
-          "afternoon": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 16.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 26.0
-          },
-          "evening": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 16.0,
-            "sunshine_hours": 0.0,
-            "temperature_celsius": 18.2
-          }
-        }
-      },
-      "source_count": 8,
-      "selected_source_id": "weathercom"
     }
   ]
 }
