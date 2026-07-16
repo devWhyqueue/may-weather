@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-16T00:30:02Z",
+  "generated_at": "2026-07-16T06:50:31Z",
   "target_date": "2026-07-30",
   "location": "Haltern am See",
   "source_status": {
-    "available": 7,
+    "available": 8,
     "partial": 1,
-    "unavailable": 2,
+    "unavailable": 1,
     "error": 0
   },
   "best_forecast_status": "available",
