@@ -7,14 +7,14 @@
     "longitude": 7.1815,
     "timezone": "Europe/Berlin"
   },
-  "target_date": "2026-08-01",
-  "generated_at": "2026-07-18T18:19:05Z",
+  "target_date": "2026-08-02",
+  "generated_at": "2026-07-19T00:31:47Z",
   "best_forecast": {
     "status": "available",
     "label": "Optimistischste Quelle",
-    "note": "Angezeigt: weather.com — niedrigster Mittel-Regen (9.0 %), dann meiste Sonnenstunden (0.0 h), dann hoechste Mitteltemperatur (21.3 °C).",
+    "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (4.8 h), dann hoechste Mitteltemperatur (17.9 °C).",
     "source_count": 1,
-    "confidence": 0.78,
+    "confidence": 0.79,
     "spread": {
       "morning": {
         "precip_probability_pct": 0.0,
@@ -31,65 +31,65 @@
     },
     "dayparts": {
       "morning": {
-        "condition_summary": "Bewölkt",
-        "precip_probability_pct": 9.0,
-        "sunshine_hours": 0.0,
-        "temperature_celsius": 19.2
+        "condition_summary": "Vereinzelt wolken",
+        "precip_probability_pct": 0.0,
+        "sunshine_hours": 1.2,
+        "temperature_celsius": 15.4
       },
       "afternoon": {
-        "condition_summary": "Bewölkt",
-        "precip_probability_pct": 9.0,
-        "sunshine_hours": 0.0,
-        "temperature_celsius": 27.0
+        "condition_summary": "Vereinzelt wolken",
+        "precip_probability_pct": 0.0,
+        "sunshine_hours": 1.8,
+        "temperature_celsius": 20.9
       },
       "evening": {
-        "condition_summary": "Bewölkt",
-        "precip_probability_pct": 9.0,
-        "sunshine_hours": 0.0,
-        "temperature_celsius": 17.6
+        "condition_summary": "Vereinzelt wolken",
+        "precip_probability_pct": 0.0,
+        "sunshine_hours": 1.8,
+        "temperature_celsius": 17.4
       }
     }
   },
   "selected_source": {
-    "source_id": "weathercom",
-    "source_name": "weather.com",
-    "source_url": "https://weather.com/de-DE/wetter/10tage/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6"
+    "source_id": "daswetter",
+    "source_name": "Das Wetter / Meteored",
+    "source_url": "https://www.daswetter.com/wetter_Haltern%2Bam%2BSee-Europa-Deutschland-Nordrhein%2BWestfalen--1-26703.html"
   },
   "coverage": {
     "total_sources": 10,
-    "available_sources": 8,
-    "ranking_candidates": 4
+    "available_sources": 7,
+    "ranking_candidates": 2
   },
-  "confidence": 0.78,
+  "confidence": 0.79,
   "sources": [
     {
       "source_id": "wetteronline",
       "source_name": "WetterOnline",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://www.wetteronline.de/wetter/haltern-am-see",
       "method": "text",
-      "confidence": 0.45,
-      "status": "partial",
-      "note": "Ein oder mehrere Tagesabschnitte konnten nur teilweise extrahiert werden.",
+      "confidence": 0.8636363636363635,
+      "status": "available",
+      "note": null,
       "dayparts": {
         "morning": {
           "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": null
+          "temperature_celsius": 13.7
         },
         "afternoon": {
           "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": null
+          "temperature_celsius": 13.7
         },
         "evening": {
           "condition_summary": "Regen",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 0.0,
-          "temperature_celsius": null
+          "temperature_celsius": 13.7
         }
       },
       "ranking_eligible": false
@@ -97,8 +97,8 @@
     {
       "source_id": "meteoblue",
       "source_name": "meteoblue",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://www.meteoblue.com/en/weather/today/haltern-am-see_germany_2911396",
       "method": "html",
       "confidence": 0.8181818181818181,
@@ -129,8 +129,8 @@
     {
       "source_id": "daswetter",
       "source_name": "Das Wetter / Meteored",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://www.daswetter.com/wetter_Haltern%2Bam%2BSee-Europa-Deutschland-Nordrhein%2BWestfalen--1-26703.html",
       "method": "text",
       "confidence": 0.7909090909090909,
@@ -138,22 +138,22 @@
       "note": null,
       "dayparts": {
         "morning": {
-          "condition_summary": "Regen",
-          "precip_probability_pct": 30.0,
-          "sunshine_hours": 304.5,
-          "temperature_celsius": 12.0
-        },
-        "afternoon": {
-          "condition_summary": "Bewölkt",
-          "precip_probability_pct": 0.0,
-          "sunshine_hours": 0.0,
-          "temperature_celsius": 21.0
-        },
-        "evening": {
-          "condition_summary": "Bewölkt",
+          "condition_summary": "Vereinzelt wolken",
           "precip_probability_pct": 0.0,
           "sunshine_hours": 1.2,
-          "temperature_celsius": 19.2
+          "temperature_celsius": 15.4
+        },
+        "afternoon": {
+          "condition_summary": "Vereinzelt wolken",
+          "precip_probability_pct": 0.0,
+          "sunshine_hours": 1.8,
+          "temperature_celsius": 20.9
+        },
+        "evening": {
+          "condition_summary": "Vereinzelt wolken",
+          "precip_probability_pct": 0.0,
+          "sunshine_hours": 1.8,
+          "temperature_celsius": 17.4
         }
       },
       "ranking_eligible": true
@@ -161,8 +161,8 @@
     {
       "source_id": "timeanddate",
       "source_name": "timeanddate",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://www.timeanddate.com/weather/germany/haltern-am-see/hourly",
       "method": "html",
       "confidence": 0.0,
@@ -193,40 +193,40 @@
     {
       "source_id": "weathercom",
       "source_name": "weather.com",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://weather.com/de-DE/wetter/10tage/l/4f2a336086cc19d90f233d01483a462f5d7537133fe126349db13fb3727b75d6",
       "method": "html",
-      "confidence": 0.7818181818181817,
-      "status": "available",
-      "note": null,
+      "confidence": 0.0,
+      "status": "unavailable",
+      "note": "Die Quelle veroeffentlicht fuer diesen Tag noch keinen vollstaendigen Tagesabschnitt.",
       "dayparts": {
         "morning": {
-          "condition_summary": "Bewölkt",
-          "precip_probability_pct": 9.0,
-          "sunshine_hours": 0.0,
-          "temperature_celsius": 19.2
+          "condition_summary": null,
+          "precip_probability_pct": null,
+          "sunshine_hours": null,
+          "temperature_celsius": null
         },
         "afternoon": {
-          "condition_summary": "Bewölkt",
-          "precip_probability_pct": 9.0,
-          "sunshine_hours": 0.0,
-          "temperature_celsius": 27.0
+          "condition_summary": null,
+          "precip_probability_pct": null,
+          "sunshine_hours": null,
+          "temperature_celsius": null
         },
         "evening": {
-          "condition_summary": "Bewölkt",
-          "precip_probability_pct": 9.0,
-          "sunshine_hours": 0.0,
-          "temperature_celsius": 17.6
+          "condition_summary": null,
+          "precip_probability_pct": null,
+          "sunshine_hours": null,
+          "temperature_celsius": null
         }
       },
-      "ranking_eligible": true
+      "ranking_eligible": false
     },
     {
       "source_id": "wetterde",
       "source_name": "wetter.de",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://www.wetter.de",
       "method": "html",
       "confidence": 0.6363636363636362,
@@ -237,19 +237,19 @@
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 1.8,
-          "temperature_celsius": 19.0
+          "temperature_celsius": 16.0
         },
         "afternoon": {
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 2.7,
-          "temperature_celsius": 24.0
+          "temperature_celsius": 22.0
         },
         "evening": {
           "condition_summary": "Wolkig",
           "precip_probability_pct": 30.0,
           "sunshine_hours": 1.5,
-          "temperature_celsius": 22.0
+          "temperature_celsius": 16.0
         }
       },
       "ranking_eligible": true
@@ -257,40 +257,40 @@
     {
       "source_id": "openmeteo",
       "source_name": "Open-Meteo",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://open-meteo.com",
       "method": "json",
-      "confidence": 0.8363636363636363,
-      "status": "available",
-      "note": null,
+      "confidence": 0.45,
+      "status": "partial",
+      "note": "Ein oder mehrere Tagesabschnitte konnten nur teilweise extrahiert werden.",
       "dayparts": {
         "morning": {
-          "condition_summary": "Regen",
-          "precip_probability_pct": 16.0,
-          "sunshine_hours": 0.0,
-          "temperature_celsius": 18.3
+          "condition_summary": "Sonnig",
+          "precip_probability_pct": 12.0,
+          "sunshine_hours": 5.2,
+          "temperature_celsius": 16.8
         },
         "afternoon": {
-          "condition_summary": "Regen",
-          "precip_probability_pct": 29.0,
-          "sunshine_hours": 1.8,
-          "temperature_celsius": 23.1
+          "condition_summary": "Wolkig",
+          "precip_probability_pct": 23.0,
+          "sunshine_hours": 3.8,
+          "temperature_celsius": 22.9
         },
         "evening": {
-          "condition_summary": "Wolkig",
-          "precip_probability_pct": 30.0,
-          "sunshine_hours": 3.6,
-          "temperature_celsius": 20.8
+          "condition_summary": null,
+          "precip_probability_pct": null,
+          "sunshine_hours": null,
+          "temperature_celsius": null
         }
       },
-      "ranking_eligible": true
+      "ranking_eligible": false
     },
     {
       "source_id": "weatherandradar",
       "source_name": "Weather & Radar",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://www.weatherandradar.com/weather/haltern-am-see/5497243",
       "method": "html",
       "confidence": 0.6818181818181818,
@@ -300,20 +300,20 @@
         "morning": {
           "condition_summary": "Regen",
           "precip_probability_pct": 20.0,
-          "sunshine_hours": 1.8,
-          "temperature_celsius": 66.0
+          "sunshine_hours": 2.1,
+          "temperature_celsius": 56.0
         },
         "afternoon": {
           "condition_summary": "Regen",
           "precip_probability_pct": 20.0,
-          "sunshine_hours": 2.7,
-          "temperature_celsius": 66.0
+          "sunshine_hours": 3.1,
+          "temperature_celsius": 56.0
         },
         "evening": {
           "condition_summary": "Regen",
           "precip_probability_pct": 20.0,
-          "sunshine_hours": 1.5,
-          "temperature_celsius": 66.0
+          "sunshine_hours": 1.8,
+          "temperature_celsius": 56.0
         }
       },
       "ranking_eligible": false
@@ -321,8 +321,8 @@
     {
       "source_id": "ventusky",
       "source_name": "Ventusky",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://www.ventusky.com/haltern-am-see",
       "method": "html",
       "confidence": 0.6727272727272726,
@@ -331,21 +331,21 @@
       "dayparts": {
         "morning": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 55.0,
-          "sunshine_hours": 304.5,
-          "temperature_celsius": 20.0
+          "precip_probability_pct": 76.0,
+          "sunshine_hours": 305.1,
+          "temperature_celsius": 15.0
         },
         "afternoon": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 55.0,
-          "sunshine_hours": 456.8,
-          "temperature_celsius": 20.0
+          "precip_probability_pct": 76.0,
+          "sunshine_hours": 457.7,
+          "temperature_celsius": 15.0
         },
         "evening": {
           "condition_summary": "Sonnig",
-          "precip_probability_pct": 55.0,
-          "sunshine_hours": 253.8,
-          "temperature_celsius": 20.0
+          "precip_probability_pct": 76.0,
+          "sunshine_hours": 254.2,
+          "temperature_celsius": 15.0
         }
       },
       "ranking_eligible": false
@@ -353,8 +353,8 @@
     {
       "source_id": "wettertv",
       "source_name": "wetter.tv",
-      "fetched_at": "2026-07-18T18:19:05Z",
-      "target_date": "2026-08-01",
+      "fetched_at": "2026-07-19T00:31:47Z",
+      "target_date": "2026-08-02",
       "source_url": "https://wetter.tv",
       "method": "html",
       "confidence": 0.6363636363636362,
@@ -364,20 +364,20 @@
         "morning": {
           "condition_summary": "Regen",
           "precip_probability_pct": 95.0,
-          "sunshine_hours": 0.6,
-          "temperature_celsius": 30.0
+          "sunshine_hours": 3.0,
+          "temperature_celsius": 27.0
         },
         "afternoon": {
           "condition_summary": "Regen",
           "precip_probability_pct": 95.0,
-          "sunshine_hours": 0.9,
-          "temperature_celsius": 30.0
+          "sunshine_hours": 4.5,
+          "temperature_celsius": 27.0
         },
         "evening": {
           "condition_summary": "Regen",
           "precip_probability_pct": 95.0,
-          "sunshine_hours": 0.5,
-          "temperature_celsius": 30.0
+          "sunshine_hours": 2.5,
+          "temperature_celsius": 27.0
         }
       },
       "ranking_eligible": false
