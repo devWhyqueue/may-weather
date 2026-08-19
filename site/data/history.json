@@ -1,8 +1,8 @@
 {
-  "target_date": "2026-09-01",
+  "target_date": "2026-09-02",
   "snapshots": [
     {
-      "fetched_at": "2026-08-18T00:11:14Z",
+      "fetched_at": "2026-08-19T00:10:57Z",
       "best_forecast": {
         "status": "available",
         "label": "Optimistischste Quelle",
@@ -28,161 +28,23 @@
             "condition_summary": "Wolkig",
             "precip_probability_pct": 30.0,
             "sunshine_hours": 1.8,
-            "temperature_celsius": 15.0
+            "temperature_celsius": 17.0
           },
           "afternoon": {
             "condition_summary": "Wolkig",
             "precip_probability_pct": 30.0,
             "sunshine_hours": 2.7,
-            "temperature_celsius": 21.0
+            "temperature_celsius": 20.0
           },
           "evening": {
             "condition_summary": "Wolkig",
             "precip_probability_pct": 30.0,
             "sunshine_hours": 1.5,
-            "temperature_celsius": 20.0
+            "temperature_celsius": 19.0
           }
         }
       },
       "source_count": 7,
-      "selected_source_id": "wetterde"
-    },
-    {
-      "fetched_at": "2026-08-18T06:08:57Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: wetter.de — niedrigster Mittel-Regen (30.0 %), dann meiste Sonnenstunden (6.0 h), dann hoechste Mitteltemperatur (18.3 °C).",
-        "source_count": 1,
-        "confidence": 0.64,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 30.0,
-            "sunshine_hours": 1.8,
-            "temperature_celsius": 15.0
-          },
-          "afternoon": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 30.0,
-            "sunshine_hours": 2.7,
-            "temperature_celsius": 20.0
-          },
-          "evening": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 30.0,
-            "sunshine_hours": 1.5,
-            "temperature_celsius": 20.0
-          }
-        }
-      },
-      "source_count": 8,
-      "selected_source_id": "wetterde"
-    },
-    {
-      "fetched_at": "2026-08-18T12:09:16Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: wetter.de — niedrigster Mittel-Regen (30.0 %), dann meiste Sonnenstunden (6.0 h), dann hoechste Mitteltemperatur (18.7 °C).",
-        "source_count": 1,
-        "confidence": 0.64,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 30.0,
-            "sunshine_hours": 1.8,
-            "temperature_celsius": 15.0
-          },
-          "afternoon": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 30.0,
-            "sunshine_hours": 2.7,
-            "temperature_celsius": 21.0
-          },
-          "evening": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 30.0,
-            "sunshine_hours": 1.5,
-            "temperature_celsius": 20.0
-          }
-        }
-      },
-      "source_count": 6,
-      "selected_source_id": "wetterde"
-    },
-    {
-      "fetched_at": "2026-08-18T18:08:44Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: wetter.de — niedrigster Mittel-Regen (30.0 %), dann meiste Sonnenstunden (6.0 h), dann hoechste Mitteltemperatur (19.3 °C).",
-        "source_count": 1,
-        "confidence": 0.64,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 30.0,
-            "sunshine_hours": 1.8,
-            "temperature_celsius": 15.0
-          },
-          "afternoon": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 30.0,
-            "sunshine_hours": 2.7,
-            "temperature_celsius": 22.0
-          },
-          "evening": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 30.0,
-            "sunshine_hours": 1.5,
-            "temperature_celsius": 21.0
-          }
-        }
-      },
-      "source_count": 8,
       "selected_source_id": "wetterde"
     }
   ]
