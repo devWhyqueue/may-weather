@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-08-28T16:07:38Z",
+  "generated_at": "2026-08-28T21:24:01Z",
   "target_date": "2026-09-11",
   "location": "Haltern am See",
   "source_status": {
-    "available": 8,
-    "partial": 0,
+    "available": 7,
+    "partial": 1,
     "unavailable": 2,
     "error": 0
   },
   "best_forecast_status": "available",
-  "selected_source_id": "openmeteo"
+  "selected_source_id": "weatherandradar"
 }
