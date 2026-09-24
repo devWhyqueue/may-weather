@@ -1,12 +1,12 @@
 {
-  "target_date": "2026-10-07",
+  "target_date": "2026-10-08",
   "snapshots": [
     {
-      "fetched_at": "2026-09-23T00:22:35Z",
+      "fetched_at": "2026-09-24T00:23:07Z",
       "best_forecast": {
         "status": "available",
         "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (4.2 h), dann hoechste Mitteltemperatur (15.7 °C).",
+        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (2.2 h), dann hoechste Mitteltemperatur (13.9 °C).",
         "source_count": 1,
         "confidence": 0.79,
         "spread": {
@@ -27,163 +27,25 @@
           "morning": {
             "condition_summary": "Vereinzelt wolken",
             "precip_probability_pct": 0.0,
-            "sunshine_hours": 2.0,
-            "temperature_celsius": 11.6
+            "sunshine_hours": 1.0,
+            "temperature_celsius": 12.5
           },
           "afternoon": {
-            "condition_summary": "Vereinzelt wolken",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 1.0,
-            "temperature_celsius": 18.9
-          },
-          "evening": {
             "condition_summary": "Vereinzelt wolken",
             "precip_probability_pct": 0.0,
             "sunshine_hours": 1.2,
-            "temperature_celsius": 16.6
-          }
-        }
-      },
-      "source_count": 7,
-      "selected_source_id": "daswetter"
-    },
-    {
-      "fetched_at": "2026-09-23T06:15:29Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (2.8 h), dann hoechste Mitteltemperatur (16.3 °C).",
-        "source_count": 1,
-        "confidence": 0.79,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
+            "temperature_celsius": 17.1
           },
           "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
             "condition_summary": "Vereinzelt wolken",
             "precip_probability_pct": 0.0,
             "sunshine_hours": 0.0,
-            "temperature_celsius": 12.8
-          },
-          "afternoon": {
-            "condition_summary": "Vereinzelt wolken",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 1.0,
-            "temperature_celsius": 19.6
-          },
-          "evening": {
-            "condition_summary": "Vereinzelt wolken",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 1.8,
-            "temperature_celsius": 16.6
+            "temperature_celsius": 12.1
           }
         }
       },
       "source_count": 7,
       "selected_source_id": "daswetter"
-    },
-    {
-      "fetched_at": "2026-09-23T12:13:44Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (609.0 h), dann hoechste Mitteltemperatur (15.3 °C).",
-        "source_count": 1,
-        "confidence": 0.79,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Regen",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 607.8,
-            "temperature_celsius": 9.0
-          },
-          "afternoon": {
-            "condition_summary": "Vereinzelt wolken",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.6,
-            "temperature_celsius": 19.8
-          },
-          "evening": {
-            "condition_summary": "Bewölkt",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.6,
-            "temperature_celsius": 17.1
-          }
-        }
-      },
-      "source_count": 8,
-      "selected_source_id": "daswetter"
-    },
-    {
-      "fetched_at": "2026-09-23T18:12:03Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Open-Meteo — niedrigster Mittel-Regen (15.7 %), dann meiste Sonnenstunden (14.8 h), dann hoechste Mitteltemperatur (13.2 °C).",
-        "source_count": 1,
-        "confidence": 0.84,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 9.0,
-            "sunshine_hours": 3.6,
-            "temperature_celsius": 11.3
-          },
-          "afternoon": {
-            "condition_summary": "Sonnig",
-            "precip_probability_pct": 18.0,
-            "sunshine_hours": 5.2,
-            "temperature_celsius": 16.2
-          },
-          "evening": {
-            "condition_summary": "Sonnig",
-            "precip_probability_pct": 20.0,
-            "sunshine_hours": 6.0,
-            "temperature_celsius": 12.2
-          }
-        }
-      },
-      "source_count": 7,
-      "selected_source_id": "openmeteo"
     }
   ]
 }
