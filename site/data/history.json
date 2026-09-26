@@ -1,12 +1,12 @@
 {
-  "target_date": "2026-10-09",
+  "target_date": "2026-10-10",
   "snapshots": [
     {
-      "fetched_at": "2026-09-25T00:24:25Z",
+      "fetched_at": "2026-09-26T00:23:26Z",
       "best_forecast": {
         "status": "available",
         "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (18.0 h), dann hoechste Mitteltemperatur (15.0 °C).",
+        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (6.6 h), dann hoechste Mitteltemperatur (16.7 °C).",
         "source_count": 1,
         "confidence": 0.79,
         "spread": {
@@ -25,165 +25,27 @@
         },
         "dayparts": {
           "morning": {
-            "condition_summary": "Sonnig",
+            "condition_summary": "Wolkig",
             "precip_probability_pct": 0.0,
-            "sunshine_hours": 6.0,
-            "temperature_celsius": 10.8
+            "sunshine_hours": 3.0,
+            "temperature_celsius": 13.8
           },
           "afternoon": {
             "condition_summary": "Vereinzelt wolken",
             "precip_probability_pct": 0.0,
-            "sunshine_hours": 4.0,
-            "temperature_celsius": 19.6
+            "sunshine_hours": 1.8,
+            "temperature_celsius": 20.1
           },
           "evening": {
-            "condition_summary": "Sonnig",
+            "condition_summary": "Vereinzelt wolken",
             "precip_probability_pct": 0.0,
-            "sunshine_hours": 8.0,
-            "temperature_celsius": 14.6
+            "sunshine_hours": 1.8,
+            "temperature_celsius": 16.2
           }
         }
       },
       "source_count": 7,
       "selected_source_id": "daswetter"
-    },
-    {
-      "fetched_at": "2026-09-25T06:15:41Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Das Wetter / Meteored — niedrigster Mittel-Regen (0.0 %), dann meiste Sonnenstunden (17.0 h), dann hoechste Mitteltemperatur (15.1 °C).",
-        "source_count": 1,
-        "confidence": 0.79,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Sonnig",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 4.0,
-            "temperature_celsius": 11.2
-          },
-          "afternoon": {
-            "condition_summary": "Sonnig",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 5.0,
-            "temperature_celsius": 19.6
-          },
-          "evening": {
-            "condition_summary": "Sonnig",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 8.0,
-            "temperature_celsius": 14.6
-          }
-        }
-      },
-      "source_count": 7,
-      "selected_source_id": "daswetter"
-    },
-    {
-      "fetched_at": "2026-09-25T12:14:08Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Open-Meteo — niedrigster Mittel-Regen (14.7 %), dann meiste Sonnenstunden (10.8 h), dann hoechste Mitteltemperatur (13.9 °C).",
-        "source_count": 1,
-        "confidence": 0.84,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 20.0,
-            "sunshine_hours": 3.6,
-            "temperature_celsius": 10.3
-          },
-          "afternoon": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 24.0,
-            "sunshine_hours": 3.6,
-            "temperature_celsius": 16.2
-          },
-          "evening": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 3.6,
-            "temperature_celsius": 15.1
-          }
-        }
-      },
-      "source_count": 8,
-      "selected_source_id": "openmeteo"
-    },
-    {
-      "fetched_at": "2026-09-25T18:11:02Z",
-      "best_forecast": {
-        "status": "available",
-        "label": "Optimistischste Quelle",
-        "note": "Angezeigt: Open-Meteo — niedrigster Mittel-Regen (14.7 %), dann meiste Sonnenstunden (10.8 h), dann hoechste Mitteltemperatur (13.9 °C).",
-        "source_count": 1,
-        "confidence": 0.84,
-        "spread": {
-          "morning": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "afternoon": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          },
-          "evening": {
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 0.0
-          }
-        },
-        "dayparts": {
-          "morning": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 20.0,
-            "sunshine_hours": 3.6,
-            "temperature_celsius": 10.3
-          },
-          "afternoon": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 24.0,
-            "sunshine_hours": 3.6,
-            "temperature_celsius": 16.2
-          },
-          "evening": {
-            "condition_summary": "Wolkig",
-            "precip_probability_pct": 0.0,
-            "sunshine_hours": 3.6,
-            "temperature_celsius": 15.1
-          }
-        }
-      },
-      "source_count": 7,
-      "selected_source_id": "openmeteo"
     }
   ]
 }
